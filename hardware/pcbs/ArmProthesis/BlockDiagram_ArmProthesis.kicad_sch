@@ -1,7 +1,7 @@
 (kicad_sch
-	(version 20231120)
+	(version 20250114)
 	(generator "eeschema")
-	(generator_version "8.0")
+	(generator_version "9.0")
 	(uuid "acffb05f-91b6-41a5-8d8a-5bb03d7a6662")
 	(paper "A4")
 	(lib_symbols
@@ -88,7 +88,531 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
+	)
+	(circle
+		(center 121.158 107.188)
+		(radius 1.0776)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 0ba0d74d-5f6a-40ea-bcb9-40efe84e707f)
+	)
+	(circle
+		(center 124.968 44.704)
+		(radius 1.0776)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 0e14e1d3-df2a-4f76-b075-2b70e421f215)
+	)
+	(circle
+		(center 151.13 45.212)
+		(radius 1.0776)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 2285684b-6f40-48d5-b53c-3aff68b79150)
+	)
+	(circle
+		(center 34.544 128.27)
+		(radius 1.0776)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 2479c0e1-b5aa-4d31-b96b-e118d1e6c975)
+	)
+	(circle
+		(center 47.244 116.078)
+		(radius 1.0776)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 3583bbae-fece-4ac5-afe2-b96ed688e38b)
+	)
+	(circle
+		(center 181.864 44.958)
+		(radius 1.0776)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 72fc4d90-d0c7-433e-bfb4-a42929286d0b)
+	)
+	(circle
+		(center 59.944 104.14)
+		(radius 1.0776)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 74e8f2ad-11a9-444b-b9da-74aa8eb98a3c)
+	)
+	(circle
+		(center 72.644 92.456)
+		(radius 1.0776)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 96305922-c6df-4985-bbd7-5a887adc0536)
+	)
+	(circle
+		(center 151.13 45.212)
+		(radius 1.0776)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid a17c0962-12f9-476e-a287-8767e5351d71)
+	)
+	(circle
+		(center 121.158 107.188)
+		(radius 1.0776)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid b749ef7f-5dbf-4720-8f76-f0335face759)
+	)
+	(text "+5V\n"
+		(exclude_from_sim no)
+		(at 201.422 64.262 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "2504da06-09c2-4071-8280-d4be59353e06")
+	)
+	(text "VELOCITY\n+\nSTRENGTH"
+		(exclude_from_sim no)
+		(at 178.816 109.474 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "31975088-ccb0-4dca-a718-4ebd80ab421a")
+	)
+	(text "SPI SERIAL MODE\n\n\n"
+		(exclude_from_sim no)
+		(at 135.128 117.094 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "5c02ef15-5622-40e6-a067-544b6cd4db7f")
+	)
+	(text "+11.1V\n"
+		(exclude_from_sim no)
+		(at 168.656 47.498 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "76387570-f47f-475f-8389-22e87512e025")
+	)
+	(text "SCL\n\nSDA\n\nALERT\n\n"
+		(exclude_from_sim no)
+		(at 139.7 70.104 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "e9b01c78-ba14-4b57-8542-67ba37cf722f")
+	)
+	(text_box "Main Processor\nNUCLEO-N657X0-Q"
+		(exclude_from_sim no)
+		(at 147.574 105.156 0)
+		(size 21.59 15.24)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "15bcae07-9877-4c16-9d37-8bc26de50077")
+	)
+	(text_box "Sensor 2"
+		(exclude_from_sim no)
+		(at 58.42 102.616 0)
+		(size 11.43 8.89)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(href "file://C:\\Users\\anton\\OneDrive\\Documents\\KiCad\\ArmProthesis\\EMG sensors.kicad_sch")
+		)
+		(uuid "3cce82f2-cfe6-4a19-80fb-238b8695795c")
+	)
+	(text_box "Smart DCs\n"
+		(exclude_from_sim no)
+		(at 205.994 118.11 0)
+		(size 17.78 10.16)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "3fc44c61-35b9-4d49-aa42-bf9dd910f24d")
+	)
+	(text_box "Smart DCs\n"
+		(exclude_from_sim no)
+		(at 224.028 128.524 0)
+		(size 17.78 10.16)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "402b4e4b-a417-44e1-bd72-edcd6db281e3")
+	)
+	(text_box "Sensor 4"
+		(exclude_from_sim no)
+		(at 33.02 126.746 0)
+		(size 11.43 8.89)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(href "file://C:\\Users\\anton\\OneDrive\\Documents\\KiCad\\ArmProthesis\\EMG sensors.kicad_sch")
+		)
+		(uuid "655bd233-cd9e-40c6-a235-7c3bf37d1de2")
+	)
+	(text_box "Sensor 1"
+		(exclude_from_sim no)
+		(at 71.12 91.186 0)
+		(size 11.43 8.89)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(href "file://C:\\Users\\anton\\OneDrive\\Documents\\KiCad\\ArmProthesis\\EMG sensors.kicad_sch")
+		)
+		(uuid "72731af7-caea-4eb5-b5cc-f80359d68f68")
+	)
+	(text_box "strength feedback"
+		(exclude_from_sim no)
+		(at 151.384 131.318 0)
+		(size 14.478 8.89)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "7a6c3e72-1e4f-4607-ba11-b03456c4c0d1")
+	)
+	(text_box "STM32C011F6P6 "
+		(exclude_from_sim no)
+		(at 148.082 71.374 0)
+		(size 20.066 14.732)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(href "file://C:\\Users\\anton\\OneDrive\\Documents\\KiCad\\ArmProthesis\\BMS.kicad_sch")
+		)
+		(uuid "7ef309a7-8f60-44eb-884f-357dfc2bdd22")
+	)
+	(text_box "LDO\nLT3045xMSE\n"
+		(exclude_from_sim no)
+		(at 211.074 32.258 0)
+		(size 17.526 7.874)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(href "file://C:\\Users\\anton\\OneDrive\\Documents\\KiCad\\ArmProthesis\\Voltage supply of sEMG & ADC.kicad_sch")
+		)
+		(uuid "91849c0a-68ae-4ad6-90b3-7b601cf1469d")
+	)
+	(text_box "Sensor 3"
+		(exclude_from_sim no)
+		(at 45.72 114.554 0)
+		(size 11.43 8.89)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(href "file://C:\\Users\\anton\\OneDrive\\Documents\\KiCad\\ArmProthesis\\EMG sensors.kicad_sch")
+		)
+		(uuid "9e1521e6-4a44-4582-a54e-c057afd79f79")
+	)
+	(text_box "Smart DCs\n"
+		(exclude_from_sim no)
+		(at 187.96 107.696 0)
+		(size 17.78 10.16)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "aef89e0b-7cb0-44cf-b2c1-da712dd8a383")
+	)
+	(text_box "LiPo Battery \n8000mAh 3S 40C"
+		(exclude_from_sim no)
+		(at 123.444 43.18 0)
+		(size 13.97 11.43)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "b02f3d14-273d-4461-9e74-df8033e8549b")
+	)
+	(text_box " ADC\nAD7606"
+		(exclude_from_sim no)
+		(at 102.87 105.156 0)
+		(size 20.32 15.24)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(href "file://C:\\Users\\anton\\OneDrive\\Documents\\KiCad\\ArmProthesis\\ADC.kicad_sch")
+		)
+		(uuid "b6bbd7ae-8fdb-4201-93c4-8e616d99f66a")
+	)
+	(text_box "BUCK\nLM2596\n"
+		(exclude_from_sim no)
+		(at 180.086 59.69 0)
+		(size 16.002 10.922)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(href "file://C:\\Users\\anton\\OneDrive\\Documents\\KiCad\\ArmProthesis\\Voltage supply of sEMG & ADC.kicad_sch")
+		)
+		(uuid "c92089d8-7e82-4ee5-ab3c-7bba68715c18")
+	)
+	(text_box "BMS\nBQ76920PW\n"
+		(exclude_from_sim no)
+		(at 149.352 43.18 0)
+		(size 13.97 21.336)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(href "file://C:\\Users\\anton\\OneDrive\\Documents\\KiCad\\ArmProthesis\\BMS.kicad_sch")
+		)
+		(uuid "cbe51c21-1b5b-47d8-af70-9f3c5077882a")
+	)
+	(text_box "BUCK\nLT8471"
+		(exclude_from_sim no)
+		(at 180.086 43.18 0)
+		(size 16.002 10.922)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(href "file://C:\\Users\\anton\\OneDrive\\Documents\\KiCad\\ArmProthesis\\Voltage supply of sEMG & ADC.kicad_sch")
+		)
+		(uuid "d6c4593a-dcc3-4d2a-93aa-7a12d40b3a51")
+	)
+	(text_box "LDOs\nLT3094xMSE\n+\nTPS7A4701RGWR\n"
+		(exclude_from_sim no)
+		(at 211.074 40.894 0)
+		(size 17.526 14.986)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(href "file://C:\\Users\\anton\\OneDrive\\Documents\\KiCad\\ArmProthesis\\Voltage supply of sEMG & ADC.kicad_sch")
+		)
+		(uuid "dc7d59c7-d333-43a6-a827-c30bcb68ca2c")
+	)
+	(text_box "Smart DCs\n"
+		(exclude_from_sim no)
+		(at 242.062 138.938 0)
+		(size 17.78 10.16)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "e526e9f3-ab7d-4231-851e-6722effa704d")
 	)
 	(junction
 		(at 40.894 95.25)
@@ -954,7 +1478,7 @@
 	)
 	(wire
 		(pts
-			(xy 158.242 99.314) (xy 158.242 102.616)
+			(xy 158.242 99.06) (xy 158.242 102.616)
 		)
 		(stroke
 			(width 0)
@@ -984,7 +1508,7 @@
 	)
 	(wire
 		(pts
-			(xy 158.496 99.314) (xy 158.242 99.314)
+			(xy 161.29 99.06) (xy 158.242 99.06)
 		)
 		(stroke
 			(width 0)
@@ -1061,511 +1585,6 @@
 			(type default)
 		)
 		(uuid "ff01844c-e840-4632-994d-152176a749a1")
-	)
-	(circle
-		(center 121.158 107.188)
-		(radius 1.0776)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(uuid 0ba0d74d-5f6a-40ea-bcb9-40efe84e707f)
-	)
-	(circle
-		(center 124.968 44.704)
-		(radius 1.0776)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(uuid 0e14e1d3-df2a-4f76-b075-2b70e421f215)
-	)
-	(circle
-		(center 151.13 45.212)
-		(radius 1.0776)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(uuid 2285684b-6f40-48d5-b53c-3aff68b79150)
-	)
-	(circle
-		(center 34.544 128.27)
-		(radius 1.0776)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(uuid 2479c0e1-b5aa-4d31-b96b-e118d1e6c975)
-	)
-	(circle
-		(center 47.244 116.078)
-		(radius 1.0776)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(uuid 3583bbae-fece-4ac5-afe2-b96ed688e38b)
-	)
-	(circle
-		(center 181.864 44.958)
-		(radius 1.0776)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(uuid 72fc4d90-d0c7-433e-bfb4-a42929286d0b)
-	)
-	(circle
-		(center 59.944 104.14)
-		(radius 1.0776)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(uuid 74e8f2ad-11a9-444b-b9da-74aa8eb98a3c)
-	)
-	(circle
-		(center 72.644 92.456)
-		(radius 1.0776)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(uuid 96305922-c6df-4985-bbd7-5a887adc0536)
-	)
-	(circle
-		(center 151.13 45.212)
-		(radius 1.0776)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(uuid a17c0962-12f9-476e-a287-8767e5351d71)
-	)
-	(circle
-		(center 121.158 107.188)
-		(radius 1.0776)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(uuid b749ef7f-5dbf-4720-8f76-f0335face759)
-	)
-	(text_box "Main Processor\nNUCLEO-N657X0-Q"
-		(exclude_from_sim no)
-		(at 147.574 105.156 0)
-		(size 21.59 15.24)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "15bcae07-9877-4c16-9d37-8bc26de50077")
-	)
-	(text_box "Sensor 2"
-		(exclude_from_sim no)
-		(at 58.42 102.616 0)
-		(size 11.43 8.89)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(href "file://C:\\Users\\anton\\OneDrive\\Documents\\KiCad\\ArmProthesis\\EMG sensors.kicad_sch")
-		)
-		(uuid "3cce82f2-cfe6-4a19-80fb-238b8695795c")
-	)
-	(text_box "Smart DCs\n"
-		(exclude_from_sim no)
-		(at 205.994 118.11 0)
-		(size 17.78 10.16)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "3fc44c61-35b9-4d49-aa42-bf9dd910f24d")
-	)
-	(text_box "Smart DCs\n"
-		(exclude_from_sim no)
-		(at 224.028 128.524 0)
-		(size 17.78 10.16)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "402b4e4b-a417-44e1-bd72-edcd6db281e3")
-	)
-	(text_box "Sensor 4"
-		(exclude_from_sim no)
-		(at 33.02 126.746 0)
-		(size 11.43 8.89)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(href "file://C:\\Users\\anton\\OneDrive\\Documents\\KiCad\\ArmProthesis\\EMG sensors.kicad_sch")
-		)
-		(uuid "655bd233-cd9e-40c6-a235-7c3bf37d1de2")
-	)
-	(text_box "Sensor 1"
-		(exclude_from_sim no)
-		(at 71.12 91.186 0)
-		(size 11.43 8.89)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(href "file://C:\\Users\\anton\\OneDrive\\Documents\\KiCad\\ArmProthesis\\EMG sensors.kicad_sch")
-		)
-		(uuid "72731af7-caea-4eb5-b5cc-f80359d68f68")
-	)
-	(text_box "strength feedback"
-		(exclude_from_sim no)
-		(at 151.384 131.318 0)
-		(size 14.478 8.89)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "7a6c3e72-1e4f-4607-ba11-b03456c4c0d1")
-	)
-	(text_box "STM32C011F6P6 "
-		(exclude_from_sim no)
-		(at 148.082 71.374 0)
-		(size 20.066 14.732)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(href "file://C:\\Users\\anton\\OneDrive\\Documents\\KiCad\\ArmProthesis\\BMS.kicad_sch")
-		)
-		(uuid "7ef309a7-8f60-44eb-884f-357dfc2bdd22")
-	)
-	(text_box "LDO\nLT3045xMSE\n"
-		(exclude_from_sim no)
-		(at 211.074 32.258 0)
-		(size 17.526 7.874)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(href "file://C:\\Users\\anton\\OneDrive\\Documents\\KiCad\\ArmProthesis\\Voltage supply of sEMG & ADC.kicad_sch")
-		)
-		(uuid "91849c0a-68ae-4ad6-90b3-7b601cf1469d")
-	)
-	(text_box "Sensor 3"
-		(exclude_from_sim no)
-		(at 45.72 114.554 0)
-		(size 11.43 8.89)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(href "file://C:\\Users\\anton\\OneDrive\\Documents\\KiCad\\ArmProthesis\\EMG sensors.kicad_sch")
-		)
-		(uuid "9e1521e6-4a44-4582-a54e-c057afd79f79")
-	)
-	(text_box "Smart DCs\n"
-		(exclude_from_sim no)
-		(at 187.96 107.696 0)
-		(size 17.78 10.16)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "aef89e0b-7cb0-44cf-b2c1-da712dd8a383")
-	)
-	(text_box "LiPo Battery \n8000mAh 3S 40C"
-		(exclude_from_sim no)
-		(at 123.444 43.18 0)
-		(size 13.97 11.43)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "b02f3d14-273d-4461-9e74-df8033e8549b")
-	)
-	(text_box " ADC\nAD7606"
-		(exclude_from_sim no)
-		(at 102.87 105.156 0)
-		(size 20.32 15.24)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(href "file://C:\\Users\\anton\\OneDrive\\Documents\\KiCad\\ArmProthesis\\ADC.kicad_sch")
-		)
-		(uuid "b6bbd7ae-8fdb-4201-93c4-8e616d99f66a")
-	)
-	(text_box "BUCK\nLM2596\n"
-		(exclude_from_sim no)
-		(at 180.086 59.69 0)
-		(size 16.002 10.922)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(href "file://C:\\Users\\anton\\OneDrive\\Documents\\KiCad\\ArmProthesis\\Voltage supply of sEMG & ADC.kicad_sch")
-		)
-		(uuid "c92089d8-7e82-4ee5-ab3c-7bba68715c18")
-	)
-	(text_box "BMS\nBQ76920PW\n"
-		(exclude_from_sim no)
-		(at 149.352 43.18 0)
-		(size 13.97 21.336)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(href "file://C:\\Users\\anton\\OneDrive\\Documents\\KiCad\\ArmProthesis\\BMS.kicad_sch")
-		)
-		(uuid "cbe51c21-1b5b-47d8-af70-9f3c5077882a")
-	)
-	(text_box "BUCK\nLT8471"
-		(exclude_from_sim no)
-		(at 180.086 43.18 0)
-		(size 16.002 10.922)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(href "file://C:\\Users\\anton\\OneDrive\\Documents\\KiCad\\ArmProthesis\\Voltage supply of sEMG & ADC.kicad_sch")
-		)
-		(uuid "d6c4593a-dcc3-4d2a-93aa-7a12d40b3a51")
-	)
-	(text_box "LDOs\nLT3094xMSE\n+\nTPS7A4701RGWR\n"
-		(exclude_from_sim no)
-		(at 211.074 40.894 0)
-		(size 17.526 14.986)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(href "file://C:\\Users\\anton\\OneDrive\\Documents\\KiCad\\ArmProthesis\\Voltage supply of sEMG & ADC.kicad_sch")
-		)
-		(uuid "dc7d59c7-d333-43a6-a827-c30bcb68ca2c")
-	)
-	(text_box "Smart DCs\n"
-		(exclude_from_sim no)
-		(at 242.062 138.938 0)
-		(size 17.78 10.16)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "e526e9f3-ab7d-4231-851e-6722effa704d")
-	)
-	(text "+5V\n"
-		(exclude_from_sim no)
-		(at 201.422 64.262 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "2504da06-09c2-4071-8280-d4be59353e06")
-	)
-	(text "VELOCITY\n+\nSTRENGTH"
-		(exclude_from_sim no)
-		(at 178.816 109.474 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "31975088-ccb0-4dca-a718-4ebd80ab421a")
-	)
-	(text "SPI SERIAL MODE\n\n\n"
-		(exclude_from_sim no)
-		(at 135.128 117.094 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "5c02ef15-5622-40e6-a067-544b6cd4db7f")
-	)
-	(text "+11.1V\n"
-		(exclude_from_sim no)
-		(at 168.656 47.498 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "76387570-f47f-475f-8389-22e87512e025")
-	)
-	(text "SCL\n\nSDA\n\nALERT\n\n"
-		(exclude_from_sim no)
-		(at 139.7 70.104 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "e9b01c78-ba14-4b57-8542-67ba37cf722f")
 	)
 	(global_label "+NUCLEO"
 		(shape output)
@@ -1701,7 +1720,7 @@
 	)
 	(global_label "+NUCLEO"
 		(shape input)
-		(at 158.496 99.314 0)
+		(at 161.29 99.06 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1711,7 +1730,7 @@
 		)
 		(uuid "d274844b-a86b-46f0-a0e1-7b041523387c")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 170.4922 99.314 0)
+			(at 173.2862 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3103,4 +3122,5 @@
 			(page "1")
 		)
 	)
+	(embedded_fonts no)
 )
