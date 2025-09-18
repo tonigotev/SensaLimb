@@ -1,4 +1,4 @@
-26638125559776456
+26636368175135283
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -13,20 +13,6 @@ audio belton reverb
 0
 7
 7
-BUCK
-QFN65P500X500X100-21N
-
-
-0
-21
-21
-BUCK
-SOP65P640X120-21N
-Conv DC-DC Triple Non-Inv/Inv/Step Up/Step Down 2.6V to 50V 20-Pin TSSOP EP
-
-0
-21
-21
 Battery
 BatteryClip_Keystone_54_D16-19mm
 Battery clip for batteries with a diameter between 16-19 mm: https://www.keyelco.com/product.cfm/product_id/826
@@ -56937,6 +56923,13 @@ connector Zhaoxing VH vertical
 0
 12
 11
+Connectors
+DIN_Male_1PIN_1.5mm
+
+
+0
+3
+2
 Converter_ACDC
 Converter_ACDC_CUI_PBO-3-Sxx_THT_Vertical
 ACDC-Converter, 3W, CUI PBO-3, THT https://www.cui.com/product/resource/pbo-3.pdf

@@ -1,8 +1,8 @@
 {
   "board": {
-    "active_layer": 6,
-    "active_layer_preset": "",
-    "auto_track_width": false,
+    "active_layer": 5,
+    "active_layer_preset": "Inner Copper Layers",
+    "auto_track_width": true,
     "hidden_netclasses": [],
     "hidden_nets": [],
     "high_contrast_mode": 0,
@@ -49,7 +49,7 @@
       "conflict_shadows",
       "shapes"
     ],
-    "visible_layers": "00000000_00000000_00000000_82002263",
+    "visible_layers": "00000000_00000000_55555555_57555575",
     "zone_display_mode": 0
   },
   "git": {
