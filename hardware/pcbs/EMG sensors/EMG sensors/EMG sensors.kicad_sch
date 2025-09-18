@@ -3881,16 +3881,6 @@
 	)
 	(wire
 		(pts
-			(xy 57.658 144.78) (xy 57.658 146.812)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "460518c8-705f-4a6c-9827-cf8d8b6220fd")
-	)
-	(wire
-		(pts
 			(xy 202.692 75.184) (xy 202.692 76.962)
 		)
 		(stroke
@@ -4061,6 +4051,16 @@
 	)
 	(wire
 		(pts
+			(xy 57.658 144.78) (xy 57.658 147.574)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8037af02-993b-4467-a408-a07d03f22fc4")
+	)
+	(wire
+		(pts
 			(xy 249.936 84.582) (xy 250.19 84.582)
 		)
 		(stroke
@@ -4168,6 +4168,16 @@
 			(type default)
 		)
 		(uuid "a0cde384-4761-4776-b7f7-b7a90b010a6b")
+	)
+	(wire
+		(pts
+			(xy 57.658 155.194) (xy 57.658 156.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a1b7753b-bfc0-43c0-a282-b565bfa94c3e")
 	)
 	(wire
 		(pts
@@ -4581,7 +4591,7 @@
 	)
 	(global_label "Ref"
 		(shape input)
-		(at 57.658 146.812 270)
+		(at 57.658 156.21 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4591,7 +4601,7 @@
 		)
 		(uuid "0f874bb8-41e4-469a-b2b8-f7ecc7a85399")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 57.658 152.8815 90)
+			(at 57.658 162.2795 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5153,6 +5163,76 @@
 			(project "EMG sensors"
 				(path "/a1d73765-1778-424a-b5d5-45dcc9997ebd"
 					(reference "#PWR04")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 57.658 151.384 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1552ad5c-9391-4013-a35e-a1a7724d2e71")
+		(property "Reference" "R11"
+			(at 59.69 150.1139 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1M"
+			(at 59.69 152.6539 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 55.88 151.384 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 57.658 151.384 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 57.658 151.384 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "eeae5072-dc6a-4c59-87e0-65ff14749e5d")
+		)
+		(pin "2"
+			(uuid "216b9643-eb9c-4c06-b872-d40005ac1f72")
+		)
+		(instances
+			(project ""
+				(path "/a1d73765-1778-424a-b5d5-45dcc9997ebd"
+					(reference "R11")
 					(unit 1)
 				)
 			)
