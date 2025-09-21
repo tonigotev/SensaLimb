@@ -3861,16 +3861,6 @@
 	)
 	(wire
 		(pts
-			(xy 54.61 29.21) (xy 63.246 29.21)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3e4c940d-d1e8-4044-8b2f-b3698b0fe26f")
-	)
-	(wire
-		(pts
 			(xy 51.054 102.108) (xy 51.054 103.378)
 		)
 		(stroke
@@ -4822,7 +4812,7 @@
 	)
 	(hierarchical_label "-5.5V"
 		(shape output)
-		(at 63.246 26.67 180)
+		(at 63.246 29.21 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4844,7 +4834,7 @@
 	)
 	(hierarchical_label "AEMG"
 		(shape input)
-		(at 63.246 31.75 180)
+		(at 63.246 24.13 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4888,7 +4878,7 @@
 	)
 	(hierarchical_label "+5.5V"
 		(shape output)
-		(at 63.246 24.13 180)
+		(at 63.246 31.75 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5105,7 +5095,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 54.61 29.21 0)
+		(at 63.246 26.67 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5113,7 +5103,7 @@
 		(dnp no)
 		(uuid "0dcc6c79-cab2-4a0d-abd6-6baca2010ae3")
 		(property "Reference" "#PWR04"
-			(at 54.61 35.56 0)
+			(at 56.896 26.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5122,7 +5112,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 54.61 33.274 0)
+			(at 59.182 26.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5130,7 +5120,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 54.61 29.21 0)
+			(at 63.246 26.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5139,7 +5129,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 54.61 29.21 0)
+			(at 63.246 26.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5148,7 +5138,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 54.61 29.21 0)
+			(at 63.246 26.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6906,7 +6896,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Connector_JST:JST_GH_BM04B-GHS-TBT_1x04-1MP_P1.25mm_Vertical"
+		(property "Footprint" "Connector_JST:JST_GH_SM04B-GHS-TB_1x04-1MP_P1.25mm_Horizontal"
 			(at 68.326 29.21 0)
 			(effects
 				(font
