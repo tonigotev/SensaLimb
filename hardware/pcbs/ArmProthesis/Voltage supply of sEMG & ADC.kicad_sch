@@ -1340,6 +1340,89 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Mechanical:MountingHole"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom no)
+			(on_board yes)
+			(property "Reference" "H"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "MountingHole"
+				(at 0 3.175 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Mounting Hole without connection"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "mounting hole"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "MountingHole*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "MountingHole_0_1"
+				(circle
+					(center 0 0)
+					(radius 1.27)
+					(stroke
+						(width 1.27)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Regulator_Linear:LT3045xMSE"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -4573,16 +4656,6 @@
 	)
 	(wire
 		(pts
-			(xy 223.52 156.21) (xy 223.52 154.94)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "85e0a8e7-d3d7-4b30-a499-5c6d63cd5e2c")
-	)
-	(wire
-		(pts
 			(xy 156.21 91.694) (xy 156.21 98.552)
 		)
 		(stroke
@@ -4803,16 +4876,6 @@
 	)
 	(wire
 		(pts
-			(xy 255.524 158.496) (xy 255.524 157.48)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "99edb363-941f-4ecc-af31-d3db97000973")
-	)
-	(wire
-		(pts
 			(xy 111.506 177.038) (xy 111.506 176.276)
 		)
 		(stroke
@@ -4903,7 +4966,7 @@
 	)
 	(wire
 		(pts
-			(xy 255.778 154.94) (xy 256.794 154.94)
+			(xy 255.27 154.94) (xy 256.794 154.94)
 		)
 		(stroke
 			(width 0)
@@ -5323,7 +5386,7 @@
 	)
 	(wire
 		(pts
-			(xy 255.524 157.48) (xy 256.794 157.48)
+			(xy 255.27 157.48) (xy 256.794 157.48)
 		)
 		(stroke
 			(width 0)
@@ -5383,7 +5446,7 @@
 	)
 	(wire
 		(pts
-			(xy 255.778 152.4) (xy 256.794 152.4)
+			(xy 255.27 152.4) (xy 256.794 152.4)
 		)
 		(stroke
 			(width 0)
@@ -6057,7 +6120,7 @@
 	)
 	(hierarchical_label "GND"
 		(shape input)
-		(at 223.52 156.21 270)
+		(at 223.774 152.4 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6101,7 +6164,7 @@
 	)
 	(hierarchical_label "+5.5V"
 		(shape input)
-		(at 255.778 152.4 180)
+		(at 255.27 157.48 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6112,7 +6175,7 @@
 	)
 	(hierarchical_label "+5V"
 		(shape input)
-		(at 223.774 152.4 180)
+		(at 223.52 154.94 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6134,7 +6197,7 @@
 	)
 	(hierarchical_label "-5.5V"
 		(shape input)
-		(at 255.778 154.94 180)
+		(at 255.27 154.94 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6156,7 +6219,7 @@
 	)
 	(hierarchical_label "GND"
 		(shape input)
-		(at 255.524 158.496 270)
+		(at 255.27 152.4 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6964,7 +7027,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_JST:JST_GH_BM02B-GHS-TBT_1x02-1MP_P1.25mm_Vertical"
+		(property "Footprint" "Connector_JST:JST_GH_SM02B-GHS-TB_1x02-1MP_P1.25mm_Horizontal"
 			(at 260.604 147.066 0)
 			(effects
 				(font
@@ -7830,6 +7893,7 @@
 	(symbol
 		(lib_id "Transistor_BJT:BC817")
 		(at 137.16 84.074 0)
+		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7837,7 +7901,7 @@
 		(dnp no)
 		(uuid "225a46a3-e47a-4243-93ab-2f565939a125")
 		(property "Reference" "Q2"
-			(at 133.604 76.708 0)
+			(at 140.716 76.708 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7846,7 +7910,7 @@
 			)
 		)
 		(property "Value" "BC817"
-			(at 131.826 79.248 0)
+			(at 142.494 79.248 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7855,7 +7919,7 @@
 			)
 		)
 		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-			(at 142.24 85.979 0)
+			(at 132.08 85.979 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8435,6 +8499,70 @@
 		)
 	)
 	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 49.53 27.94 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3785a845-7632-4dc2-bd4a-2ebb25d39192")
+		(property "Reference" "H2"
+			(at 52.07 26.6699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 52.07 29.2099 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_2.7mm_M2.5_DIN965"
+			(at 49.53 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 49.53 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 49.53 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "Voltage supply of sEMG & ADC"
+				(path "/2b971b82-04c2-44b8-8a4b-c54191e7bf3c"
+					(reference "H2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Regulator_Linear:LT3045xMSE")
 		(at 61.976 80.01 0)
 		(unit 1)
@@ -8936,6 +9064,70 @@
 			(project "Voltage supply of sEMG & ADC"
 				(path "/2b971b82-04c2-44b8-8a4b-c54191e7bf3c"
 					(reference "R5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 88.9 27.94 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "478e291e-2160-4bde-9a35-f5ab4e96d5ab")
+		(property "Reference" "H4"
+			(at 91.44 26.6699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 91.44 29.2099 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_2.7mm_M2.5_DIN965"
+			(at 88.9 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 88.9 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 88.9 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "Voltage supply of sEMG & ADC"
+				(path "/2b971b82-04c2-44b8-8a4b-c54191e7bf3c"
+					(reference "H4")
 					(unit 1)
 				)
 			)
@@ -10904,7 +11096,7 @@
 		(fields_autoplaced yes)
 		(uuid "8ff6ea6a-39c5-4e31-995d-ff3099cd6fcd")
 		(property "Reference" "U5"
-			(at 273.304 154.3049 0)
+			(at 273.05 153.6699 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10913,7 +11105,7 @@
 			)
 		)
 		(property "Value" "~"
-			(at 273.304 156.21 0)
+			(at 273.05 156.2099 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10921,7 +11113,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_JST:JST_GH_BM03B-GHS-TBT_1x03-1MP_P1.25mm_Vertical"
+		(property "Footprint" "Connector_JST:JST_GH_SM03B-GHS-TB_1x03-1MP_P1.25mm_Horizontal"
 			(at 254.254 156.21 0)
 			(effects
 				(font
@@ -13074,7 +13266,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_JST:JST_GH_BM02B-GHS-TBT_1x02-1MP_P1.25mm_Vertical"
+		(property "Footprint" "Connector_JST:JST_GH_SM02B-GHS-TB_1x02-1MP_P1.25mm_Horizontal"
 			(at 228.346 160.02 0)
 			(effects
 				(font
@@ -13355,6 +13547,70 @@
 		)
 	)
 	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 30.48 27.94 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ea3a474f-e5f3-4bbc-8cf0-3381a88d3fa7")
+		(property "Reference" "H1"
+			(at 33.02 26.6699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 33.02 29.2099 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_2.7mm_M2.5_DIN965"
+			(at 30.48 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 30.48 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 30.48 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project ""
+				(path "/2b971b82-04c2-44b8-8a4b-c54191e7bf3c"
+					(reference "H1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 78.994 149.098 0)
 		(unit 1)
@@ -13415,6 +13671,70 @@
 			(project "Voltage supply of sEMG & ADC"
 				(path "/2b971b82-04c2-44b8-8a4b-c54191e7bf3c"
 					(reference "#PWR014")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 68.58 27.94 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f28631ec-422a-4368-a408-99f5a7ad72e5")
+		(property "Reference" "H3"
+			(at 71.12 26.6699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 71.12 29.2099 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_2.7mm_M2.5_DIN965"
+			(at 68.58 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 68.58 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 68.58 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "Voltage supply of sEMG & ADC"
+				(path "/2b971b82-04c2-44b8-8a4b-c54191e7bf3c"
+					(reference "H3")
 					(unit 1)
 				)
 			)
