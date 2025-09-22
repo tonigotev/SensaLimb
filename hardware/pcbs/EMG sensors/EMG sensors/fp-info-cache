@@ -1,4 +1,4 @@
-26639883184779851
+26641641718142210
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -56937,6 +56937,13 @@ connector Zhaoxing VH vertical
 0
 12
 11
+Connectors
+DIN_Male_1PIN_1.5mm
+
+
+0
+0
+0
 Converter_ACDC
 Converter_ACDC_CUI_PBO-3-Sxx_THT_Vertical
 ACDC-Converter, 3W, CUI PBO-3, THT https://www.cui.com/product/resource/pbo-3.pdf
