@@ -1595,7 +1595,7 @@
 		(descr "JST GH series connector, SM02B-GHS-TB (http://www.jst-mfg.com/product/pdf/eng/eGH.pdf), generated with kicad-footprint-generator")
 		(tags "connector JST GH horizontal")
 		(property "Reference" "U7"
-			(at 0 -3.9 180)
+			(at 0.025 -4.55 180)
 			(layer "F.SilkS")
 			(uuid "89aa8948-1da1-4433-99b6-f1bf91dd5c2e")
 			(effects
@@ -3934,7 +3934,7 @@
 		(descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
 		(tags "capacitor handsolder")
 		(property "Reference" "Cby7"
-			(at -0.025 -1.45 90)
+			(at 2.45 -0.025 180)
 			(layer "F.SilkS")
 			(uuid "ab83f1c9-0d8e-4707-ae76-975b8f321bae")
 			(effects
@@ -4146,7 +4146,7 @@
 		(descr "JST GH series connector, SM02B-GHS-TB (http://www.jst-mfg.com/product/pdf/eng/eGH.pdf), generated with kicad-footprint-generator")
 		(tags "connector JST GH horizontal")
 		(property "Reference" "U6"
-			(at 0 -3.9 180)
+			(at 0.025 -4.35 180)
 			(layer "F.SilkS")
 			(uuid "983280c5-7f10-4172-a7ff-3006ee22a8ab")
 			(effects
@@ -8265,7 +8265,7 @@
 		(property "Reference" "D6"
 			(at 2.575 0 0)
 			(layer "F.SilkS")
-			(uuid "001ebbb8-9a7a-43a6-924f-487c6cde92ce")
+			(uuid "42b32ef6-43a9-495b-8b50-2cece9125d1c")
 			(effects
 				(font
 					(size 0.7 0.7)
@@ -8277,7 +8277,7 @@
 		(property "Value" "LED"
 			(at 0 1.43 0)
 			(layer "F.Fab")
-			(uuid "1fc35530-fde2-43ec-8ecc-f26e862a39b0")
+			(uuid "5c230e2b-ef88-4cf4-86e0-a2ee0ea46c91")
 			(effects
 				(font
 					(size 1 1)
@@ -8289,7 +8289,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "b2fcf4f5-a6a4-469f-aa3e-46f2e9d8ee01")
+			(uuid "0f98347f-d614-472b-a660-28e6135f42d8")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8301,7 +8301,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "8825b6c8-5aae-4379-a6c0-aeb77cc9f452")
+			(uuid "289778c2-4491-48b7-915b-c837b38976ce")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8710,7 +8710,7 @@
 		(descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
 		(tags "capacitor handsolder")
 		(property "Reference" "Cby2"
-			(at 3.465 0 90)
+			(at 2.6725 0.02 90)
 			(layer "F.SilkS")
 			(uuid "53e029de-1df7-44c6-a231-7d429c6ecab1")
 			(effects
@@ -13012,7 +13012,7 @@
 		(descr "Capacitor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor handsolder")
 		(property "Reference" "C4"
-			(at -3.3625 -0.009375 0)
+			(at -2.5625 0.025 0)
 			(layer "F.SilkS")
 			(uuid "e429e707-9667-495d-943d-49547841b33e")
 			(effects
@@ -13226,7 +13226,7 @@
 		(descr "JST GH series connector, SM03B-GHS-TB (http://www.jst-mfg.com/product/pdf/eng/eGH.pdf), generated with kicad-footprint-generator")
 		(tags "connector JST GH horizontal")
 		(property "Reference" "U5"
-			(at 0 -3.9 180)
+			(at 0.175 0 180)
 			(layer "F.SilkS")
 			(uuid "31346b6a-5563-4ebd-8fed-abe7fa2533fd")
 			(effects
@@ -17745,8 +17745,8 @@
 			)
 		)
 	)
-	(gr_text "SL-sEMG/ADC-PSU v0.3"
-		(at 132.85 46.85 0)
+	(gr_text "SL-sEMG&ADC-PSU v0.3"
+		(at 135.35 46.6 0)
 		(layer "B.SilkS")
 		(uuid "bcd2f843-6d31-4c5c-8f58-83147f17c906")
 		(effects
