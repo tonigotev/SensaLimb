@@ -21961,7 +21961,7 @@
 		(layer "Edge.Cuts")
 		(uuid "d1924334-e64d-47f3-87d9-0d8212333fc7")
 	)
-	(gr_text "BMS v0.2"
+	(gr_text "BMS v0.3"
 		(at 189.6 126.5 0)
 		(layer "B.SilkS")
 		(uuid "ed6c44fb-65ca-44eb-babd-5373dcca4c7c")
