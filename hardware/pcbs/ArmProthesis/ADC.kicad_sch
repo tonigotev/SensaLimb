@@ -1958,6 +1958,89 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Mechanical:MountingHole"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom no)
+			(on_board yes)
+			(property "Reference" "H"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "MountingHole"
+				(at 0 3.175 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Mounting Hole without connection"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "mounting hole"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "MountingHole*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "MountingHole_0_1"
+				(circle
+					(center 0 0)
+					(radius 1.27)
+					(stroke
+						(width 1.27)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Switch:SW_Reed_SPDT"
 			(pin_numbers
 				(hide yes)
@@ -3540,7 +3623,7 @@
 	)
 	(text "4x0.1uF\n"
 		(exclude_from_sim no)
-		(at 65.532 111.252 0)
+		(at 62.738 111.252 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3571,24 +3654,6 @@
 		(uuid "0a1c8017-765b-4f03-9c6d-3ac835b8b261")
 	)
 	(junction
-		(at 144.526 42.164)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "0c22b8ce-9c33-4b31-a851-6f6cf7b0caa0")
-	)
-	(junction
-		(at 76.708 110.236)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "0c875032-8fe3-4d17-8246-836a5c65a102")
-	)
-	(junction
-		(at 52.832 89.154)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "0ed5fd0c-0764-4741-ae37-4d2e4ef7826e")
-	)
-	(junction
 		(at 37.846 37.084)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3601,10 +3666,10 @@
 		(uuid "246bcf5a-569a-43b0-b78b-5ceecca62131")
 	)
 	(junction
-		(at 144.526 49.784)
+		(at 53.086 89.154)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "4b35d99f-2c87-438a-959e-3653c151ca22")
+		(uuid "2c61e65c-3498-46e7-91b1-4360c5daa937")
 	)
 	(junction
 		(at 131.826 48.514)
@@ -3619,22 +3684,10 @@
 		(uuid "694e10c5-2235-4064-9fd6-d15e7904e340")
 	)
 	(junction
-		(at 150.876 42.164)
+		(at 144.526 49.784)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "69dbffcb-2913-46dc-9560-078d49bd20e7")
-	)
-	(junction
-		(at 157.226 49.784)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "7085ff7d-b1ea-4c4c-8216-04c2b27ee2ec")
-	)
-	(junction
-		(at 171.196 58.674)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "771a4146-e544-4180-8bc2-13d46ae8e818")
+		(uuid "6cc5ff5b-19da-4a41-8a7a-1701cc904299")
 	)
 	(junction
 		(at 48.006 96.774)
@@ -3643,10 +3696,16 @@
 		(uuid "77685ff1-f35d-4fee-a87e-f00fcc7ae563")
 	)
 	(junction
-		(at 65.532 117.856)
+		(at 65.786 121.158)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "782bb818-6ca3-4964-85d6-4ba3af112151")
+	)
+	(junction
+		(at 144.526 42.164)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "80cf86d4-db6c-4b70-9b75-39dd4adee116")
 	)
 	(junction
 		(at 93.726 76.454)
@@ -3721,13 +3780,7 @@
 		(uuid "b66c4253-5c44-40dd-bfe3-70e30f56094f")
 	)
 	(junction
-		(at 71.12 117.856)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "d347cbfd-4733-444b-914d-a4926360cc1b")
-	)
-	(junction
-		(at 59.182 117.856)
+		(at 59.436 121.158)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d7abed6b-d737-49a0-9abc-b95b42d6dc12")
@@ -3743,6 +3796,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "db430c74-db86-46bc-ad50-cafce106161c")
+	)
+	(junction
+		(at 62.738 121.158)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "deba0bd8-78e8-404c-a9dc-3a5aa1b843cf")
 	)
 	(junction
 		(at 60.96 74.676)
@@ -3858,7 +3917,7 @@
 	)
 	(wire
 		(pts
-			(xy 65.532 106.934) (xy 96.266 106.934)
+			(xy 65.786 106.934) (xy 96.266 106.934)
 		)
 		(stroke
 			(width 0)
@@ -3888,16 +3947,6 @@
 	)
 	(wire
 		(pts
-			(xy 65.532 117.856) (xy 71.12 117.856)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "16d06d43-cb52-43b1-a2e3-a68e17b7222c")
-	)
-	(wire
-		(pts
 			(xy 155.956 94.234) (xy 152.146 94.234)
 		)
 		(stroke
@@ -3918,7 +3967,7 @@
 	)
 	(wire
 		(pts
-			(xy 71.12 117.856) (xy 76.708 117.856)
+			(xy 65.786 121.158) (xy 71.374 121.158)
 		)
 		(stroke
 			(width 0)
@@ -3928,7 +3977,7 @@
 	)
 	(wire
 		(pts
-			(xy 65.532 117.856) (xy 65.532 121.666)
+			(xy 62.738 121.158) (xy 62.738 124.968)
 		)
 		(stroke
 			(width 0)
@@ -3948,7 +3997,7 @@
 	)
 	(wire
 		(pts
-			(xy 52.832 89.154) (xy 52.832 110.236)
+			(xy 53.086 89.154) (xy 53.086 113.538)
 		)
 		(stroke
 			(width 0)
@@ -4018,16 +4067,6 @@
 	)
 	(wire
 		(pts
-			(xy 96.266 112.014) (xy 96.266 110.236)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "468fa26d-b28f-4a50-9287-a28de5019c65")
-	)
-	(wire
-		(pts
 			(xy 23.876 99.314) (xy 27.686 99.314)
 		)
 		(stroke
@@ -4088,7 +4127,7 @@
 	)
 	(wire
 		(pts
-			(xy 65.532 110.236) (xy 65.532 106.934)
+			(xy 65.786 113.538) (xy 65.786 106.934)
 		)
 		(stroke
 			(width 0)
@@ -4098,7 +4137,17 @@
 	)
 	(wire
 		(pts
-			(xy 150.876 49.784) (xy 157.226 49.784)
+			(xy 62.738 121.158) (xy 65.786 121.158)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "56087b8a-0361-4cda-b552-8927888fa8aa")
+	)
+	(wire
+		(pts
+			(xy 150.876 49.784) (xy 150.876 50.8)
 		)
 		(stroke
 			(width 0)
@@ -4155,6 +4204,16 @@
 			(type default)
 		)
 		(uuid "677939a4-375f-4283-96d1-922569b966a1")
+	)
+	(wire
+		(pts
+			(xy 71.374 112.014) (xy 96.266 112.014)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6a5313e5-10c7-4877-9bc2-8c341a5a3363")
 	)
 	(wire
 		(pts
@@ -4258,16 +4317,6 @@
 	)
 	(wire
 		(pts
-			(xy 150.876 42.164) (xy 157.226 42.164)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7aadc8a0-ab6f-4682-ba5e-8be01f5da868")
-	)
-	(wire
-		(pts
 			(xy 155.956 96.774) (xy 152.146 96.774)
 		)
 		(stroke
@@ -4288,27 +4337,7 @@
 	)
 	(wire
 		(pts
-			(xy 52.832 89.154) (xy 96.266 89.154)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7f814aa2-c6db-4392-b26c-7cc67904abe3")
-	)
-	(wire
-		(pts
-			(xy 71.12 110.236) (xy 76.708 110.236)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "84c34e2f-8cca-4f67-ab97-93074ca4d2b8")
-	)
-	(wire
-		(pts
-			(xy 59.182 117.856) (xy 65.532 117.856)
+			(xy 59.436 121.158) (xy 62.738 121.158)
 		)
 		(stroke
 			(width 0)
@@ -4355,6 +4384,26 @@
 			(type default)
 		)
 		(uuid "8de0470d-0566-41f2-aed6-30aaea1290a7")
+	)
+	(wire
+		(pts
+			(xy 144.526 49.784) (xy 150.876 49.784)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8df2edea-166f-4280-9e15-32adea937d3b")
+	)
+	(wire
+		(pts
+			(xy 144.526 42.164) (xy 150.876 42.164)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8f02261e-f4dd-4dae-a715-d7bd62514e57")
 	)
 	(wire
 		(pts
@@ -4448,7 +4497,7 @@
 	)
 	(wire
 		(pts
-			(xy 150.876 58.674) (xy 171.196 58.674)
+			(xy 150.876 58.674) (xy 157.734 58.674)
 		)
 		(stroke
 			(width 0)
@@ -4558,16 +4607,6 @@
 	)
 	(wire
 		(pts
-			(xy 144.526 42.164) (xy 150.876 42.164)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b469ae31-5bfb-47e6-a61f-cab807d1efb0")
-	)
-	(wire
-		(pts
 			(xy 131.826 42.164) (xy 131.826 48.514)
 		)
 		(stroke
@@ -4618,6 +4657,16 @@
 	)
 	(wire
 		(pts
+			(xy 71.374 113.538) (xy 71.374 112.014)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bd04bb4f-2165-472b-b022-eaa13704426e")
+	)
+	(wire
+		(pts
 			(xy 205.232 133.604) (xy 205.232 134.112)
 		)
 		(stroke
@@ -4648,7 +4697,7 @@
 	)
 	(wire
 		(pts
-			(xy 52.832 117.856) (xy 59.182 117.856)
+			(xy 53.086 121.158) (xy 59.436 121.158)
 		)
 		(stroke
 			(width 0)
@@ -4658,7 +4707,7 @@
 	)
 	(wire
 		(pts
-			(xy 59.182 104.394) (xy 96.266 104.394)
+			(xy 59.436 104.394) (xy 96.266 104.394)
 		)
 		(stroke
 			(width 0)
@@ -4698,16 +4747,6 @@
 	)
 	(wire
 		(pts
-			(xy 144.526 49.784) (xy 150.876 49.784)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "da13c690-207c-4f77-9722-5093c63bc1f6")
-	)
-	(wire
-		(pts
 			(xy 53.086 37.084) (xy 72.39 37.084)
 		)
 		(stroke
@@ -4715,6 +4754,16 @@
 			(type default)
 		)
 		(uuid "da7ae208-c475-4ce3-b2b7-9155c6373a06")
+	)
+	(wire
+		(pts
+			(xy 53.086 89.154) (xy 96.266 89.154)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "db8b1cdf-4e3b-4df5-a080-91eb89f15902")
 	)
 	(wire
 		(pts
@@ -4728,17 +4777,7 @@
 	)
 	(wire
 		(pts
-			(xy 96.266 110.236) (xy 76.708 110.236)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e63a67c8-cab0-4e73-b980-8d8c441435d4")
-	)
-	(wire
-		(pts
-			(xy 34.036 89.154) (xy 52.832 89.154)
+			(xy 34.036 89.154) (xy 53.086 89.154)
 		)
 		(stroke
 			(width 0)
@@ -4778,7 +4817,7 @@
 	)
 	(wire
 		(pts
-			(xy 59.182 104.394) (xy 59.182 110.236)
+			(xy 59.436 104.394) (xy 59.436 113.538)
 		)
 		(stroke
 			(width 0)
@@ -4798,7 +4837,7 @@
 	)
 	(wire
 		(pts
-			(xy 171.196 58.674) (xy 171.196 56.134)
+			(xy 157.734 58.674) (xy 157.734 55.88)
 		)
 		(stroke
 			(width 0)
@@ -4881,8 +4920,8 @@
 		)
 	)
 	(global_label "+3.3V"
-		(shape output)
-		(at 171.196 56.134 90)
+		(shape input)
+		(at 157.734 55.88 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4892,7 +4931,7 @@
 		)
 		(uuid "11df4966-8f66-48ac-b74f-23429188b217")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 171.196 47.464 90)
+			(at 157.734 47.21 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7642,7 +7681,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 65.532 114.046 180)
+		(at 65.786 117.348 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7650,7 +7689,7 @@
 		(dnp no)
 		(uuid "46a8efc6-2160-4772-97d7-b6cb22aed61b")
 		(property "Reference" "C2"
-			(at 57.912 114.046 90)
+			(at 58.166 117.348 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7659,7 +7698,7 @@
 			)
 		)
 		(property "Value" "1uF"
-			(at 61.976 114.046 90)
+			(at 62.23 117.348 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7668,7 +7707,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
-			(at 64.5668 110.236 0)
+			(at 64.8208 113.538 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7677,7 +7716,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 65.532 114.046 0)
+			(at 65.786 117.348 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7686,7 +7725,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 65.532 114.046 0)
+			(at 65.786 117.348 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7695,7 +7734,7 @@
 			)
 		)
 		(property "website" "https://eu.mouser.com/ProductDetail/Murata-Electronics/GRM155Z71A105KE01D?qs=%252B6g0mu59x7LZ5VDL%2FTet%2Fg%3D%3D"
-			(at 65.532 114.046 0)
+			(at 65.786 117.348 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7704,7 +7743,7 @@
 			)
 		)
 		(property "Centerline_Pitch" ""
-			(at 65.532 114.046 0)
+			(at 65.786 117.348 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7713,7 +7752,7 @@
 			)
 		)
 		(property "Comment" ""
-			(at 65.532 114.046 0)
+			(at 65.786 117.348 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7722,7 +7761,7 @@
 			)
 		)
 		(property "EU_RoHS_Compliance" ""
-			(at 65.532 114.046 0)
+			(at 65.786 117.348 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7731,7 +7770,7 @@
 			)
 		)
 		(property "Number_of_Positions" ""
-			(at 65.532 114.046 0)
+			(at 65.786 117.348 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7740,7 +7779,7 @@
 			)
 		)
 		(property "Product_Type" ""
-			(at 65.532 114.046 0)
+			(at 65.786 117.348 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8182,6 +8221,70 @@
 		)
 	)
 	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 46.482 140.208 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "6e0a287f-d9c6-4e72-b0c0-24ae3d59f525")
+		(property "Reference" "H1"
+			(at 44.958 136.906 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 49.022 141.4779 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_2.7mm_M2.5"
+			(at 46.482 140.208 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 46.482 140.208 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 46.482 140.208 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project ""
+				(path "/e7acbbb1-ecaa-48ea-b3f0-162d5edce236"
+					(reference "H1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "headers:MTSW-150-22-S-D-415")
 		(at 210.82 151.13 0)
 		(unit 1)
@@ -8560,7 +8663,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 52.832 114.046 180)
+		(at 53.086 117.348 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8568,7 +8671,7 @@
 		(dnp no)
 		(uuid "70723c7d-0dd0-411b-aace-06be1e2ae9f6")
 		(property "Reference" "C3"
-			(at 47.752 112.776 0)
+			(at 48.006 116.078 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8576,7 +8679,7 @@
 			)
 		)
 		(property "Value" "10uF"
-			(at 47.752 115.316 0)
+			(at 48.006 118.618 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8584,7 +8687,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
-			(at 51.8668 110.236 0)
+			(at 52.1208 113.538 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8593,7 +8696,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 52.832 114.046 0)
+			(at 53.086 117.348 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8602,7 +8705,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 52.832 114.046 0)
+			(at 53.086 117.348 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8611,7 +8714,7 @@
 			)
 		)
 		(property "website" "https://www.mouser.bg/ProductDetail/Murata-Electronics/GRM21BZ71E106KE15L?qs=Ey7%2FXF42M3fdXe9bIpCO9w%3D%3D"
-			(at 52.832 114.046 0)
+			(at 53.086 117.348 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8620,7 +8723,7 @@
 			)
 		)
 		(property "Centerline_Pitch" ""
-			(at 52.832 114.046 0)
+			(at 53.086 117.348 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8629,7 +8732,7 @@
 			)
 		)
 		(property "Comment" ""
-			(at 52.832 114.046 0)
+			(at 53.086 117.348 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8638,7 +8741,7 @@
 			)
 		)
 		(property "EU_RoHS_Compliance" ""
-			(at 52.832 114.046 0)
+			(at 53.086 117.348 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8647,7 +8750,7 @@
 			)
 		)
 		(property "Number_of_Positions" ""
-			(at 52.832 114.046 0)
+			(at 53.086 117.348 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8656,7 +8759,7 @@
 			)
 		)
 		(property "Product_Type" ""
-			(at 52.832 114.046 0)
+			(at 53.086 117.348 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8893,7 +8996,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 65.532 121.666 0)
+		(at 62.738 124.968 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8901,7 +9004,7 @@
 		(dnp no)
 		(uuid "83ca47a8-07c1-48a1-9596-c2c4794b52c8")
 		(property "Reference" "#PWR03"
-			(at 65.532 128.016 0)
+			(at 62.738 131.318 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8910,7 +9013,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 59.436 123.19 0)
+			(at 56.642 126.492 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8919,7 +9022,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 65.532 121.666 0)
+			(at 62.738 124.968 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8928,7 +9031,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 65.532 121.666 0)
+			(at 62.738 124.968 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8937,7 +9040,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 65.532 121.666 0)
+			(at 62.738 124.968 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8952,135 +9055,6 @@
 			(project "ADC"
 				(path "/e7acbbb1-ecaa-48ea-b3f0-162d5edce236"
 					(reference "#PWR03")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 71.12 114.046 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "856ed561-8186-4d37-824d-c73f8de07427")
-		(property "Reference" "C10"
-			(at 77.47 114.046 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "1uF"
-			(at 73.914 111.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
-			(at 72.0852 117.856 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 71.12 114.046 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 71.12 114.046 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "website" "https://eu.mouser.com/ProductDetail/Murata-Electronics/GRM155Z71A105KE01D?qs=%252B6g0mu59x7LZ5VDL%2FTet%2Fg%3D%3D"
-			(at 71.12 114.046 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Centerline_Pitch" ""
-			(at 71.12 114.046 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Comment" ""
-			(at 71.12 114.046 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "EU_RoHS_Compliance" ""
-			(at 71.12 114.046 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Number_of_Positions" ""
-			(at 71.12 114.046 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Product_Type" ""
-			(at 71.12 114.046 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "22707657-1a3b-4396-97b1-94473f76d5b1")
-		)
-		(pin "2"
-			(uuid "ee982f14-0ce7-46ac-9629-db7e1f2efe15")
-		)
-		(instances
-			(project "AD7606"
-				(path "/0b4c6d4e-ef3d-44d2-9557-7e286248b783/de72fcc7-e3fd-4b0c-9b2e-287da83abf39"
-					(reference "C10")
-					(unit 1)
-				)
-			)
-			(project "AD7606"
-				(path "/e7acbbb1-ecaa-48ea-b3f0-162d5edce236"
-					(reference "C10")
 					(unit 1)
 				)
 			)
@@ -9159,35 +9133,35 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:C")
-		(at 157.226 45.974 180)
+		(lib_id "Mechanical:MountingHole")
+		(at 53.594 140.208 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "8c8ac00f-6659-4913-af12-f1ebf3050669")
-		(property "Reference" "C9"
-			(at 149.606 45.974 90)
+		(uuid "88e66a6d-9cfa-4f24-b5d3-908a2914fd04")
+		(property "Reference" "H2"
+			(at 52.07 136.906 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
+				(justify left)
 			)
 		)
-		(property "Value" "0.1uF"
-			(at 152.146 45.974 90)
+		(property "Value" "MountingHole"
+			(at 56.134 141.4779 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
-			(at 156.2608 42.164 0)
+		(property "Footprint" "MountingHole:MountingHole_2.7mm_M2.5"
+			(at 53.594 140.208 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9196,7 +9170,71 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 157.226 45.974 0)
+			(at 53.594 140.208 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 53.594 140.208 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "ADC"
+				(path "/e7acbbb1-ecaa-48ea-b3f0-162d5edce236"
+					(reference "H2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 150.876 45.974 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8c8ac00f-6659-4913-af12-f1ebf3050669")
+		(property "Reference" "C9"
+			(at 143.256 45.974 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "0.1uF"
+			(at 145.796 45.974 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+			(at 149.9108 42.164 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 150.876 45.974 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9205,7 +9243,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 157.226 45.974 0)
+			(at 150.876 45.974 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9214,7 +9252,7 @@
 			)
 		)
 		(property "website" "https://www.mouser.bg/ProductDetail/Murata-Electronics/GRM155R71H104KE14D?qs=2UZY3JfgLCy9gG9icKV9Yg%3D%3D"
-			(at 157.226 45.974 0)
+			(at 150.876 45.974 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9223,7 +9261,7 @@
 			)
 		)
 		(property "Centerline_Pitch" ""
-			(at 157.226 45.974 0)
+			(at 150.876 45.974 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9232,7 +9270,7 @@
 			)
 		)
 		(property "Comment" ""
-			(at 157.226 45.974 0)
+			(at 150.876 45.974 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9241,7 +9279,7 @@
 			)
 		)
 		(property "EU_RoHS_Compliance" ""
-			(at 157.226 45.974 0)
+			(at 150.876 45.974 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9250,7 +9288,7 @@
 			)
 		)
 		(property "Number_of_Positions" ""
-			(at 157.226 45.974 0)
+			(at 150.876 45.974 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9259,7 +9297,7 @@
 			)
 		)
 		(property "Product_Type" ""
-			(at 157.226 45.974 0)
+			(at 150.876 45.974 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9290,7 +9328,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 76.708 114.046 0)
+		(at 71.374 117.348 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9298,7 +9336,7 @@
 		(dnp no)
 		(uuid "92262e04-830b-4d0b-b66e-dfaa0612ae30")
 		(property "Reference" "C7"
-			(at 83.058 114.046 90)
+			(at 77.724 117.348 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9307,7 +9345,7 @@
 			)
 		)
 		(property "Value" "1uF"
-			(at 80.518 114.046 90)
+			(at 75.184 117.348 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9316,7 +9354,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
-			(at 77.6732 117.856 0)
+			(at 72.3392 121.158 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9325,7 +9363,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 76.708 114.046 0)
+			(at 71.374 117.348 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9334,7 +9372,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 76.708 114.046 0)
+			(at 71.374 117.348 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9343,7 +9381,7 @@
 			)
 		)
 		(property "website" "https://eu.mouser.com/ProductDetail/Murata-Electronics/GRM155Z71A105KE01D?qs=%252B6g0mu59x7LZ5VDL%2FTet%2Fg%3D%3D"
-			(at 76.708 114.046 0)
+			(at 71.374 117.348 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9352,7 +9390,7 @@
 			)
 		)
 		(property "Centerline_Pitch" ""
-			(at 76.708 114.046 0)
+			(at 71.374 117.348 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9361,7 +9399,7 @@
 			)
 		)
 		(property "Comment" ""
-			(at 76.708 114.046 0)
+			(at 71.374 117.348 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9370,7 +9408,7 @@
 			)
 		)
 		(property "EU_RoHS_Compliance" ""
-			(at 76.708 114.046 0)
+			(at 71.374 117.348 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9379,7 +9417,7 @@
 			)
 		)
 		(property "Number_of_Positions" ""
-			(at 76.708 114.046 0)
+			(at 71.374 117.348 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9388,7 +9426,7 @@
 			)
 		)
 		(property "Product_Type" ""
-			(at 76.708 114.046 0)
+			(at 71.374 117.348 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10180,136 +10218,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:C")
-		(at 144.526 45.974 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "a1ea654f-f5df-4f4e-95bd-cea4df5b9b97")
-		(property "Reference" "C1"
-			(at 136.906 45.974 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "0.1uF"
-			(at 139.446 45.974 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
-			(at 143.5608 42.164 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 144.526 45.974 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 144.526 45.974 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "website" "https://www.mouser.bg/ProductDetail/Murata-Electronics/GRM155R71H104KE14D?qs=2UZY3JfgLCy9gG9icKV9Yg%3D%3D"
-			(at 144.526 45.974 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Centerline_Pitch" ""
-			(at 144.526 45.974 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Comment" ""
-			(at 144.526 45.974 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "EU_RoHS_Compliance" ""
-			(at 144.526 45.974 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Number_of_Positions" ""
-			(at 144.526 45.974 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Product_Type" ""
-			(at 144.526 45.974 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "d22f92bb-bad1-4a2b-93e9-47cc08c2ee56")
-		)
-		(pin "1"
-			(uuid "d48218d8-952a-401f-8d9e-6e1f2eb5695a")
-		)
-		(instances
-			(project "AD7606"
-				(path "/0b4c6d4e-ef3d-44d2-9557-7e286248b783/de72fcc7-e3fd-4b0c-9b2e-287da83abf39"
-					(reference "C1")
-					(unit 1)
-				)
-			)
-			(project "AD7606"
-				(path "/e7acbbb1-ecaa-48ea-b3f0-162d5edce236"
-					(reference "C1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Switch:SW_Reed_SPDT")
 		(at 37.846 43.434 270)
 		(unit 1)
@@ -10700,7 +10608,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 59.182 114.046 180)
+		(at 59.436 117.348 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10708,7 +10616,7 @@
 		(dnp no)
 		(uuid "b8db3943-172c-4cd0-b250-133a513e40bc")
 		(property "Reference" "C6"
-			(at 51.562 114.046 90)
+			(at 51.816 117.348 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10717,7 +10625,7 @@
 			)
 		)
 		(property "Value" "1uF"
-			(at 62.23 111.76 0)
+			(at 62.484 115.062 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10726,7 +10634,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
-			(at 58.2168 110.236 0)
+			(at 58.4708 113.538 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10735,7 +10643,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 59.182 114.046 0)
+			(at 59.436 117.348 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10744,7 +10652,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 59.182 114.046 0)
+			(at 59.436 117.348 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10753,7 +10661,7 @@
 			)
 		)
 		(property "website" "https://eu.mouser.com/ProductDetail/Murata-Electronics/GRM155Z71A105KE01D?qs=%252B6g0mu59x7LZ5VDL%2FTet%2Fg%3D%3D"
-			(at 59.182 114.046 0)
+			(at 59.436 117.348 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10762,7 +10670,7 @@
 			)
 		)
 		(property "Centerline_Pitch" ""
-			(at 59.182 114.046 0)
+			(at 59.436 117.348 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10771,7 +10679,7 @@
 			)
 		)
 		(property "Comment" ""
-			(at 59.182 114.046 0)
+			(at 59.436 117.348 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10780,7 +10688,7 @@
 			)
 		)
 		(property "EU_RoHS_Compliance" ""
-			(at 59.182 114.046 0)
+			(at 59.436 117.348 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10789,7 +10697,7 @@
 			)
 		)
 		(property "Number_of_Positions" ""
-			(at 59.182 114.046 0)
+			(at 59.436 117.348 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10798,7 +10706,7 @@
 			)
 		)
 		(property "Product_Type" ""
-			(at 59.182 114.046 0)
+			(at 59.436 117.348 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10894,136 +10802,6 @@
 			(project "AD7606"
 				(path "/e7acbbb1-ecaa-48ea-b3f0-162d5edce236"
 					(reference "#PWR08")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 171.196 62.484 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "c14a1a7f-437c-4687-a37f-7617b5b5a45e")
-		(property "Reference" "C5"
-			(at 175.006 61.2139 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-		(property "Value" "0.1uF"
-			(at 174.752 62.484 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
-			(at 170.2308 58.674 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 171.196 62.484 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 171.196 62.484 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "website" "https://www.mouser.bg/ProductDetail/Murata-Electronics/GRM155R71H104KE14D?qs=2UZY3JfgLCy9gG9icKV9Yg%3D%3D"
-			(at 171.196 62.484 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Centerline_Pitch" ""
-			(at 171.196 62.484 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Comment" ""
-			(at 171.196 62.484 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "EU_RoHS_Compliance" ""
-			(at 171.196 62.484 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Number_of_Positions" ""
-			(at 171.196 62.484 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Product_Type" ""
-			(at 171.196 62.484 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "6877829f-8cac-445f-879a-842551650050")
-		)
-		(pin "1"
-			(uuid "822e494b-b74a-41f7-88af-efe736f5c76c")
-		)
-		(instances
-			(project "AD7606"
-				(path "/0b4c6d4e-ef3d-44d2-9557-7e286248b783/de72fcc7-e3fd-4b0c-9b2e-287da83abf39"
-					(reference "C5")
-					(unit 1)
-				)
-			)
-			(project "AD7606"
-				(path "/e7acbbb1-ecaa-48ea-b3f0-162d5edce236"
-					(reference "C5")
 					(unit 1)
 				)
 			)
@@ -11249,7 +11027,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 157.226 49.784 0)
+		(at 150.876 50.8 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11258,7 +11036,7 @@
 		(fields_autoplaced yes)
 		(uuid "e0e3b0c9-1608-4480-b428-194805e712cb")
 		(property "Reference" "#PWR01"
-			(at 157.226 56.134 0)
+			(at 150.876 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11267,7 +11045,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 157.226 55.118 0)
+			(at 150.876 56.134 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11275,7 +11053,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 157.226 49.784 0)
+			(at 150.876 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11284,7 +11062,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 157.226 49.784 0)
+			(at 150.876 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11293,7 +11071,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 157.226 49.784 0)
+			(at 150.876 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11522,79 +11300,8 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 171.196 66.294 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "eafd8de7-db1a-4604-9028-e217c1c25d52")
-		(property "Reference" "#PWR05"
-			(at 171.196 72.644 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 175.006 66.294 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 171.196 66.294 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 171.196 66.294 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 171.196 66.294 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "e9cc5b6c-2907-49e9-9db9-c53cf0c5239e")
-		)
-		(instances
-			(project "AD7606"
-				(path "/0b4c6d4e-ef3d-44d2-9557-7e286248b783/de72fcc7-e3fd-4b0c-9b2e-287da83abf39"
-					(reference "#PWR05")
-					(unit 1)
-				)
-			)
-			(project "AD7606"
-				(path "/e7acbbb1-ecaa-48ea-b3f0-162d5edce236"
-					(reference "#PWR05")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C")
-		(at 150.876 45.974 180)
+		(at 144.526 45.974 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11603,7 +11310,7 @@
 		(fields_autoplaced yes)
 		(uuid "ecc95ecc-7b6f-4bbf-9dbf-1a7da7217e3f")
 		(property "Reference" "C8"
-			(at 143.256 45.974 90)
+			(at 136.906 45.974 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11612,7 +11319,7 @@
 			)
 		)
 		(property "Value" "0.1uF"
-			(at 145.796 45.974 90)
+			(at 139.446 45.974 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11621,7 +11328,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
-			(at 149.9108 42.164 0)
+			(at 143.5608 42.164 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11630,7 +11337,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 150.876 45.974 0)
+			(at 144.526 45.974 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11639,7 +11346,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 150.876 45.974 0)
+			(at 144.526 45.974 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11648,7 +11355,7 @@
 			)
 		)
 		(property "website" "https://www.mouser.bg/ProductDetail/Murata-Electronics/GRM155R71H104KE14D?qs=2UZY3JfgLCy9gG9icKV9Yg%3D%3D"
-			(at 150.876 45.974 0)
+			(at 144.526 45.974 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11657,7 +11364,7 @@
 			)
 		)
 		(property "Centerline_Pitch" ""
-			(at 150.876 45.974 0)
+			(at 144.526 45.974 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11666,7 +11373,7 @@
 			)
 		)
 		(property "Comment" ""
-			(at 150.876 45.974 0)
+			(at 144.526 45.974 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11675,7 +11382,7 @@
 			)
 		)
 		(property "EU_RoHS_Compliance" ""
-			(at 150.876 45.974 0)
+			(at 144.526 45.974 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11684,7 +11391,7 @@
 			)
 		)
 		(property "Number_of_Positions" ""
-			(at 150.876 45.974 0)
+			(at 144.526 45.974 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11693,7 +11400,7 @@
 			)
 		)
 		(property "Product_Type" ""
-			(at 150.876 45.974 0)
+			(at 144.526 45.974 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11717,6 +11424,70 @@
 			(project "AD7606"
 				(path "/e7acbbb1-ecaa-48ea-b3f0-162d5edce236"
 					(reference "C8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 67.818 140.208 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "ee9599b6-4539-42da-8675-cab7c111508d")
+		(property "Reference" "H4"
+			(at 66.294 136.906 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 70.358 141.4779 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_2.7mm_M2.5"
+			(at 67.818 140.208 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 67.818 140.208 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 67.818 140.208 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "ADC"
+				(path "/e7acbbb1-ecaa-48ea-b3f0-162d5edce236"
+					(reference "H4")
 					(unit 1)
 				)
 			)
@@ -11850,6 +11621,70 @@
 			(project ""
 				(path "/e7acbbb1-ecaa-48ea-b3f0-162d5edce236"
 					(reference "SW1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 60.706 140.208 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "f519edc0-6d5d-415e-a4e7-1ceba8205922")
+		(property "Reference" "H3"
+			(at 59.182 136.906 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 63.246 141.4779 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_2.7mm_M2.5"
+			(at 60.706 140.208 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 60.706 140.208 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 60.706 140.208 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "ADC"
+				(path "/e7acbbb1-ecaa-48ea-b3f0-162d5edce236"
+					(reference "H3")
 					(unit 1)
 				)
 			)

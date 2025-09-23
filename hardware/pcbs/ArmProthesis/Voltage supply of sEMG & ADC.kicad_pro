@@ -58,24 +58,7 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [
-        [
-          "annular_width|113770001|67175000|a7e20fc3-de61-4c42-92d5-6f916fbc6ac2|00000000-0000-0000-0000-000000000000",
-          ""
-        ],
-        [
-          "annular_width|119800000|77100000|0f3c9028-a254-40bb-b4af-ffc6b536c8eb|00000000-0000-0000-0000-000000000000",
-          "Needs to be smaller to fit"
-        ],
-        [
-          "annular_width|129350000|80450000|f442fa74-f73a-4381-a309-4ceff0a42bce|00000000-0000-0000-0000-000000000000",
-          "Needs to be smaller to fit"
-        ],
-        [
-          "annular_width|129800000|77375000|f9375a98-2ffe-4e14-b6a8-292e44d8ed2d|00000000-0000-0000-0000-000000000000",
-          "Needs to be smaller to fit"
-        ]
-      ],
+      "drc_exclusions": [],
       "meta": {
         "version": 2
       },
@@ -97,6 +80,7 @@
         "footprint_symbol_mismatch": "warning",
         "footprint_type_mismatch": "ignore",
         "hole_clearance": "error",
+        "hole_near_hole": "error",
         "hole_to_hole": "error",
         "holes_co_located": "warning",
         "invalid_outline": "error",
