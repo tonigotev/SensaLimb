@@ -1,0 +1,272 @@
+Protel Design System Design Rule Check
+PCB File : C:\Users\boris\OneDrive\?????????\KiCad_github\ArmProthesis\Imported Voltage supply of sEMG & ADC\Voltage supply of sEMG & ADC(1).PcbDoc
+Date     : 9/24/2025
+Time     : 11:29:56 AM
+
+Processing Rule : Clearance Constraint (Gap=0.5mm) (InNamedPolygon('In1.Cu-GND') OR InNamedPolygon('In2.Cu-/+11.1V')),(All)
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=3mm) (InPadClass('Pad Class Clearance 3')),(All)
+Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+   Violation between Short-Circuit Constraint: Between Pad U3-10(104.998mm,66.992mm) on F.Cu And Track (104.353mm,67.049mm)(104.502mm,66.9mm) on F.Cu Location : [X = 104.445mm][Y = 66.983mm]
+   Violation between Short-Circuit Constraint: Between Track (102.74mm,71.512mm)(102.74mm,72.972mm) on F.CrtYd And Track (96.988mm,73.057mm)(103.168mm,73.057mm) on F.CrtYd Location : [X = 102.74mm][Y = 73.015mm]
+   Violation between Short-Circuit Constraint: Between Track (103.168mm,73.057mm)(103.168mm,79.037mm) on F.CrtYd And Track (103.323mm,74.775mm)(103.323mm,78.535mm) on F.CrtYd Location : [X = 103.245mm][Y = 76.655mm]
+   Violation between Short-Circuit Constraint: Between Track (103.168mm,73.057mm)(103.168mm,79.037mm) on F.CrtYd And Track (103.323mm,74.775mm)(105.283mm,74.775mm) on F.CrtYd Location : [X = 103.245mm][Y = 74.775mm]
+   Violation between Short-Circuit Constraint: Between Track (103.168mm,73.057mm)(103.168mm,79.037mm) on F.CrtYd And Track (103.323mm,78.535mm)(105.283mm,78.535mm) on F.CrtYd Location : [X = 103.245mm][Y = 78.535mm]
+   Violation between Short-Circuit Constraint: Between Track (103.576mm,79.662mm)(103.576mm,81.122mm) on F.CrtYd And Track (103.613mm,81.312mm)(103.613mm,82.772mm) on F.CrtYd Location : [X = 103.594mm][Y = 81.217mm]
+   Violation between Short-Circuit Constraint: Between Track (103.576mm,79.662mm)(103.576mm,81.122mm) on F.CrtYd And Track (103.613mm,81.312mm)(106.913mm,81.312mm) on F.CrtYd Location : [X = 103.6mm][Y = 81.217mm]
+   Violation between Short-Circuit Constraint: Between Track (103.576mm,81.122mm)(106.875mm,81.122mm) on F.CrtYd And Track (103.613mm,81.312mm)(103.613mm,82.772mm) on F.CrtYd Location : [X = 103.619mm][Y = 81.217mm]
+   Violation between Short-Circuit Constraint: Between Track (103.576mm,81.122mm)(106.875mm,81.122mm) on F.CrtYd And Track (103.613mm,81.312mm)(106.913mm,81.312mm) on F.CrtYd Location : [X = 105.244mm][Y = 81.217mm]
+   Violation between Short-Circuit Constraint: Between Track (103.576mm,81.122mm)(106.875mm,81.122mm) on F.CrtYd And Track (106.913mm,81.312mm)(106.913mm,82.772mm) on F.CrtYd Location : [X = 106.888mm][Y = 81.217mm]
+   Violation between Short-Circuit Constraint: Between Track (103.613mm,81.312mm)(106.913mm,81.312mm) on F.CrtYd And Track (106.875mm,79.662mm)(106.875mm,81.122mm) on F.CrtYd Location : [X = 106.869mm][Y = 81.217mm]
+   Violation between Short-Circuit Constraint: Between Track (106.875mm,79.662mm)(106.875mm,81.122mm) on F.CrtYd And Track (106.913mm,81.312mm)(106.913mm,82.772mm) on F.CrtYd Location : [X = 106.894mm][Y = 81.217mm]
+   Violation between Short-Circuit Constraint: Between Track (110.348mm,74.775mm)(112.308mm,74.775mm) on F.CrtYd And Track (112.478mm,74.727mm)(112.478mm,83.227mm) on F.CrtYd Location : [X = 112.393mm][Y = 74.779mm]
+   Violation between Short-Circuit Constraint: Between Track (110.348mm,74.775mm)(112.308mm,74.775mm) on F.CrtYd And Track (112.478mm,74.727mm)(120.978mm,74.727mm) on F.CrtYd Location : [X = 112.393mm][Y = 74.751mm]
+   Violation between Short-Circuit Constraint: Between Track (110.348mm,78.535mm)(112.308mm,78.535mm) on F.CrtYd And Track (112.478mm,74.727mm)(112.478mm,83.227mm) on F.CrtYd Location : [X = 112.393mm][Y = 78.535mm]
+   Violation between Short-Circuit Constraint: Between Track (112.308mm,74.775mm)(112.308mm,78.535mm) on F.CrtYd And Track (112.478mm,74.727mm)(112.478mm,83.227mm) on F.CrtYd Location : [X = 112.393mm][Y = 76.659mm]
+   Violation between Short-Circuit Constraint: Between Track (112.308mm,74.775mm)(112.308mm,78.535mm) on F.CrtYd And Track (112.478mm,74.727mm)(120.978mm,74.727mm) on F.CrtYd Location : [X = 112.393mm][Y = 74.755mm]
+   Violation between Short-Circuit Constraint: Between Track (112.478mm,66.992mm)(120.978mm,66.992mm) on F.CrtYd And Track (117.098mm,67.192mm)(117.098mm,70.492mm) on F.CrtYd Location : [X = 117.098mm][Y = 67.092mm]
+   Violation between Short-Circuit Constraint: Between Track (112.478mm,66.992mm)(120.978mm,66.992mm) on F.CrtYd And Track (117.098mm,67.192mm)(118.558mm,67.192mm) on F.CrtYd Location : [X = 117.828mm][Y = 67.092mm]
+   Violation between Short-Circuit Constraint: Between Track (112.478mm,66.992mm)(120.978mm,66.992mm) on F.CrtYd And Track (118.558mm,67.192mm)(118.558mm,70.492mm) on F.CrtYd Location : [X = 118.558mm][Y = 67.092mm]
+   Violation between Short-Circuit Constraint: Between Track (113.166mm,71.237mm)(113.166mm,72.697mm) on F.CrtYd And Track (113.166mm,72.912mm)(113.166mm,74.372mm) on F.CrtYd Location : [X = 113.166mm][Y = 72.805mm]
+   Violation between Short-Circuit Constraint: Between Track (113.166mm,71.237mm)(113.166mm,72.697mm) on F.CrtYd And Track (113.166mm,72.912mm)(116.465mm,72.912mm) on F.CrtYd Location : [X = 113.179mm][Y = 72.805mm]
+   Violation between Short-Circuit Constraint: Between Track (113.166mm,72.697mm)(116.465mm,72.697mm) on F.CrtYd And Track (113.166mm,72.912mm)(113.166mm,74.372mm) on F.CrtYd Location : [X = 113.179mm][Y = 72.805mm]
+   Violation between Short-Circuit Constraint: Between Track (113.166mm,72.697mm)(116.465mm,72.697mm) on F.CrtYd And Track (113.166mm,72.912mm)(116.465mm,72.912mm) on F.CrtYd Location : [X = 114.816mm][Y = 72.805mm]
+   Violation between Short-Circuit Constraint: Between Track (113.166mm,72.697mm)(116.465mm,72.697mm) on F.CrtYd And Track (116.465mm,72.912mm)(116.465mm,74.372mm) on F.CrtYd Location : [X = 116.452mm][Y = 72.805mm]
+   Violation between Short-Circuit Constraint: Between Track (113.166mm,72.912mm)(116.465mm,72.912mm) on F.CrtYd And Track (116.465mm,71.237mm)(116.465mm,72.697mm) on F.CrtYd Location : [X = 116.452mm][Y = 72.805mm]
+   Violation between Short-Circuit Constraint: Between Track (114.833mm,89.862mm)(114.833mm,94.022mm) on F.CrtYd And Track (115.058mm,90.132mm)(115.058mm,92.352mm) on F.CrtYd Location : [X = 114.946mm][Y = 91.242mm]
+   Violation between Short-Circuit Constraint: Between Track (114.833mm,89.862mm)(114.833mm,94.022mm) on F.CrtYd And Track (115.058mm,90.132mm)(115.998mm,90.132mm) on F.CrtYd Location : [X = 114.946mm][Y = 90.132mm]
+   Violation between Short-Circuit Constraint: Between Track (114.833mm,89.862mm)(114.833mm,94.022mm) on F.CrtYd And Track (115.058mm,92.352mm)(115.998mm,92.352mm) on F.CrtYd Location : [X = 114.946mm][Y = 92.352mm]
+   Violation between Short-Circuit Constraint: Between Track (115.058mm,90.132mm)(115.998mm,90.132mm) on F.CrtYd And Track (116.248mm,88.067mm)(116.248mm,91.367mm) on F.CrtYd Location : [X = 116.123mm][Y = 90.132mm]
+   Violation between Short-Circuit Constraint: Between Track (115.998mm,90.132mm)(115.998mm,92.352mm) on F.CrtYd And Track (116.248mm,88.067mm)(116.248mm,91.367mm) on F.CrtYd Location : [X = 116.123mm][Y = 90.75mm]
+   Violation between Short-Circuit Constraint: Between Track (115.998mm,90.132mm)(115.998mm,92.352mm) on F.CrtYd And Track (116.248mm,91.367mm)(117.708mm,91.367mm) on F.CrtYd Location : [X = 116.123mm][Y = 91.367mm]
+   Violation between Short-Circuit Constraint: Between Track (116.465mm,71.237mm)(116.465mm,72.697mm) on F.CrtYd And Track (116.465mm,72.912mm)(116.465mm,74.372mm) on F.CrtYd Location : [X = 116.465mm][Y = 72.805mm]
+   Violation between Short-Circuit Constraint: Between Track (121.216mm,89.142mm)(122.246mm,89.142mm) on F.CrtYd And Track (122.373mm,86.217mm)(122.373mm,89.517mm) on F.CrtYd Location : [X = 122.309mm][Y = 89.142mm]
+   Violation between Short-Circuit Constraint: Between Track (121.216mm,90.242mm)(122.246mm,90.242mm) on F.CrtYd And Track (122.373mm,89.93mm)(122.373mm,93.23mm) on F.CrtYd Location : [X = 122.309mm][Y = 90.242mm]
+   Violation between Short-Circuit Constraint: Between Track (122.246mm,89.142mm)(122.246mm,90.242mm) on F.CrtYd And Track (122.373mm,86.217mm)(122.373mm,89.517mm) on F.CrtYd Location : [X = 122.309mm][Y = 89.33mm]
+   Violation between Short-Circuit Constraint: Between Track (122.246mm,89.142mm)(122.246mm,90.242mm) on F.CrtYd And Track (122.373mm,89.517mm)(123.833mm,89.517mm) on F.CrtYd Location : [X = 122.309mm][Y = 89.517mm]
+   Violation between Short-Circuit Constraint: Between Track (122.246mm,89.142mm)(122.246mm,90.242mm) on F.CrtYd And Track (122.373mm,89.93mm)(122.373mm,93.23mm) on F.CrtYd Location : [X = 122.309mm][Y = 90.086mm]
+   Violation between Short-Circuit Constraint: Between Track (122.246mm,89.142mm)(122.246mm,90.242mm) on F.CrtYd And Track (122.373mm,89.93mm)(123.833mm,89.93mm) on F.CrtYd Location : [X = 122.309mm][Y = 89.93mm]
+   Violation between Short-Circuit Constraint: Between Track (86.23mm,72.402mm)(90.39mm,72.402mm) on F.CrtYd And Track (89.436mm,70.225mm)(89.436mm,72.185mm) on F.CrtYd Location : [X = 89.436mm][Y = 72.293mm]
+   Violation between Short-Circuit Constraint: Between Track (86.23mm,72.402mm)(90.39mm,72.402mm) on F.CrtYd And Track (89.436mm,72.185mm)(93.195mm,72.185mm) on F.CrtYd Location : [X = 89.913mm][Y = 72.293mm]
+   Violation between Short-Circuit Constraint: Between Track (86.65mm,88.7mm)(88.111mm,88.7mm) on F.CrtYd And Track (87.731mm,87.513mm)(87.731mm,88.543mm) on F.CrtYd Location : [X = 87.731mm][Y = 88.622mm]
+   Violation between Short-Circuit Constraint: Between Track (86.65mm,88.7mm)(88.111mm,88.7mm) on F.CrtYd And Track (87.731mm,88.543mm)(88.83mm,88.543mm) on F.CrtYd Location : [X = 87.92mm][Y = 88.622mm]
+   Violation between Short-Circuit Constraint: Between Track (87.731mm,88.543mm)(88.83mm,88.543mm) on F.CrtYd And Track (88.111mm,88.7mm)(88.111mm,92mm) on F.CrtYd Location : [X = 88.111mm][Y = 88.622mm]
+   Violation between Short-Circuit Constraint: Between Track (87.731mm,88.543mm)(88.83mm,88.543mm) on F.CrtYd And Track (88.45mm,88.7mm)(88.45mm,92mm) on F.CrtYd Location : [X = 88.45mm][Y = 88.622mm]
+   Violation between Short-Circuit Constraint: Between Track (87.731mm,88.543mm)(88.83mm,88.543mm) on F.CrtYd And Track (88.45mm,88.7mm)(89.911mm,88.7mm) on F.CrtYd Location : [X = 88.64mm][Y = 88.622mm]
+   Violation between Short-Circuit Constraint: Between Track (88.45mm,88.7mm)(89.911mm,88.7mm) on F.CrtYd And Track (88.83mm,87.513mm)(88.83mm,88.543mm) on F.CrtYd Location : [X = 88.83mm][Y = 88.622mm]
+   Violation between Short-Circuit Constraint: Between Track (89.436mm,72.185mm)(93.195mm,72.185mm) on F.CrtYd And Track (90.39mm,72.402mm)(90.39mm,73.782mm) on F.CrtYd Location : [X = 90.39mm][Y = 72.293mm]
+   Violation between Short-Circuit Constraint: Between Track (90.766mm,59.587mm)(90.766mm,61.047mm) on F.CrtYd And Track (90.766mm,61.212mm)(90.766mm,62.672mm) on F.CrtYd Location : [X = 90.766mm][Y = 61.13mm]
+   Violation between Short-Circuit Constraint: Between Track (90.766mm,59.587mm)(90.766mm,61.047mm) on F.CrtYd And Track (90.766mm,61.212mm)(94.065mm,61.212mm) on F.CrtYd Location : [X = 90.778mm][Y = 61.13mm]
+   Violation between Short-Circuit Constraint: Between Track (90.766mm,61.047mm)(94.065mm,61.047mm) on F.CrtYd And Track (90.766mm,61.212mm)(90.766mm,62.672mm) on F.CrtYd Location : [X = 90.778mm][Y = 61.13mm]
+   Violation between Short-Circuit Constraint: Between Track (90.766mm,61.047mm)(94.065mm,61.047mm) on F.CrtYd And Track (90.766mm,61.212mm)(94.065mm,61.212mm) on F.CrtYd Location : [X = 92.415mm][Y = 61.13mm]
+   Violation between Short-Circuit Constraint: Between Track (90.766mm,61.047mm)(94.065mm,61.047mm) on F.CrtYd And Track (94.065mm,61.212mm)(94.065mm,62.672mm) on F.CrtYd Location : [X = 94.053mm][Y = 61.13mm]
+   Violation between Short-Circuit Constraint: Between Track (90.766mm,61.047mm)(94.065mm,61.047mm) on F.CrtYd And Track (94.285mm,60.592mm)(94.285mm,61.692mm) on F.CrtYd Location : [X = 94.175mm][Y = 61.047mm]
+   Violation between Short-Circuit Constraint: Between Track (90.766mm,61.212mm)(94.065mm,61.212mm) on F.CrtYd And Track (94.065mm,59.587mm)(94.065mm,61.047mm) on F.CrtYd Location : [X = 94.053mm][Y = 61.13mm]
+   Violation between Short-Circuit Constraint: Between Track (90.766mm,61.212mm)(94.065mm,61.212mm) on F.CrtYd And Track (94.285mm,60.592mm)(94.285mm,61.692mm) on F.CrtYd Location : [X = 94.175mm][Y = 61.212mm]
+   Violation between Short-Circuit Constraint: Between Track (93.488mm,82.732mm)(99.758mm,82.732mm) on F.CrtYd And Track (97.766mm,80.687mm)(97.766mm,82.647mm) on F.CrtYd Location : [X = 97.766mm][Y = 82.69mm]
+   Violation between Short-Circuit Constraint: Between Track (93.488mm,82.732mm)(99.758mm,82.732mm) on F.CrtYd And Track (97.766mm,82.647mm)(101.525mm,82.647mm) on F.CrtYd Location : [X = 98.762mm][Y = 82.69mm]
+   Violation between Short-Circuit Constraint: Between Track (94.065mm,59.587mm)(94.065mm,61.047mm) on F.CrtYd And Track (94.065mm,61.212mm)(94.065mm,62.672mm) on F.CrtYd Location : [X = 94.065mm][Y = 61.13mm]
+   Violation between Short-Circuit Constraint: Between Track (94.065mm,59.587mm)(94.065mm,61.047mm) on F.CrtYd And Track (94.285mm,60.592mm)(94.285mm,61.692mm) on F.CrtYd Location : [X = 94.175mm][Y = 60.82mm]
+   Violation between Short-Circuit Constraint: Between Track (94.065mm,59.587mm)(94.065mm,61.047mm) on F.CrtYd And Track (94.285mm,60.592mm)(95.315mm,60.592mm) on F.CrtYd Location : [X = 94.175mm][Y = 60.592mm]
+   Violation between Short-Circuit Constraint: Between Track (94.065mm,61.212mm)(94.065mm,62.672mm) on F.CrtYd And Track (94.285mm,60.592mm)(94.285mm,61.692mm) on F.CrtYd Location : [X = 94.175mm][Y = 61.452mm]
+   Violation between Short-Circuit Constraint: Between Track (94.065mm,61.212mm)(94.065mm,62.672mm) on F.CrtYd And Track (94.285mm,61.692mm)(95.315mm,61.692mm) on F.CrtYd Location : [X = 94.175mm][Y = 61.692mm]
+   Violation between Short-Circuit Constraint: Between Track (96.988mm,73.057mm)(103.168mm,73.057mm) on F.CrtYd And Track (99.44mm,71.512mm)(99.44mm,72.972mm) on F.CrtYd Location : [X = 99.44mm][Y = 73.015mm]
+   Violation between Short-Circuit Constraint: Between Track (96.988mm,73.057mm)(103.168mm,73.057mm) on F.CrtYd And Track (99.44mm,72.972mm)(102.74mm,72.972mm) on F.CrtYd Location : [X = 101.09mm][Y = 73.015mm]
+   Violation between Short-Circuit Constraint: Between Track (97.766mm,82.647mm)(101.525mm,82.647mm) on F.CrtYd And Track (99.758mm,82.732mm)(99.758mm,89.002mm) on F.CrtYd Location : [X = 99.758mm][Y = 82.69mm]
+Rule Violations :66
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+   Violation between Un-Routed Net Constraint: Arc (126.703mm,104.03mm) on F.SilkS Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Arc (126.703mm,52.78mm) on F.SilkS Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Arc (126.778mm,103.942mm) on B.SilkS Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Arc (126.778mm,52.792mm) on B.SilkS Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Arc (127.453mm,104.64mm) on Edge.Cuts Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Arc (127.453mm,52.165mm) on Edge.Cuts Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Arc (80.328mm,104.64mm) on Edge.Cuts Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Arc (80.328mm,52.165mm) on Edge.Cuts Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Arc (80.953mm,103.942mm) on B.SilkS Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Arc (80.953mm,52.792mm) on B.SilkS Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Arc (80.978mm,104.03mm) on F.SilkS Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Arc (80.978mm,104.03mm) on F.SilkS Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Arc (80.978mm,52.78mm) on F.SilkS Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Net GND Between Pad R14-2(101.028mm,66.63mm) on F.Cu And Pad C2-2(102.528mm,66.63mm) on F.Cu 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad R15-2(104.328mm,94.795mm) on F.Cu And Track (106.483mm,95.02mm)(106.485mm,95.017mm) on F.Cu 
+   Violation between Un-Routed Net Constraint: Net +11.1V Between Pad R6-2(91.503mm,61.942mm) on F.Cu And Via (97.673mm,66.242mm) from F.Cu to B.Cu 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad R8-2(95.373mm,91.112mm) on F.Cu And Track (94.263mm,86.517mm)(95.973mm,86.517mm) on F.Cu 
+   Violation between Un-Routed Net Constraint: Net +5V Between Pad U1-10(88.635mm,73.382mm) on F.Cu And Track (89.278mm,73.38mm)(90.278mm,72.38mm) on F.Cu 
+   Violation between Un-Routed Net Constraint: Net +6V Between Track (96.623mm,82.292mm)(96.623mm,83.507mm) on F.Cu And Pad U2-15(97.923mm,83.507mm) on F.Cu 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (103.528mm,66.642mm) from F.Cu to B.Cu And Pad U3-10(104.998mm,66.992mm) on F.Cu 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad U3-12(110.728mm,67.642mm) on F.Cu And Via (112.782mm,68.254mm) from F.Cu to B.Cu 
+   Violation between Un-Routed Net Constraint: Polygon  (NONET_L01_P004) on F.Cu Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Track (104.353mm,67.049mm)(104.502mm,66.9mm) on F.Cu Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Net GND Between Via (108.003mm,95.017mm) from F.Cu to B.Cu And Track (108.028mm,91.942mm)(108.353mm,92.267mm) on F.Cu 
+   Violation between Un-Routed Net Constraint: Net Net-(U3-SHOUT) Between Via (112.528mm,71.967mm) from F.Cu to B.Cu And Track (112.5mm,71.967mm)(112.528mm,71.967mm) on In2.Cu 
+   Violation between Un-Routed Net Constraint: Net GND Between Track (116.978mm,88.805mm)(117.015mm,88.767mm) on F.Cu And Via (117.942mm,88.742mm) from F.Cu to B.Cu 
+   Violation between Un-Routed Net Constraint: Track (128.703mm,52.78mm)(128.703mm,104.03mm) on F.SilkS Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Track (128.778mm,52.792mm)(128.778mm,103.942mm) on B.SilkS Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Track (129.453mm,52.165mm)(129.453mm,104.64mm) on Edge.Cuts Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Track (78.328mm,52.165mm)(78.328mm,104.64mm) on Edge.Cuts Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Track (78.953mm,52.792mm)(78.953mm,103.942mm) on B.SilkS Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Track (78.978mm,52.78mm)(78.978mm,104.03mm) on F.SilkS Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Track (80.328mm,106.64mm)(127.453mm,106.64mm) on Edge.Cuts Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Track (80.328mm,50.165mm)(127.453mm,50.165mm) on Edge.Cuts Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Track (80.953mm,105.942mm)(126.778mm,105.942mm) on B.SilkS Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Track (80.953mm,50.792mm)(126.778mm,50.792mm) on B.SilkS Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Track (80.978mm,106.03mm)(126.703mm,106.03mm) on F.SilkS Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Track (80.978mm,50.78mm)(126.703mm,50.78mm) on F.SilkS Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Net GND Between Track (85.175mm,70.16mm)(85.213mm,70.122mm) on F.Cu And Via (85.486mm,68.767mm) from F.Cu to B.Cu 
+   Violation between Un-Routed Net Constraint: Net +6V Between Via (87.378mm,92.392mm) from F.Cu to B.Cu And Track (86.205mm,91.22mm)(87.378mm,92.392mm) on In2.Cu 
+   Violation between Un-Routed Net Constraint: Net Net-(U1-PGFB) Between Via (86.273mm,71.972mm) from F.Cu to B.Cu And Track (86.273mm,71.727mm)(86.273mm,71.972mm) on In2.Cu 
+   Violation between Un-Routed Net Constraint: Net GND Between Track (86.385mm,75.072mm)(87.9mm,75.072mm) on F.Cu And Track (87.986mm,72.322mm)(87.986mm,73.382mm) on F.Cu 
+   Violation between Un-Routed Net Constraint: Net GND Between Track (88.31mm,75.532mm)(88.376mm,75.597mm) on F.Cu And Via (91.028mm,75.61mm) from F.Cu to B.Cu 
+   Violation between Un-Routed Net Constraint: Net Net-(U1-PGFB) Between Via (92.103mm,67.817mm) from F.Cu to B.Cu And Track (92.003mm,67.817mm)(92.103mm,67.817mm) on In2.Cu 
+   Violation between Un-Routed Net Constraint: Net +6V Between Track (96.498mm,82.167mm)(99.823mm,78.842mm) on In2.Cu And Track (96.498mm,82.167mm)(96.623mm,82.292mm) on F.Cu 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (100.228mm,71.042mm) from F.Cu to B.Cu And Via (103.528mm,66.642mm) from F.Cu to B.Cu 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (100.228mm,71.042mm) from F.Cu to B.Cu And Via (104.303mm,74.317mm) from F.Cu to B.Cu 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (100.584mm,84.836mm) from F.Cu to B.Cu And Via (100.711mm,82.931mm) from F.Cu to B.Cu 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (100.584mm,86.868mm) from F.Cu to B.Cu And Via (101.5mm,89.5mm) from F.Cu to B.Cu 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (100.711mm,82.931mm) from F.Cu to B.Cu And Via (103.051mm,82.042mm) from F.Cu to B.Cu 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (99.228mm,65.242mm) from F.Cu to B.Cu And Via (101.028mm,65.255mm) from F.Cu to B.Cu 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (103.051mm,82.042mm) from F.Cu to B.Cu And Via (104.303mm,84.492mm) from F.Cu to B.Cu 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (94.228mm,100.355mm) from F.Cu to B.Cu And Via (104.278mm,100.367mm) from F.Cu to B.Cu 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (104.278mm,97.367mm) from F.Cu to B.Cu And Via (104.328mm,96.042mm) from F.Cu to B.Cu 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (104.303mm,74.317mm) from F.Cu to B.Cu And Via (106.628mm,74.317mm) from F.Cu to B.Cu 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (106.628mm,74.317mm) from F.Cu to B.Cu And Via (109.028mm,74.317mm) from F.Cu to B.Cu 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (106.828mm,67.317mm) from F.Cu to B.Cu And Via (107.853mm,67.317mm) from F.Cu to B.Cu 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (107.853mm,67.317mm) from F.Cu to B.Cu And Via (108.878mm,67.317mm) from F.Cu to B.Cu 
+   Violation between Un-Routed Net Constraint: Net +11.1V Between Via (107.878mm,72.842mm) from F.Cu to B.Cu And Via (113.128mm,97.542mm) from F.Cu to B.Cu 
+   Violation between Un-Routed Net Constraint: Net +11.1V Between Via (107.878mm,72.842mm) from F.Cu to B.Cu And Via (114.328mm,59.042mm) from F.Cu to B.Cu 
+   Violation between Un-Routed Net Constraint: Net +11.1V Between Via (97.673mm,66.242mm) from F.Cu to B.Cu And Via (107.878mm,72.842mm) from F.Cu to B.Cu 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (108.003mm,95.017mm) from F.Cu to B.Cu And Via (111.878mm,97.542mm) from F.Cu to B.Cu 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (108.028mm,91.942mm) from F.Cu to B.Cu And Via (108.053mm,88.817mm) from F.Cu to B.Cu 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (108.053mm,88.817mm) from F.Cu to B.Cu And Via (111.753mm,89.117mm) from F.Cu to B.Cu 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (109.028mm,74.317mm) from F.Cu to B.Cu And Via (111.328mm,74.33mm) from F.Cu to B.Cu 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (111.753mm,89.117mm) from F.Cu to B.Cu And Via (115.806mm,88.805mm) from F.Cu to B.Cu 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (111.878mm,97.542mm) from F.Cu to B.Cu And Via (115.303mm,93.817mm) from F.Cu to B.Cu 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (112.782mm,68.254mm) from F.Cu to B.Cu And Via (115.678mm,70.717mm) from F.Cu to B.Cu 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (115.678mm,70.717mm) from F.Cu to B.Cu And Via (116.653mm,67.942mm) from F.Cu to B.Cu 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (117.942mm,88.742mm) from F.Cu to B.Cu And Via (119.253mm,85.567mm) from F.Cu to B.Cu 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (119.253mm,85.567mm) from F.Cu to B.Cu And Via (121.828mm,86.992mm) from F.Cu to B.Cu 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (120.468mm,81.33mm) from F.Cu to B.Cu And Via (121.828mm,86.992mm) from F.Cu to B.Cu 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (85.213mm,71.431mm) from F.Cu to B.Cu And Via (88.485mm,71.822mm) from F.Cu to B.Cu 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (85.486mm,68.767mm) from F.Cu to B.Cu And Via (89.765mm,66.552mm) from F.Cu to B.Cu 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (86.378mm,79.242mm) from F.Cu to B.Cu And Via (86.385mm,76.072mm) from F.Cu to B.Cu 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (86.378mm,79.242mm) from F.Cu to B.Cu And Via (89.193mm,84.275mm) from F.Cu to B.Cu 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (89.178mm,92.342mm) from F.Cu to B.Cu And Via (95.373mm,92.212mm) from F.Cu to B.Cu 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (89.193mm,84.275mm) from F.Cu to B.Cu And Via (93.023mm,86.507mm) from F.Cu to B.Cu 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (89.765mm,66.552mm) from F.Cu to B.Cu And Via (90.215mm,60.317mm) from F.Cu to B.Cu 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (89.765mm,66.552mm) from F.Cu to B.Cu And Via (95.628mm,67.242mm) from F.Cu to B.Cu 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (91.028mm,75.61mm) from F.Cu to B.Cu And Via (92.353mm,72.63mm) from F.Cu to B.Cu 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (93.023mm,86.507mm) from F.Cu to B.Cu And Via (95.383mm,82.067mm) from F.Cu to B.Cu 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (94.228mm,97.355mm) from F.Cu to B.Cu And Via (95.373mm,92.212mm) from F.Cu to B.Cu 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (95.628mm,67.242mm) from F.Cu to B.Cu And Via (99.228mm,65.242mm) from F.Cu to B.Cu 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (98.528mm,62.342mm) from F.Cu to B.Cu And Via (99.228mm,65.242mm) from F.Cu to B.Cu 
+Rule Violations :85
+
+Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.254mm) (Max=10mm) (Preferred=0.254mm) (All)
+Rule Violations :0
+
+Processing Rule : Routing Topology Rule(Topology=Shortest) (All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=0.025mm) (Max=2.54mm) (All)
+   Violation between Hole Size Constraint: (2.7mm > 2.54mm) Pad H1-Un1(82.428mm,102.742mm) on Multi-Layer Actual Hole Size = 2.7mm
+   Violation between Hole Size Constraint: (2.7mm > 2.54mm) Pad H2-Un1(125.428mm,102.742mm) on Multi-Layer Actual Hole Size = 2.7mm
+   Violation between Hole Size Constraint: (2.7mm > 2.54mm) Pad H3-Un1(82.328mm,54.169mm) on Multi-Layer Actual Hole Size = 2.7mm
+   Violation between Hole Size Constraint: (2.7mm > 2.54mm) Pad H4-Un1(125.328mm,54.242mm) on Multi-Layer Actual Hole Size = 2.7mm
+Rule Violations :4
+
+Processing Rule : Hole To Hole Clearance (Gap=0.254mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=0mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Silk To Solder Mask (Clearance=0mm) (IsPad),(All)
+Rule Violations :0
+
+Processing Rule : Silk to Silk (Clearance=0mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Net Antennae (Tolerance=0mm) (All)
+   Violation between Net Antennae: Track (112.5mm,71.967mm)(112.528mm,71.967mm) on In2.Cu 
+   Violation between Net Antennae: Track (112.5mm,71.967mm)(112.528mm,71.967mm) on In2.Cu 
+   Violation between Net Antennae: Track (86.205mm,91.22mm)(87.378mm,92.392mm) on In2.Cu 
+   Violation between Net Antennae: Track (86.273mm,71.727mm)(88.383mm,69.617mm) on In2.Cu 
+   Violation between Net Antennae: Track (96.498mm,82.167mm)(99.823mm,78.842mm) on In2.Cu 
+   Violation between Net Antennae: Via (100.228mm,71.042mm) from F.Cu to B.Cu 
+   Violation between Net Antennae: Via (101.028mm,65.255mm) from F.Cu to B.Cu 
+   Violation between Net Antennae: Via (103.051mm,82.042mm) from F.Cu to B.Cu 
+   Violation between Net Antennae: Via (104.278mm,100.367mm) from F.Cu to B.Cu 
+   Violation between Net Antennae: Via (104.278mm,97.367mm) from F.Cu to B.Cu 
+   Violation between Net Antennae: Via (104.303mm,74.317mm) from F.Cu to B.Cu 
+   Violation between Net Antennae: Via (104.303mm,84.492mm) from F.Cu to B.Cu 
+   Violation between Net Antennae: Via (104.328mm,96.042mm) from F.Cu to B.Cu 
+   Violation between Net Antennae: Via (106.628mm,74.317mm) from F.Cu to B.Cu 
+   Violation between Net Antennae: Via (107.878mm,72.842mm) from F.Cu to B.Cu 
+   Violation between Net Antennae: Via (108.003mm,95.017mm) from F.Cu to B.Cu 
+   Violation between Net Antennae: Via (109.028mm,74.317mm) from F.Cu to B.Cu 
+   Violation between Net Antennae: Via (111.328mm,74.33mm) from F.Cu to B.Cu 
+   Violation between Net Antennae: Via (111.753mm,89.117mm) from F.Cu to B.Cu 
+   Violation between Net Antennae: Via (111.878mm,100.242mm) from F.Cu to B.Cu 
+   Violation between Net Antennae: Via (111.878mm,97.542mm) from F.Cu to B.Cu 
+   Violation between Net Antennae: Via (113.128mm,100.242mm) from F.Cu to B.Cu 
+   Violation between Net Antennae: Via (113.128mm,97.542mm) from F.Cu to B.Cu 
+   Violation between Net Antennae: Via (114.328mm,59.042mm) from F.Cu to B.Cu 
+   Violation between Net Antennae: Via (115.128mm,59.042mm) from F.Cu to B.Cu 
+   Violation between Net Antennae: Via (115.678mm,70.717mm) from F.Cu to B.Cu 
+   Violation between Net Antennae: Via (115.806mm,88.805mm) from F.Cu to B.Cu 
+   Violation between Net Antennae: Via (115.928mm,59.042mm) from F.Cu to B.Cu 
+   Violation between Net Antennae: Via (116.653mm,67.942mm) from F.Cu to B.Cu 
+   Violation between Net Antennae: Via (116.728mm,59.042mm) from F.Cu to B.Cu 
+   Violation between Net Antennae: Via (117.528mm,59.042mm) from F.Cu to B.Cu 
+   Violation between Net Antennae: Via (117.942mm,88.742mm) from F.Cu to B.Cu 
+   Violation between Net Antennae: Via (118.328mm,59.042mm) from F.Cu to B.Cu 
+   Violation between Net Antennae: Via (119.128mm,59.042mm) from F.Cu to B.Cu 
+   Violation between Net Antennae: Via (119.253mm,85.567mm) from F.Cu to B.Cu 
+   Violation between Net Antennae: Via (120.468mm,76.53mm) from F.Cu to B.Cu 
+   Violation between Net Antennae: Via (120.468mm,77.33mm) from F.Cu to B.Cu 
+   Violation between Net Antennae: Via (120.468mm,78.13mm) from F.Cu to B.Cu 
+   Violation between Net Antennae: Via (120.468mm,78.93mm) from F.Cu to B.Cu 
+   Violation between Net Antennae: Via (120.468mm,79.73mm) from F.Cu to B.Cu 
+   Violation between Net Antennae: Via (120.468mm,80.53mm) from F.Cu to B.Cu 
+   Violation between Net Antennae: Via (120.468mm,81.33mm) from F.Cu to B.Cu 
+   Violation between Net Antennae: Via (121.828mm,86.992mm) from F.Cu to B.Cu 
+   Violation between Net Antennae: Via (85.213mm,71.431mm) from F.Cu to B.Cu 
+   Violation between Net Antennae: Via (85.486mm,68.767mm) from F.Cu to B.Cu 
+   Violation between Net Antennae: Via (86.273mm,71.972mm) from F.Cu to B.Cu 
+   Violation between Net Antennae: Via (86.385mm,75.072mm) from F.Cu to B.Cu 
+   Violation between Net Antennae: Via (86.385mm,76.072mm) from F.Cu to B.Cu 
+   Violation between Net Antennae: Via (88.485mm,71.822mm) from F.Cu to B.Cu 
+   Violation between Net Antennae: Via (89.193mm,84.275mm) from F.Cu to B.Cu 
+   Violation between Net Antennae: Via (90.215mm,60.317mm) from F.Cu to B.Cu 
+   Violation between Net Antennae: Via (90.265mm,61.942mm) from F.Cu to B.Cu 
+   Violation between Net Antennae: Via (91.028mm,75.61mm) from F.Cu to B.Cu 
+   Violation between Net Antennae: Via (92.103mm,67.817mm) from F.Cu to B.Cu 
+   Violation between Net Antennae: Via (92.353mm,72.63mm) from F.Cu to B.Cu 
+   Violation between Net Antennae: Via (93.023mm,86.507mm) from F.Cu to B.Cu 
+   Violation between Net Antennae: Via (94.228mm,100.355mm) from F.Cu to B.Cu 
+   Violation between Net Antennae: Via (94.228mm,97.355mm) from F.Cu to B.Cu 
+   Violation between Net Antennae: Via (95.373mm,92.212mm) from F.Cu to B.Cu 
+   Violation between Net Antennae: Via (95.383mm,82.067mm) from F.Cu to B.Cu 
+   Violation between Net Antennae: Via (95.628mm,67.242mm) from F.Cu to B.Cu 
+   Violation between Net Antennae: Via (97.673mm,66.242mm) from F.Cu to B.Cu 
+   Violation between Net Antennae: Via (99.228mm,65.242mm) from F.Cu to B.Cu 
+Rule Violations :63
+
+Processing Rule : Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)
+Rule Violations :0
+
+
+Violations Detected : 218
+Waived Violations : 0
+Time Elapsed        : 00:00:00
