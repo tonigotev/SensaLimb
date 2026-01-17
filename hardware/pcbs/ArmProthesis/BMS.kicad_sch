@@ -4543,6 +4543,12 @@
 		(uuid "0dd67bcc-c7dc-4660-b721-01c143bd7e0d")
 	)
 	(junction
+		(at 156.21 55.88)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0e1e11a1-6257-49ab-a80e-487990a384b9")
+	)
+	(junction
 		(at 116.84 132.08)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4573,22 +4579,16 @@
 		(uuid "2449614a-8fc3-4871-bb08-6e423b750cd3")
 	)
 	(junction
-		(at 44.45 137.16)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "2728fc17-6d70-4908-a7dd-37d8a8055089")
-	)
-	(junction
 		(at 86.36 82.55)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "3441b56f-93e6-4335-960e-253680a01e78")
 	)
 	(junction
-		(at 73.66 179.07)
+		(at 52.07 60.198)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "3b6a75ff-8b64-4fbf-8658-583c9dd247cc")
+		(uuid "387834b1-33d9-41a1-846f-6c479c555821")
 	)
 	(junction
 		(at 148.59 24.13)
@@ -4657,12 +4657,6 @@
 		(uuid "90c1882b-61eb-4f39-b99a-8fa881b55503")
 	)
 	(junction
-		(at 78.74 179.07)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "93188d1b-d3f2-4e24-8fb8-309d895867c4")
-	)
-	(junction
 		(at 26.67 168.91)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4687,10 +4681,10 @@
 		(uuid "c6bbac8b-3c81-4cfd-b4a8-e5cb1f40f2ac")
 	)
 	(junction
-		(at 105.41 168.91)
+		(at 47.498 67.818)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "c6edc182-9b6d-4e03-bde3-3635a4e81064")
+		(uuid "c8f8e646-d157-4c79-9dee-b806ce8ac5e0")
 	)
 	(junction
 		(at 105.41 156.21)
@@ -4699,10 +4693,10 @@
 		(uuid "cf39dfb6-da4a-4dad-9c03-b04ae446d11a")
 	)
 	(junction
-		(at 34.29 137.16)
+		(at 123.19 55.88)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "d700dfec-8878-474a-92da-029d041dc576")
+		(uuid "d3043c71-1a30-45c7-b8fc-adc4e4377009")
 	)
 	(junction
 		(at 140.97 132.08)
@@ -4757,16 +4751,6 @@
 			(type default)
 		)
 		(uuid "026c3552-cad5-4f37-8734-94e9add1f408")
-	)
-	(wire
-		(pts
-			(xy 85.09 179.07) (xy 78.74 179.07)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0330ff5f-1dd5-476a-b057-3c0e96f3cb85")
 	)
 	(wire
 		(pts
@@ -4840,16 +4824,6 @@
 	)
 	(wire
 		(pts
-			(xy 78.74 180.34) (xy 78.74 179.07)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0c4ce25b-9101-46f7-b2b4-460c1dba1fd4")
-	)
-	(wire
-		(pts
 			(xy 25.4 151.13) (xy 29.21 151.13)
 		)
 		(stroke
@@ -4910,23 +4884,23 @@
 	)
 	(wire
 		(pts
-			(xy 33.528 56.388) (xy 33.528 60.198)
+			(xy 47.498 67.818) (xy 52.07 67.818)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "130c4773-c097-41a0-b360-bbd7ff132129")
+	)
+	(wire
+		(pts
+			(xy 33.528 51.308) (xy 33.528 60.198)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "15758395-915a-4c72-ac62-d491552743c9")
-	)
-	(wire
-		(pts
-			(xy 90.17 184.15) (xy 90.17 182.88)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "16e5df00-2ef4-4e2f-87a7-d50f9f49ea16")
 	)
 	(wire
 		(pts
@@ -5010,6 +4984,16 @@
 	)
 	(wire
 		(pts
+			(xy 47.498 67.818) (xy 42.926 67.818)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2570f6e0-6bad-4b45-9878-33826e0e0975")
+	)
+	(wire
+		(pts
 			(xy 29.21 151.13) (xy 34.29 151.13)
 		)
 		(stroke
@@ -5070,16 +5054,6 @@
 	)
 	(wire
 		(pts
-			(xy 72.39 179.07) (xy 73.66 179.07)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2d8729d0-65c6-4b6c-8faf-83f24b20bc44")
-	)
-	(wire
-		(pts
 			(xy 36.83 172.72) (xy 36.83 163.83)
 		)
 		(stroke
@@ -5137,16 +5111,6 @@
 			(type default)
 		)
 		(uuid "34fdf64c-1d3e-4f45-ada4-922f2961bf36")
-	)
-	(wire
-		(pts
-			(xy 96.52 179.07) (xy 95.25 179.07)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "35e161bb-45db-4146-bcbb-5af77ff77af0")
 	)
 	(wire
 		(pts
@@ -5260,7 +5224,7 @@
 	)
 	(wire
 		(pts
-			(xy 52.07 54.61) (xy 52.07 60.198)
+			(xy 52.07 52.578) (xy 52.07 60.198)
 		)
 		(stroke
 			(width 0)
@@ -5377,16 +5341,6 @@
 			(type default)
 		)
 		(uuid "543c1a81-4977-4fbd-9c1b-e27cd6130da4")
-	)
-	(wire
-		(pts
-			(xy 78.74 189.23) (xy 78.74 187.96)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "55075b74-504b-4ebb-9a6a-20273112b84e")
 	)
 	(wire
 		(pts
@@ -5520,16 +5474,6 @@
 	)
 	(wire
 		(pts
-			(xy 105.41 179.07) (xy 104.14 179.07)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6aea1e4b-be48-41d5-8cfc-465ccf419723")
-	)
-	(wire
-		(pts
 			(xy 190.5 55.88) (xy 217.17 55.88)
 		)
 		(stroke
@@ -5567,26 +5511,6 @@
 			(type default)
 		)
 		(uuid "6fd5124b-7e91-4c69-964f-a4b55a92d95b")
-	)
-	(wire
-		(pts
-			(xy 73.66 179.07) (xy 78.74 179.07)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "70666bec-7b95-4b33-b71b-d0f5157ba91c")
-	)
-	(wire
-		(pts
-			(xy 34.29 137.16) (xy 35.56 137.16)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "70c741c6-1e70-40ff-b460-f444d13b48d7")
 	)
 	(wire
 		(pts
@@ -5830,7 +5754,7 @@
 	)
 	(wire
 		(pts
-			(xy 34.29 137.16) (xy 34.29 148.59)
+			(xy 34.29 134.62) (xy 34.29 148.59)
 		)
 		(stroke
 			(width 0)
@@ -5857,6 +5781,16 @@
 			(type default)
 		)
 		(uuid "9b20e13f-d829-46ea-b47a-99be45091163")
+	)
+	(wire
+		(pts
+			(xy 47.498 67.818) (xy 47.498 69.088)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9b3c3a5c-9445-424b-bdeb-5a17f2fe92a9")
 	)
 	(wire
 		(pts
@@ -5967,16 +5901,6 @@
 			(type default)
 		)
 		(uuid "aab34af1-0c1b-44ed-b6c2-7de76cf3f4e0")
-	)
-	(wire
-		(pts
-			(xy 52.07 44.958) (xy 52.07 46.99)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ab6916ca-28f6-4f12-9216-513ed6cdaf7e")
 	)
 	(wire
 		(pts
@@ -6110,13 +6034,13 @@
 	)
 	(wire
 		(pts
-			(xy 34.29 134.62) (xy 34.29 137.16)
+			(xy 123.19 55.88) (xy 156.21 55.88)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "be40e66d-9015-4e62-ae5d-e7d39ce60a2f")
+		(uuid "bda44e43-eb0b-4ede-a5f8-4a5aff9b7c64")
 	)
 	(wire
 		(pts
@@ -6260,16 +6184,6 @@
 	)
 	(wire
 		(pts
-			(xy 43.18 137.16) (xy 44.45 137.16)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d36d99d8-b7e3-41e9-bfe2-ec44f71ca604")
-	)
-	(wire
-		(pts
 			(xy 34.29 151.13) (xy 34.29 153.67)
 		)
 		(stroke
@@ -6277,6 +6191,16 @@
 			(type default)
 		)
 		(uuid "d397a878-ed15-4a5c-aade-6b4977e80a42")
+	)
+	(wire
+		(pts
+			(xy 42.926 64.008) (xy 42.926 67.818)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d452b298-9fd4-4d4a-839e-1d4e0e2ddfd7")
 	)
 	(wire
 		(pts
@@ -6327,16 +6251,6 @@
 			(type default)
 		)
 		(uuid "db926a62-52d2-481c-a376-ffef4b61fb0c")
-	)
-	(wire
-		(pts
-			(xy 105.41 168.91) (xy 105.41 179.07)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "dbf6d688-95bc-46fe-b997-4a9214e7c372")
 	)
 	(wire
 		(pts
@@ -6577,16 +6491,6 @@
 			(type default)
 		)
 		(uuid "ff84cd7e-2f29-476b-83c3-1e6d98145a14")
-	)
-	(wire
-		(pts
-			(xy 73.66 179.07) (xy 73.66 180.34)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ff8bc9df-5d4a-4042-9d53-514db429d577")
 	)
 	(wire
 		(pts
@@ -6996,7 +6900,7 @@
 	)
 	(global_label "PWROFF"
 		(shape output)
-		(at 52.07 44.958 90)
+		(at 52.07 52.578 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7006,7 +6910,7 @@
 		)
 		(uuid "97027621-40ff-41fa-9b00-6984d295ec57")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 52.07 34.4737 90)
+			(at 52.07 42.0937 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7326,7 +7230,7 @@
 	)
 	(global_label "+3.3V"
 		(shape input)
-		(at 33.528 56.388 90)
+		(at 33.528 51.308 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7336,7 +7240,7 @@
 		)
 		(uuid "f3c58d09-dba2-47f1-bfca-8269dabf0abd")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 33.528 47.718 90)
+			(at 33.528 42.638 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7392,22 +7296,22 @@
 	)
 	(global_label "SWCLK"
 		(shape input)
-		(at 73.66 180.34 270)
+		(at 72.39 179.07 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right)
+			(justify left)
 		)
 		(uuid "fffa6f4a-1189-4875-86a2-13d6d5b8b005")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 73.66 189.5542 90)
+			(at 81.6042 179.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -7662,7 +7566,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 150.368 35.56 90)
 			(effects
 				(font
@@ -7691,6 +7595,24 @@
 		)
 		(property "Website" "https://store.comet.bg/Catalogue/Product/36541/"
 			(at 148.59 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "website" ""
+			(at 148.59 35.56 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C106232"
+			(at 148.59 35.56 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7740,7 +7662,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 28.448 177.8 90)
 			(effects
 				(font
@@ -7768,6 +7690,24 @@
 			)
 		)
 		(property "Website" ""
+			(at 26.67 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "website" ""
+			(at 26.67 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25900"
 			(at 26.67 177.8 0)
 			(effects
 				(font
@@ -7887,7 +7827,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 17.78 159.7152 0)
 			(effects
 				(font
@@ -7916,6 +7856,24 @@
 		)
 		(property "Website" "https://eu.mouser.com/ProductDetail/Murata-Electronics/GCM188R71H104JA57D?qs=ui%252B2d9lVEI4ebGBmb9XKtA%3D%3D"
 			(at 21.59 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "website" ""
+			(at 21.59 158.75 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C346206"
+			(at 21.59 158.75 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7993,6 +7951,24 @@
 				(hide yes)
 			)
 		)
+		(property "website" ""
+			(at 259.842 96.266 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" ""
+			(at 259.842 96.266 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project ""
 				(path "/c857089e-0150-42bc-8543-a350893e4e37"
@@ -8027,7 +8003,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 121.92 54.9148 0)
 			(effects
 				(font
@@ -8054,8 +8030,26 @@
 				(hide yes)
 			)
 		)
-		(property "Website" "https://eu.mouser.com/ProductDetail/TDK/C1608X7R1H105K080AB?qs=efUn273yAhdzCWVW9RXgig%3D%3D"
+		(property "Website" ""
 			(at 118.11 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "website" ""
+			(at 118.11 55.88 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C15849"
+			(at 118.11 55.88 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8278,6 +8272,24 @@
 				(hide yes)
 			)
 		)
+		(property "website" ""
+			(at 231.14 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C157925"
+			(at 231.14 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "8c8fd702-aaac-4e7b-837c-dec999aa2881")
 		)
@@ -8476,6 +8488,24 @@
 				(hide yes)
 			)
 		)
+		(property "website" ""
+			(at 261.62 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" ""
+			(at 261.62 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "e5147246-e5c6-442b-9679-d1dac0aa8e09")
 		)
@@ -8540,6 +8570,24 @@
 			)
 		)
 		(property "Description" "Microminiature SMT Side Actuated, 4.2 x 2.8 x 1.42mm, without pegs, with shield pin"
+			(at 26.67 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "website" ""
+			(at 26.67 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" ""
 			(at 26.67 134.62 0)
 			(effects
 				(font
@@ -8621,6 +8669,24 @@
 				(hide yes)
 			)
 		)
+		(property "website" ""
+			(at 259.842 100.838 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" ""
+			(at 259.842 100.838 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project ""
 				(path "/c857089e-0150-42bc-8543-a350893e4e37"
@@ -8685,6 +8751,24 @@
 				(hide yes)
 			)
 		)
+		(property "website" ""
+			(at 257.81 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C189893"
+			(at 257.81 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "9ab8f3b4-9c2d-4eee-83ea-193e8bbc010b")
 		)
@@ -8725,7 +8809,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 118.618 125.73 90)
 			(effects
 				(font
@@ -8761,6 +8845,24 @@
 				(hide yes)
 			)
 		)
+		(property "website" ""
+			(at 116.84 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22935"
+			(at 116.84 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "ad697ef7-ab0f-4fb6-b7d9-1bca43aa61ba")
 		)
@@ -8778,7 +8880,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 42.926 64.008 0)
+		(at 47.498 69.088 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -8787,7 +8889,7 @@
 		(dnp no)
 		(uuid "3db32b86-8b99-4edf-a4ec-3811e4f6905e")
 		(property "Reference" "#PWR014"
-			(at 42.926 70.358 0)
+			(at 47.498 75.438 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8796,7 +8898,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 39.116 65.532 0)
+			(at 43.688 70.612 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8804,7 +8906,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 42.926 64.008 0)
+			(at 47.498 69.088 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8813,7 +8915,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 42.926 64.008 0)
+			(at 47.498 69.088 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8822,7 +8924,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 42.926 64.008 0)
+			(at 47.498 69.088 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8837,71 +8939,6 @@
 			(project "BMS"
 				(path "/c857089e-0150-42bc-8543-a350893e4e37"
 					(reference "#PWR014")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 78.74 189.23 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "41a56841-c545-4a91-8af3-98ae66928266")
-		(property "Reference" "#PWR022"
-			(at 78.74 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 78.74 193.548 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 78.74 189.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 78.74 189.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 78.74 189.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "521b4117-39c0-40a6-a368-64156405058a")
-		)
-		(instances
-			(project "BMS"
-				(path "/c857089e-0150-42bc-8543-a350893e4e37"
-					(reference "#PWR022")
 					(unit 1)
 				)
 			)
@@ -8932,7 +8969,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 154.178 120.65 90)
 			(effects
 				(font
@@ -8960,6 +8997,24 @@
 			)
 		)
 		(property "Website" "https://store.comet.bg/Catalogue/Product/36541/"
+			(at 152.4 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "website" ""
+			(at 152.4 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C106232"
 			(at 152.4 120.65 0)
 			(effects
 				(font
@@ -9038,6 +9093,24 @@
 			)
 		)
 		(property "Website" "https://www.mouser.bg/ProductDetail/Murata-Electronics/NCP18XH103F03RB?qs=k3rQb2PKXqkF9YvF09qsvw%3D%3D"
+			(at 123.19 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "website" ""
+			(at 123.19 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C181647"
 			(at 123.19 80.01 0)
 			(effects
 				(font
@@ -9296,6 +9369,24 @@
 				(hide yes)
 			)
 		)
+		(property "website" ""
+			(at 261.62 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" ""
+			(at 261.62 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "495cae62-4dc0-4185-b1e2-c7f360c6f7ca")
 		)
@@ -9343,7 +9434,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 153.67 109.5248 0)
 			(effects
 				(font
@@ -9372,6 +9463,24 @@
 		)
 		(property "Website" "https://eu.mouser.com/ProductDetail/Murata-Electronics/GCM188R71H104JA57D?qs=ui%252B2d9lVEI4ebGBmb9XKtA%3D%3D"
 			(at 157.48 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "website" ""
+			(at 157.48 110.49 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C14663"
+			(at 157.48 110.49 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9530,6 +9639,24 @@
 				(hide yes)
 			)
 		)
+		(property "website" ""
+			(at 107.95 129.54 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C2934854"
+			(at 107.95 129.54 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "0aa6b510-dd3e-48a2-b08b-5c48546f039f")
 		)
@@ -9575,7 +9702,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 88.138 69.85 90)
 			(effects
 				(font
@@ -9603,6 +9730,24 @@
 			)
 		)
 		(property "Website" ""
+			(at 86.36 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "website" ""
+			(at 86.36 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C60490"
 			(at 86.36 69.85 0)
 			(effects
 				(font
@@ -9657,7 +9802,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 139.7 109.5248 0)
 			(effects
 				(font
@@ -9686,6 +9831,24 @@
 		)
 		(property "Website" "https://eu.mouser.com/ProductDetail/Murata-Electronics/GCM188R71H104JA57D?qs=ui%252B2d9lVEI4ebGBmb9XKtA%3D%3D"
 			(at 135.89 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "website" ""
+			(at 135.89 110.49 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C14663"
+			(at 135.89 110.49 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9781,82 +9944,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 78.74 184.15 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "5aab8b71-d4be-4012-9866-2ca36f67a9c4")
-		(property "Reference" "R15"
-			(at 83.312 183.134 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "10k"
-			(at 83.312 185.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
-			(at 76.962 184.15 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 78.74 184.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 78.74 184.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Website" "https://store.comet.bg/Catalogue/Product/36541/"
-			(at 78.74 184.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "ff1d06df-49ef-4e54-94d5-3e4b8eec8435")
-		)
-		(pin "2"
-			(uuid "c2119a0d-8340-4654-a589-5f2c3cba523e")
-		)
-		(instances
-			(project "BMS"
-				(path "/c857089e-0150-42bc-8543-a350893e4e37"
-					(reference "R15")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C")
 		(at 190.5 71.12 0)
 		(unit 1)
@@ -9883,7 +9970,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 191.4652 74.93 0)
 			(effects
 				(font
@@ -9910,7 +9997,25 @@
 				(hide yes)
 			)
 		)
-		(property "Website" "http://eu.mouser.com/ProductDetail/Murata-Electronics/GCJ21BR71H105MA01K?qs=QzBtWTOodeVZ%252BTk8SNChEw%3D%3D"
+		(property "Website" ""
+			(at 190.5 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "website" ""
+			(at 190.5 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C15849"
 			(at 190.5 71.12 0)
 			(effects
 				(font
@@ -10001,6 +10106,24 @@
 				(hide yes)
 			)
 		)
+		(property "website" ""
+			(at 105.41 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C85202"
+			(at 105.41 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "c7dc248f-695e-436b-9b77-513c3c530b3e")
 		)
@@ -10050,7 +10173,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 96.52 157.988 90)
 			(effects
 				(font
@@ -10079,6 +10202,24 @@
 		)
 		(property "Website" "https://store.comet.bg/Catalogue/Product/36541/"
 			(at 96.52 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "website" ""
+			(at 96.52 156.21 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C60490"
+			(at 96.52 156.21 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10126,7 +10267,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 173.99 57.658 90)
 			(effects
 				(font
@@ -10155,6 +10296,24 @@
 		)
 		(property "Website" "https://store.comet.bg/Catalogue/Product/36541/"
 			(at 173.99 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "website" ""
+			(at 173.99 55.88 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C106232"
+			(at 173.99 55.88 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10275,7 +10434,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 191.4652 93.98 0)
 			(effects
 				(font
@@ -10302,7 +10461,25 @@
 				(hide yes)
 			)
 		)
-		(property "Website" "http://eu.mouser.com/ProductDetail/Murata-Electronics/GCJ21BR71H105MA01K?qs=QzBtWTOodeVZ%252BTk8SNChEw%3D%3D"
+		(property "Website" ""
+			(at 190.5 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "website" ""
+			(at 190.5 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C15849"
 			(at 190.5 90.17 0)
 			(effects
 				(font
@@ -10489,7 +10666,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 149.86 109.5248 0)
 			(effects
 				(font
@@ -10518,6 +10695,24 @@
 		)
 		(property "Website" "https://eu.mouser.com/ProductDetail/Murata-Electronics/GCM188R71H104JA57D?qs=ui%252B2d9lVEI4ebGBmb9XKtA%3D%3D"
 			(at 146.05 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "website" ""
+			(at 146.05 110.49 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C14663"
+			(at 146.05 110.49 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10568,7 +10763,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 189.5348 64.77 0)
 			(effects
 				(font
@@ -10595,7 +10790,25 @@
 				(hide yes)
 			)
 		)
-		(property "Website" "http://eu.mouser.com/ProductDetail/Murata-Electronics/GCJ21BR71H105MA01K?qs=QzBtWTOodeVZ%252BTk8SNChEw%3D%3D"
+		(property "Website" ""
+			(at 190.5 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "website" ""
+			(at 190.5 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C15849"
 			(at 190.5 60.96 0)
 			(effects
 				(font
@@ -10776,7 +10989,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 173.99 67.818 90)
 			(effects
 				(font
@@ -10812,6 +11025,24 @@
 				(hide yes)
 			)
 		)
+		(property "website" ""
+			(at 173.99 66.04 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C106232"
+			(at 173.99 66.04 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "cf33f481-35b7-41eb-a1d5-1a4b30f9ac93")
 		)
@@ -10829,7 +11060,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 52.07 50.8 0)
+		(at 52.07 64.008 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10838,7 +11069,7 @@
 		(fields_autoplaced yes)
 		(uuid "8fe82047-d94e-4522-8410-8442fcfc479a")
 		(property "Reference" "R12"
-			(at 54.102 49.5299 0)
+			(at 54.102 62.7379 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10847,7 +11078,7 @@
 			)
 		)
 		(property "Value" "1k"
-			(at 54.102 52.0699 0)
+			(at 54.102 65.2779 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10855,8 +11086,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
-			(at 50.292 50.8 90)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 50.292 64.008 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10865,7 +11096,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 52.07 50.8 0)
+			(at 52.07 64.008 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10874,7 +11105,25 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 52.07 50.8 0)
+			(at 52.07 64.008 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "website" ""
+			(at 52.07 64.008 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C11702"
+			(at 52.07 64.008 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10987,7 +11236,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 142.748 120.65 90)
 			(effects
 				(font
@@ -11015,6 +11264,24 @@
 			)
 		)
 		(property "Website" "https://store.comet.bg/Catalogue/Product/36541/"
+			(at 140.97 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "website" ""
+			(at 140.97 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C106232"
 			(at 140.97 120.65 0)
 			(effects
 				(font
@@ -11055,7 +11322,7 @@
 				)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "5m"
 			(at 146.05 137.414 90)
 			(effects
 				(font
@@ -11063,7 +11330,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor:R_3920"
+		(property "Footprint" "Resistor_SMD:R_2512_6332Metric"
 			(at 146.05 133.858 90)
 			(effects
 				(font
@@ -11092,6 +11359,24 @@
 		)
 		(property "Website" ""
 			(at 146.05 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "website" ""
+			(at 146.05 132.08 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22385263"
+			(at 146.05 132.08 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11145,7 +11430,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 106.68 86.6648 0)
 			(effects
 				(font
@@ -11172,8 +11457,26 @@
 				(hide yes)
 			)
 		)
-		(property "Website" "https://eu.mouser.com/ProductDetail/TDK/C1608X7R1H105K080AB?qs=efUn273yAhdzCWVW9RXgig%3D%3D"
+		(property "Website" ""
 			(at 102.87 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "website" ""
+			(at 102.87 87.63 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C15849"
+			(at 102.87 87.63 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11221,7 +11524,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 173.99 95.758 90)
 			(effects
 				(font
@@ -11250,6 +11553,24 @@
 		)
 		(property "Website" "https://store.comet.bg/Catalogue/Product/36541/"
 			(at 173.99 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "website" ""
+			(at 173.99 93.98 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C106232"
+			(at 173.99 93.98 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11362,7 +11683,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Diode_SMD:D_0603_1608Metric_Pad1.05x0.95mm_HandSolder"
+		(property "Footprint" "Diode_SMD:D_0603_1608Metric"
 			(at 86.36 156.21 0)
 			(effects
 				(font
@@ -11381,6 +11702,24 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
+			(at 86.36 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "website" ""
+			(at 86.36 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C282129"
 			(at 86.36 156.21 0)
 			(effects
 				(font
@@ -11458,6 +11797,24 @@
 		)
 		(property "Description" "Two pin crystal"
 			(at 29.21 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "website" ""
+			(at 29.21 154.94 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C519280"
+			(at 29.21 154.94 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11598,6 +11955,24 @@
 			)
 		)
 		(property "Description" ""
+			(at 147.32 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "website" ""
+			(at 147.32 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" ""
 			(at 147.32 172.72 0)
 			(effects
 				(font
@@ -11762,6 +12137,24 @@
 				(hide yes)
 			)
 		)
+		(property "website" ""
+			(at 77.47 82.55 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C13564"
+			(at 77.47 82.55 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "e5c7a795-da77-4706-91c9-ecd1d7c39fdf")
 		)
@@ -11903,6 +12296,24 @@
 				(hide yes)
 			)
 		)
+		(property "website" ""
+			(at 259.842 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" ""
+			(at 259.842 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project ""
 				(path "/c857089e-0150-42bc-8543-a350893e4e37"
@@ -11939,7 +12350,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 34.798 177.8 90)
 			(effects
 				(font
@@ -11967,6 +12378,24 @@
 			)
 		)
 		(property "Website" ""
+			(at 33.02 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "website" ""
+			(at 33.02 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25900"
 			(at 33.02 177.8 0)
 			(effects
 				(font
@@ -12070,6 +12499,24 @@
 				(hide yes)
 			)
 		)
+		(property "website" ""
+			(at 86.36 59.69 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C232841"
+			(at 86.36 59.69 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "88228b0a-1342-47c9-9a64-5b4e0afd6de8")
 		)
@@ -12086,82 +12533,6 @@
 			(project ""
 				(path "/c857089e-0150-42bc-8543-a350893e4e37"
 					(reference "D1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 100.33 179.07 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "bf765e83-a7b0-457f-944a-6f4ff49c0f6b")
-		(property "Reference" "R14"
-			(at 100.203 182.499 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "330"
-			(at 100.203 184.785 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
-			(at 100.33 177.292 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 100.33 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 100.33 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Website" "https://store.comet.bg/Catalogue/Product/36541/"
-			(at 100.33 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "76fdf40d-d887-4951-816c-0fd6e3a82837")
-		)
-		(pin "2"
-			(uuid "05496c3b-5777-401e-a658-f11197c6e300")
-		)
-		(instances
-			(project "BMS"
-				(path "/c857089e-0150-42bc-8543-a350893e4e37"
-					(reference "R14")
 					(unit 1)
 				)
 			)
@@ -12222,6 +12593,24 @@
 				(hide yes)
 			)
 		)
+		(property "website" ""
+			(at 97.79 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" ""
+			(at 97.79 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "b1fcf471-b87b-439b-8a83-fc173029f8a5")
 		)
@@ -12267,7 +12656,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 191.4652 85.09 0)
 			(effects
 				(font
@@ -12294,7 +12683,25 @@
 				(hide yes)
 			)
 		)
-		(property "Website" "http://eu.mouser.com/ProductDetail/Murata-Electronics/GCJ21BR71H105MA01K?qs=QzBtWTOodeVZ%252BTk8SNChEw%3D%3D"
+		(property "Website" ""
+			(at 190.5 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "website" ""
+			(at 190.5 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C15849"
 			(at 190.5 81.28 0)
 			(effects
 				(font
@@ -12418,7 +12825,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 96.52 170.688 90)
 			(effects
 				(font
@@ -12454,6 +12861,24 @@
 				(hide yes)
 			)
 		)
+		(property "website" ""
+			(at 96.52 168.91 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25900"
+			(at 96.52 168.91 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "a3c1a8d6-7fa8-4bcb-8003-a055f543660f")
 		)
@@ -12470,81 +12895,6 @@
 			(project "BMS"
 				(path "/c857089e-0150-42bc-8543-a350893e4e37"
 					(reference "R19")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Switch:CK_KMS2xxG")
-		(at 90.17 179.07 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "c43c88b3-ff3b-4ddf-8727-e34bbce6993b")
-		(property "Reference" "SW3"
-			(at 82.804 182.372 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Value" "CK_KMS2xxG"
-			(at 86.741 184.785 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Button_Switch_SMD:SW_SPST_CK_KMS2xxG"
-			(at 90.17 173.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.ckswitches.com/media/1482/kms.pdf"
-			(at 90.17 173.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Microminiature SMT Side Actuated, 4.2 x 2.8 x 1.42mm, without pegs, with shield pin"
-			(at 90.17 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "9cd45481-f679-495c-84e3-022ba1b4e2eb")
-		)
-		(pin "2"
-			(uuid "3220d7de-4f7c-4152-83b0-0dbcc9113366")
-		)
-		(pin "SH"
-			(uuid "1bec1b48-a909-41dd-acdb-a67b6015a852")
-		)
-		(instances
-			(project "BMS"
-				(path "/c857089e-0150-42bc-8543-a350893e4e37"
-					(reference "SW3")
 					(unit 1)
 				)
 			)
@@ -12575,7 +12925,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 84.328 125.73 90)
 			(effects
 				(font
@@ -12603,6 +12953,24 @@
 			)
 		)
 		(property "Website" "https://store.comet.bg/Catalogue/Product/4430/"
+			(at 82.55 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "website" ""
+			(at 82.55 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22935"
 			(at 82.55 125.73 0)
 			(effects
 				(font
@@ -12681,6 +13049,24 @@
 				(hide yes)
 			)
 		)
+		(property "website" ""
+			(at 42.926 60.198 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" ""
+			(at 42.926 60.198 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "9cd13439-0305-4446-a40b-af3704bf9c7c")
 		)
@@ -12724,7 +13110,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 45.72 138.1252 0)
 			(effects
 				(font
@@ -12753,6 +13139,24 @@
 		)
 		(property "Website" "https://eu.mouser.com/ProductDetail/Murata-Electronics/GCM188R71H104JA57D?qs=ui%252B2d9lVEI4ebGBmb9XKtA%3D%3D"
 			(at 49.53 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "website" ""
+			(at 49.53 137.16 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C110251"
+			(at 49.53 137.16 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12803,7 +13207,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 133.35 46.6852 0)
 			(effects
 				(font
@@ -12832,6 +13236,24 @@
 		)
 		(property "Website" "https://eu.mouser.com/ProductDetail/Murata-Electronics/GCQ1555C1H4R7WB01D?qs=0lQeLiL1qyYRZt16ZY6xZA%3D%3D"
 			(at 129.54 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "website" ""
+			(at 129.54 45.72 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C167420"
+			(at 129.54 45.72 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12975,6 +13397,24 @@
 				(hide yes)
 			)
 		)
+		(property "website" ""
+			(at 54.61 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5456198"
+			(at 54.61 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "15"
 			(uuid "59ff2699-2a34-4b4c-9d44-c5f417d302c1")
 		)
@@ -13075,7 +13515,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_1210_3225Metric_Pad1.33x2.70mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_1210_3225Metric"
 			(at 152.4 46.6852 0)
 			(effects
 				(font
@@ -13111,6 +13551,24 @@
 				(hide yes)
 			)
 		)
+		(property "website" ""
+			(at 156.21 45.72 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C2918502"
+			(at 156.21 45.72 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "9aaf7a05-d2ed-492a-b0af-4fc7a0c5e7df")
 		)
@@ -13121,148 +13579,6 @@
 			(project "BMS"
 				(path "/c857089e-0150-42bc-8543-a350893e4e37"
 					(reference "C11")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 90.17 184.15 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "de9dcd88-5815-4cf9-9327-fd216cfb476e")
-		(property "Reference" "#PWR021"
-			(at 90.17 190.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 90.17 188.468 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 90.17 184.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 90.17 184.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 90.17 184.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "3490e3d6-ec69-4e7a-bfd5-781a2afab70d")
-		)
-		(instances
-			(project "BMS"
-				(path "/c857089e-0150-42bc-8543-a350893e4e37"
-					(reference "#PWR021")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 39.37 137.16 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "e28395db-366b-420f-99ad-b5b31dce1394")
-		(property "Reference" "C15"
-			(at 39.37 129.794 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "0.1uF"
-			(at 39.37 132.334 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
-			(at 43.18 136.1948 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 39.37 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 39.37 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Website" "https://eu.mouser.com/ProductDetail/Murata-Electronics/GCM188R71H104JA57D?qs=ui%252B2d9lVEI4ebGBmb9XKtA%3D%3D"
-			(at 39.37 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "6bf97964-5d05-4d42-b418-d07ca08e70ba")
-		)
-		(pin "2"
-			(uuid "94371f1e-34ac-4ee6-a815-670a2a1e7c0d")
-		)
-		(instances
-			(project "BMS"
-				(path "/c857089e-0150-42bc-8543-a350893e4e37"
-					(reference "C15")
 					(unit 1)
 				)
 			)
@@ -13358,7 +13674,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 17.78 152.0952 0)
 			(effects
 				(font
@@ -13387,6 +13703,24 @@
 		)
 		(property "Website" "https://eu.mouser.com/ProductDetail/Murata-Electronics/GCM188R71H104JA57D?qs=ui%252B2d9lVEI4ebGBmb9XKtA%3D%3D"
 			(at 21.59 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "website" ""
+			(at 21.59 151.13 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C346206"
+			(at 21.59 151.13 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13434,7 +13768,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 173.99 79.248 90)
 			(effects
 				(font
@@ -13463,6 +13797,24 @@
 		)
 		(property "Website" "https://store.comet.bg/Catalogue/Product/36541/"
 			(at 173.99 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "website" ""
+			(at 173.99 77.47 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C106232"
+			(at 173.99 77.47 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13556,6 +13908,24 @@
 				(hide yes)
 			)
 		)
+		(property "website" ""
+			(at 91.44 129.54 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C2934854"
+			(at 91.44 129.54 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "e806c564-d7c7-47f2-afe6-56a4a0824a82")
 		)
@@ -13635,6 +14005,24 @@
 				(hide yes)
 			)
 		)
+		(property "website" ""
+			(at 259.842 110.236 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" ""
+			(at 259.842 110.236 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project ""
 				(path "/c857089e-0150-42bc-8543-a350893e4e37"
@@ -13691,6 +14079,24 @@
 			)
 		)
 		(property "Description" ""
+			(at 257.81 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "website" ""
+			(at 257.81 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C189893"
 			(at 257.81 57.15 0)
 			(effects
 				(font
