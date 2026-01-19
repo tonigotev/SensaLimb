@@ -37,7 +37,8 @@ def resolve_csv_path(data_root: Path, file_arg: str) -> Path:
             return p
 
     # fallback: match by filename across subjects
-    matches = list(data_root.glob(f"Subject_*/*{candidate.name}"))
+    # Avoid globbing with filenames containing '[' / ']' (glob character classes).
+    matches = [p for p in find_recording_files(data_root) if p.name == candidate.name]
     if len(matches) == 1:
         return matches[0]
     if len(matches) > 1:
@@ -52,6 +53,7 @@ def normalize_one_csv(
     maxima: dict[str, float],
     *,
     chunksize: int = 200_000,
+    normalize_angle: bool = False,
 ) -> None:
     """
     Normalize columns [biceps, triceps, angle] by provided maxima and write a CSV.
@@ -85,7 +87,10 @@ def normalize_one_csv(
 
         df.iloc[:, 0] = df.iloc[:, 0] / b_max
         df.iloc[:, 1] = df.iloc[:, 1] / t_max
-        df.iloc[:, 2] = df.iloc[:, 2] / a_max
+        # IMPORTANT: Keep angle in degrees by default (needed for labeling / thresholds).
+        # Only normalize angle if explicitly requested.
+        if normalize_angle:
+            df.iloc[:, 2] = df.iloc[:, 2] / a_max
 
         df.to_csv(out_path, index=False, header=False, mode="w" if first else "a")
         first = False
@@ -128,6 +133,11 @@ def main() -> None:
         default=200_000,
         help="Chunk size (rows) for CSV streaming (default: 200000).",
     )
+    parser.add_argument(
+        "--normalize-angle",
+        action="store_true",
+        help="Also normalize the angle column. Default keeps angle in degrees (recommended).",
+    )
     args = parser.parse_args()
 
     script_dir = Path(__file__).resolve().parent
@@ -164,7 +174,13 @@ def main() -> None:
 
         rel_subj = subj.lower()
         out_path = out_dir / rel_subj / f"{csv_path.stem}_normalized.csv"
-        normalize_one_csv(csv_path, out_path, maxima, chunksize=int(args.chunksize))
+        normalize_one_csv(
+            csv_path,
+            out_path,
+            maxima,
+            chunksize=int(args.chunksize),
+            normalize_angle=bool(args.normalize_angle),
+        )
         print(f"Saved: {out_path}")
 
 

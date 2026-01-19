@@ -8,7 +8,7 @@ from typing import Iterable, List
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-from scipy.signal import butter, filtfilt, welch
+from scipy.signal import butter, filtfilt, iirnotch, spectrogram, welch
 
 
 SAMPLE_RATE_HZ: float = 2000.0  # 2 kHz
@@ -144,6 +144,19 @@ def bandpass_filter(
     return filtfilt(b, a, x, axis=0)
 
 
+def notch_filter(x: np.ndarray, fs_hz: float, notch_hz: float, q: float = 30.0) -> np.ndarray:
+    """
+    Apply a zero-phase IIR notch filter at notch_hz.
+
+    Useful for removing mains interference (50/60 Hz) and optionally harmonics.
+    q controls notch sharpness (higher = narrower).
+    """
+    if notch_hz <= 0 or notch_hz >= fs_hz / 2:
+        raise ValueError("notch_hz must satisfy 0 < notch_hz < Nyquist.")
+    b, a = iirnotch(w0=notch_hz, Q=q, fs=fs_hz)
+    return filtfilt(b, a, x, axis=0)
+
+
 def welch_psd(
     x: np.ndarray,
     fs_hz: float,
@@ -195,6 +208,9 @@ def plot_psd_for_file(
     output_dir: Path,
     max_freq_hz: float,
     bandpass: tuple[float, float] | None,
+    *,
+    notches: list[float] | None = None,
+    notch_q: float = 30.0,
 ) -> None:
     """
     For a single CSV: compute and plot PSD for biceps and triceps,
@@ -212,6 +228,13 @@ def plot_psd_for_file(
     if bandpass is not None:
         low, high = bandpass
         filtered = bandpass_filter(np.column_stack([biceps, triceps]), SAMPLE_RATE_HZ, low, high)
+        biceps = filtered[:, 0]
+        triceps = filtered[:, 1]
+
+    if notches:
+        filtered = np.column_stack([biceps, triceps])
+        for hz in notches:
+            filtered = notch_filter(filtered, SAMPLE_RATE_HZ, float(hz), q=float(notch_q))
         biceps = filtered[:, 0]
         triceps = filtered[:, 1]
 
@@ -248,6 +271,129 @@ def plot_psd_for_file(
     fig.savefig(out, dpi=150)
     print(f"Saved: {out}")
     # In batch mode we never show; close to avoid accumulating figures.
+    plt.close(fig)
+
+
+def plot_time_frequency_for_file(
+    csv_path: Path,
+    output_dir: Path,
+    *,
+    max_freq_hz: float,
+    bandpass: tuple[float, float] | None,
+    notches: list[float] | None,
+    notch_q: float,
+    win_sec: float,
+    step_sec: float,
+    metric: str,
+    vmin_db: float | None,
+    vmax_db: float | None,
+) -> None:
+    """
+    Compute a time-varying spectrum (sliding-window PSD / spectrogram) for biceps & triceps.
+
+    - Spectrogram: Power spectral density over time, shown as dB/Hz vs Frequency
+    - Metric over time: peak/mean/median frequency per window
+
+    Typical EMG: use bandpass ~20-450 Hz, fs=2kHz.
+    """
+    if win_sec <= 0 or step_sec <= 0:
+        raise ValueError("win_sec and step_sec must be > 0")
+
+    data = load_three_column_csv(csv_path)
+    if data.shape[0] == 0:
+        raise SystemExit(f"No data rows found in: {csv_path}")
+
+    biceps = data[:, 0]
+    triceps = data[:, 1]
+
+    if bandpass is not None:
+        low, high = bandpass
+        filtered = bandpass_filter(np.column_stack([biceps, triceps]), SAMPLE_RATE_HZ, low, high)
+        biceps = filtered[:, 0]
+        triceps = filtered[:, 1]
+
+    # Optional notch filtering (e.g., 50/60 Hz and harmonics)
+    if notches:
+        filtered = np.column_stack([biceps, triceps])
+        for hz in notches:
+            filtered = notch_filter(filtered, SAMPLE_RATE_HZ, float(hz), q=float(notch_q))
+        biceps = filtered[:, 0]
+        triceps = filtered[:, 1]
+
+    nperseg = int(round(win_sec * SAMPLE_RATE_HZ))
+    nstep = int(round(step_sec * SAMPLE_RATE_HZ))
+    if nperseg < 8:
+        raise SystemExit(f"Window too small: win_sec={win_sec} -> nperseg={nperseg}")
+    if nstep < 1:
+        raise SystemExit(f"Step too small: step_sec={step_sec} -> nstep={nstep}")
+    noverlap = nperseg - nstep
+    if noverlap < 0:
+        noverlap = 0
+
+    def compute_spec(x: np.ndarray) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+        f, t, sxx = spectrogram(
+            x,
+            fs=SAMPLE_RATE_HZ,
+            window="hann",
+            nperseg=nperseg,
+            noverlap=noverlap,
+            detrend="constant",
+            scaling="density",
+            mode="psd",
+        )
+        mask = f <= max_freq_hz
+        return f[mask], t, sxx[mask, :]
+
+    f_bi, t_bi, sxx_bi = compute_spec(biceps)
+    f_tr, t_tr, sxx_tr = compute_spec(triceps)
+
+    # Feature per time-slice
+    def feature_over_time(freq: np.ndarray, sxx: np.ndarray) -> np.ndarray:
+        # sxx: (F, T)
+        if metric == "peak":
+            return freq[np.argmax(sxx, axis=0)]
+        if metric == "mean":
+            num = np.sum(freq[:, None] * sxx, axis=0)
+            den = np.sum(sxx, axis=0) + 1e-30
+            return num / den
+        if metric == "median":
+            cs = np.cumsum(sxx, axis=0)
+            cs = cs / (cs[-1, :] + 1e-30)
+            idx = np.argmax(cs >= 0.5, axis=0)
+            return freq[idx]
+        raise SystemExit(f"Unknown metric: {metric}")
+
+    feat_bi = feature_over_time(f_bi, sxx_bi)
+    feat_tr = feature_over_time(f_tr, sxx_tr)
+
+    # Plot spectrograms + feature curves
+    fig, axes = plt.subplots(3, 1, figsize=(12, 10), sharex=True)
+
+    bi_db = 10 * np.log10(sxx_bi + 1e-20)
+    tr_db = 10 * np.log10(sxx_tr + 1e-20)
+
+    im0 = axes[0].pcolormesh(t_bi, f_bi, bi_db, shading="auto", vmin=vmin_db, vmax=vmax_db)
+    axes[0].set_title(f"Biceps Spectrogram (PSD, dB/Hz) — win={win_sec}s step={step_sec}s")
+    axes[0].set_ylabel("Frequency (Hz)")
+    fig.colorbar(im0, ax=axes[0], label="dB/Hz")
+
+    im1 = axes[1].pcolormesh(t_tr, f_tr, tr_db, shading="auto", vmin=vmin_db, vmax=vmax_db)
+    axes[1].set_title(f"Triceps Spectrogram (PSD, dB/Hz) — win={win_sec}s step={step_sec}s")
+    axes[1].set_ylabel("Frequency (Hz)")
+    fig.colorbar(im1, ax=axes[1], label="dB/Hz")
+
+    axes[2].plot(t_bi, feat_bi, label=f"Biceps {metric} freq")
+    axes[2].plot(t_tr, feat_tr, label=f"Triceps {metric} freq")
+    axes[2].set_title(f"Frequency over time ({metric})")
+    axes[2].set_xlabel("Time (s)")
+    axes[2].set_ylabel("Frequency (Hz)")
+    axes[2].grid(True, linestyle="--", linewidth=0.5, alpha=0.6)
+    axes[2].legend()
+
+    fig.tight_layout()
+    out = output_dir / f"{csv_path.stem}_time_frequency_{metric}.png"
+    fig.savefig(out, dpi=150)
+    print(f"Saved: {out}")
     plt.close(fig)
 
 
@@ -379,6 +525,56 @@ def main() -> None:
         help="Also compute and plot Welch PSD for biceps/triceps (best used with --file).",
     )
     parser.add_argument(
+        "--tf",
+        action="store_true",
+        help=(
+            "Compute a time-varying spectrum (spectrogram) for biceps/triceps and save it. "
+            "Best used with --file, or combined with --per-record."
+        ),
+    )
+    parser.add_argument(
+        "--tf-win",
+        type=float,
+        default=0.1,
+        help="Time-frequency window length in seconds (default: 0.1).",
+    )
+    parser.add_argument(
+        "--tf-step",
+        type=float,
+        default=0.1,
+        help="Time-frequency step size in seconds (default: 0.1).",
+    )
+    parser.add_argument(
+        "--tf-metric",
+        choices=["peak", "mean", "median"],
+        default="peak",
+        help="Frequency summary to plot over time (default: peak).",
+    )
+    parser.add_argument(
+        "--notch",
+        type=str,
+        default=None,
+        help='Optional notch frequencies in Hz, e.g. "60" or "60,120,180" to suppress mains and harmonics.',
+    )
+    parser.add_argument(
+        "--notch-q",
+        type=float,
+        default=30.0,
+        help="Notch filter Q (sharpness). Higher = narrower notch. Default: 30.",
+    )
+    parser.add_argument(
+        "--tf-vmin",
+        type=float,
+        default=None,
+        help="Optional spectrogram color scale min (dB/Hz).",
+    )
+    parser.add_argument(
+        "--tf-vmax",
+        type=float,
+        default=None,
+        help="Optional spectrogram color scale max (dB/Hz).",
+    )
+    parser.add_argument(
         "--max-freq",
         type=float,
         default=500.0,
@@ -501,6 +697,13 @@ def main() -> None:
         return
 
     if args.file:
+        if args.file.strip() in {"...", "\"...\"", "'...'"}:
+            raise SystemExit(
+                "You passed a placeholder '...'. Replace it with a real CSV path, e.g.\n"
+                '  --file "ML\\datasets\\Mendeley\\sEMG_recordings\\Subject_2\\record-[2014.12.11-11.7.18].csv"\n'
+                'or just:\n'
+                '  --file "record-[2014.12.11-11.7.18].csv"'
+            )
         # Resolve target CSV path robustly
         candidate = Path(args.file)
         resolved: Path | None = None
@@ -522,7 +725,8 @@ def main() -> None:
         if not resolved:
             # Try matching by filename across subjects
             name = candidate.name
-            matches = list(data_root.glob(f"Subject_*/*{name}")) + list(data_root.glob(f"subject_*/*{name}"))
+            # Avoid globbing with filenames containing '[' / ']' (glob character classes).
+            matches = [p for p in find_recording_files(data_root) if p.name == name]
             if len(matches) == 1:
                 resolved = matches[0]
             elif len(matches) > 1:
@@ -558,16 +762,44 @@ def main() -> None:
             raise SystemExit('Invalid --bandpass. Expected format like "20,450".')
         return (float(parts[0]), float(parts[1]))
 
+    def parse_notches() -> list[float]:
+        if not args.notch:
+            return []
+        parts = [p.strip() for p in args.notch.split(",") if p.strip()]
+        return [float(p) for p in parts]
+
     # Batch mode: generate per-record outputs for all recordings (no GUI windows).
     if args.per_record and not args.file:
         bp = parse_bandpass()
+        notches = parse_notches()
         for csv_path in csv_files:
             subj_dir = csv_path.parent.name.lower()
             per_dir = output_dir / subj_dir / csv_path.stem
             per_dir.mkdir(parents=True, exist_ok=True)
             plot_signals([csv_path], per_dir, show=False, single_file=csv_path)
             if args.psd:
-                plot_psd_for_file(csv_path, per_dir, max_freq_hz=float(args.max_freq), bandpass=bp)
+                plot_psd_for_file(
+                    csv_path,
+                    per_dir,
+                    max_freq_hz=float(args.max_freq),
+                    bandpass=bp,
+                    notches=notches,
+                    notch_q=float(args.notch_q),
+                )
+            if args.tf:
+                plot_time_frequency_for_file(
+                    csv_path,
+                    per_dir,
+                    max_freq_hz=float(args.max_freq),
+                    bandpass=bp,
+                    notches=notches,
+                    notch_q=float(args.notch_q),
+                    win_sec=float(args.tf_win),
+                    step_sec=float(args.tf_step),
+                    metric=str(args.tf_metric),
+                    vmin_db=args.tf_vmin,
+                    vmax_db=args.tf_vmax,
+                )
         print(f"Done. Per-record plots saved under: {output_dir}")
         return
 
@@ -582,6 +814,7 @@ def main() -> None:
 
     if args.psd:
         bp = parse_bandpass()
+        notches = parse_notches()
         # If multiple files were plotted, default PSD to the first one to avoid a cluttered plot.
         target = csv_files[0]
         plot_psd_for_file(
@@ -589,8 +822,28 @@ def main() -> None:
             single_output_dir or output_dir,
             max_freq_hz=float(args.max_freq),
             bandpass=bp,
+            notches=notches,
+            notch_q=float(args.notch_q),
         )
         plt.show()
+
+    if args.tf:
+        bp = parse_bandpass()
+        notches = parse_notches()
+        target = csv_files[0]
+        plot_time_frequency_for_file(
+            target,
+            single_output_dir or output_dir,
+            max_freq_hz=float(args.max_freq),
+            bandpass=bp,
+            notches=notches,
+            notch_q=float(args.notch_q),
+            win_sec=float(args.tf_win),
+            step_sec=float(args.tf_step),
+            metric=str(args.tf_metric),
+            vmin_db=args.tf_vmin,
+            vmax_db=args.tf_vmax,
+        )
 
 
 if __name__ == "__main__":
