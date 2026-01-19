@@ -1620,6 +1620,24 @@
 					(hide yes)
 				)
 			)
+			(property "website" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
 			(property "ki_keywords" "linear voltage regulator low-noise"
 				(at 0 0 0)
 				(effects
@@ -1799,25 +1817,6 @@
 						)
 					)
 				)
-				(pin passive line
-					(at 10.16 2.54 180)
-					(length 2.54)
-					(hide yes)
-					(name "OUT"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "12"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
 				(pin open_collector line
 					(at 10.16 2.54 180)
 					(length 2.54)
@@ -1847,6 +1846,25 @@
 						)
 					)
 					(number "11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 10.16 0 180)
+					(length 2.54)
+					(hide yes)
+					(name "OUT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "12"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -6296,7 +6314,7 @@
 	)
 	(hierarchical_label "GND"
 		(shape input)
-		(at 223.774 152.4 180)
+		(at 223.52 154.94 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6351,7 +6369,7 @@
 	)
 	(hierarchical_label "+5V"
 		(shape input)
-		(at 223.52 154.94 180)
+		(at 223.774 152.4 180)
 		(effects
 			(font
 				(size 1.27 1.27)
