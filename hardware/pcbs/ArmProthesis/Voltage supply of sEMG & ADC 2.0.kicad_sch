@@ -1833,8 +1833,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "113f0afd-42e0-434a-9a33-b9edfc5579b9")
-		(property "Reference" "U6"
-			(at 177.8 70.9929 0)
+		(property "Reference" "J2"
+			(at 177.8 70.3579 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1843,7 +1843,7 @@
 			)
 		)
 		(property "Value" "~"
-			(at 177.8 72.898 0)
+			(at 177.8 72.8979 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2046,7 +2046,7 @@
 			)
 			(project ""
 				(path "/2b971b82-04c2-44b8-8a4b-c54191e7bf3c"
-					(reference "U6")
+					(reference "J2")
 					(unit 1)
 				)
 			)

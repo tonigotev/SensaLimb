@@ -5516,7 +5516,7 @@
 				)
 			)
 		)
-		(property "Value" "75kΩ"
+		(property "Value" "1k"
 			(at 209.296 109.474 0)
 			(effects
 				(font
@@ -5680,7 +5680,7 @@
 				)
 			)
 		)
-		(property "Value" "6.8k"
+		(property "Value" "1k"
 			(at 229.87 94.234 90)
 			(effects
 				(font
@@ -5757,7 +5757,7 @@
 				)
 			)
 		)
-		(property "Value" "10.5kΩ"
+		(property "Value" "10k"
 			(at 267.716 115.316 0)
 			(effects
 				(font
@@ -6785,7 +6785,7 @@
 				)
 			)
 		)
-		(property "Value" "6.8kΩ"
+		(property "Value" "1k"
 			(at 191.262 108.966 90)
 			(effects
 				(font
@@ -7258,7 +7258,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "7.87uF"
 			(at 202.184 117.602 0)
 			(effects
 				(font
@@ -7345,7 +7345,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "316nF"
 			(at 203.454 107.188 90)
 			(effects
 				(font
@@ -7432,7 +7432,7 @@
 				)
 			)
 		)
-		(property "Value" "10kΩ"
+		(property "Value" "1k"
 			(at 267.97 123.444 0)
 			(effects
 				(font
