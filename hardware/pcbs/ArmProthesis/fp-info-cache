@@ -1,4 +1,4 @@
-26638130446526430
+26639899558008472
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -73492,6 +73492,13 @@ net tie
 0
 4
 4
+OP AMPS
+LME49726MY
+
+
+0
+9
+9
 OP AMPS
 OPA2188
 
