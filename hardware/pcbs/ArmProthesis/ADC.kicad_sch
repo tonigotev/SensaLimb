@@ -2888,517 +2888,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "headers:MTSW-150-22-S-D-415"
-			(pin_names
-				(offset 1.016)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "J2"
-				(at -13.208 69.088 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "H_16_2.54mm"
-				(at 0 68.58 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_2x08_P2.54mm_Vertical"
-				(at 8.89 20.828 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" ""
-				(at 6.096 21.844 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" ""
-				(at 6.096 21.844 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "MF" "Samtec"
-				(at 6.096 21.844 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "Description_1" "\n                        \n                            MTSW - Samtec 2.54mm Variable Post Height Header  22 Lead Style\n                        \n"
-				(at 8.89 20.828 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "Package" "None"
-				(at 6.096 21.844 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "Price" "None"
-				(at 6.096 21.844 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "Check_prices" "https://www.snapeda.com/parts/MTSW-150-22-S-D-415/Samtec/view-part/?ref=eda"
-				(at 8.89 20.828 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "STANDARD" "Manufacturer Recommendations"
-				(at 8.89 20.828 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "PARTREV" "R"
-				(at 6.096 21.844 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "SnapEDA_Link" "https://www.snapeda.com/parts/MTSW-150-22-S-D-415/Samtec/view-part/?ref=snap"
-				(at 8.89 20.828 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "MP" "MTSW-150-22-S-D-415"
-				(at 8.89 20.828 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "Availability" "In Stock"
-				(at 6.096 21.844 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "MANUFACTURER" "Samtec"
-				(at 6.096 21.844 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "Centerline_Pitch" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Comment" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "EU_RoHS_Compliance" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Number_of_Positions" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Product_Type" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "MTSW-150-22-S-D-415_0_0"
-				(rectangle
-					(start -7.62 66.04)
-					(end 7.62 44.45)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(pin passive line
-					(at -12.7 50.8 0)
-					(length 5.08)
-					(name "11"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "11"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -12.7 48.26 0)
-					(length 5.08)
-					(name "13"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "13"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -12.7 45.72 0)
-					(length 5.08)
-					(name "15"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "15"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 12.7 53.34 180)
-					(length 5.08)
-					(name "10"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "10"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 12.7 50.8 180)
-					(length 5.08)
-					(name "12"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "12"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 12.7 48.26 180)
-					(length 5.08)
-					(name "14"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "14"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 12.7 45.72 180)
-					(length 5.08)
-					(name "16"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "16"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-			)
-			(symbol "MTSW-150-22-S-D-415_1_0"
-				(pin passive line
-					(at -12.7 63.5 0)
-					(length 5.08)
-					(name "1"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -12.7 60.96 0)
-					(length 5.08)
-					(name "3"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -12.7 58.42 0)
-					(length 5.08)
-					(name "5"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -12.7 55.88 0)
-					(length 5.08)
-					(name "7"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "7"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -12.7 53.34 0)
-					(length 5.08)
-					(name "9"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "9"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 12.7 63.5 180)
-					(length 5.08)
-					(name "2"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 12.7 60.96 180)
-					(length 5.08)
-					(name "4"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 12.7 58.42 180)
-					(length 5.08)
-					(name "6"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 12.7 55.88 180)
-					(length 5.08)
-					(name "8"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "8"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "power:+5V"
 			(power)
 			(pin_numbers
@@ -5015,24 +4504,24 @@
 			)
 		)
 	)
-	(global_label "DB3"
+	(global_label "DB2"
 		(shape input)
-		(at 223.52 90.17 0)
+		(at 196.85 87.63 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left)
+			(justify right)
 		)
-		(uuid "0b839d67-33d5-4410-b40a-834ef07ccc00")
+		(uuid "08c7009b-22fc-4ba9-9ce7-b0de71b45cc5")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 230.2547 90.17 0)
+			(at 190.1153 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 				(hide yes)
 			)
 		)
@@ -5301,6 +4790,50 @@
 			)
 		)
 	)
+	(global_label "DB3"
+		(shape input)
+		(at 196.85 90.17 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "386aaac1-63db-49d9-b3e0-2c6962cb261e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 190.1153 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "DB0"
+		(shape input)
+		(at 196.85 82.55 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "39d814aa-cce1-4db8-a0c5-a8f6e76af08c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 190.1153 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "DB1"
 		(shape output)
 		(at 155.956 73.914 0)
@@ -5389,6 +4922,28 @@
 			)
 		)
 	)
+	(global_label "DB5"
+		(shape input)
+		(at 196.85 95.25 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "4f3ece88-d89d-4f92-8781-2d45c7842c84")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 190.1153 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "V3"
 		(shape output)
 		(at 210.82 55.88 180)
@@ -5433,28 +4988,6 @@
 			)
 		)
 	)
-	(global_label "DB11"
-		(shape input)
-		(at 223.52 100.33 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "5a273ef2-a1b7-4d20-97b7-fdcb460b460d")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 231.4642 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "BUSY"
 		(shape output)
 		(at 268.224 101.854 180)
@@ -5479,22 +5012,22 @@
 	)
 	(global_label "DB13"
 		(shape input)
-		(at 223.52 102.87 0)
+		(at 227.33 95.25 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left)
+			(justify right)
 		)
-		(uuid "638fed19-59b7-4ef4-9a2c-276a92608189")
+		(uuid "61cd99ed-b9db-4c4b-a116-37b7df005c9e")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 231.4642 102.87 0)
+			(at 219.3858 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 				(hide yes)
 			)
 		)
@@ -5543,6 +5076,28 @@
 			)
 		)
 	)
+	(global_label "DB7{slash}DOUTA"
+		(shape input)
+		(at 196.85 100.33 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "73c21caa-71b7-4c3d-9791-2c535daf5877")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 182.7976 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "V2"
 		(shape output)
 		(at 210.82 53.34 180)
@@ -5565,24 +5120,24 @@
 			)
 		)
 	)
-	(global_label "DB9"
+	(global_label "DB8DOUTB"
 		(shape input)
-		(at 223.52 97.79 0)
+		(at 227.33 82.55 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left)
+			(justify right)
 		)
-		(uuid "78f46cf9-f6b6-4f88-8eb6-f3d347ecc0d2")
+		(uuid "7452c9e8-7488-438c-8a17-8fc31b6f13f8")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 230.2547 97.79 0)
+			(at 214.4267 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 				(hide yes)
 			)
 		)
@@ -5605,6 +5160,28 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "DB15"
+		(shape input)
+		(at 227.33 100.33 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "7c793c9c-8aa8-4a26-997e-4da588794797")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 219.3858 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 				(hide yes)
 			)
 		)
@@ -5675,28 +5252,6 @@
 			)
 		)
 	)
-	(global_label "DB5"
-		(shape input)
-		(at 223.52 92.71 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "8641b243-5449-407b-a6db-9c1e62a85565")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 230.2547 92.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "STBY"
 		(shape output)
 		(at 268.224 81.534 180)
@@ -5741,28 +5296,6 @@
 			)
 		)
 	)
-	(global_label "DB4"
-		(shape input)
-		(at 198.12 92.71 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "92b84b25-fd19-4489-a32f-8df72bec74a3")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 191.3853 92.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "CS"
 		(shape output)
 		(at 268.224 99.314 180)
@@ -5803,28 +5336,6 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "DB1"
-		(shape input)
-		(at 223.52 87.63 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "979ad939-7d5e-4823-9948-3b34ca34af10")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 230.2547 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
 				(hide yes)
 			)
 		)
@@ -5913,6 +5424,28 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "DB10"
+		(shape input)
+		(at 227.33 87.63 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "a137e0ec-aac3-4ab8-931c-c80984aaed89")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 219.3858 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 				(hide yes)
 			)
 		)
@@ -6027,28 +5560,6 @@
 			)
 		)
 	)
-	(global_label "DB6"
-		(shape input)
-		(at 198.12 95.25 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "aafa09f1-2897-47f2-ba3c-6611c22abb9c")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 191.3853 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "DB8DOUTB"
 		(shape output)
 		(at 155.956 91.694 0)
@@ -6137,28 +5648,6 @@
 			)
 		)
 	)
-	(global_label "DB10"
-		(shape input)
-		(at 198.12 100.33 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "b0c2246f-4ed6-4d1f-9a24-e2c3e4ac63d8")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 190.1758 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "V4"
 		(shape input)
 		(at 87.376 127.254 180)
@@ -6203,50 +5692,6 @@
 			)
 		)
 	)
-	(global_label "DB2"
-		(shape input)
-		(at 198.12 90.17 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "b723e0af-c47d-4727-9313-2bfeb91ab1d6")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 191.3853 90.17 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "DB15"
-		(shape input)
-		(at 223.52 105.41 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "bb5ccaba-f552-46e5-bff5-ee32e58488d2")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 231.4642 105.41 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "DB3"
 		(shape output)
 		(at 155.956 78.994 0)
@@ -6265,6 +5710,50 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "DB12"
+		(shape input)
+		(at 227.33 92.71 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c3d1b15f-efe5-40f5-91ed-23b359b751e2")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 219.3858 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "DB4"
+		(shape input)
+		(at 196.85 92.71 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c43e587b-23be-4860-bc22-53ec33afdaba")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 190.1153 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 				(hide yes)
 			)
 		)
@@ -6313,9 +5802,9 @@
 			)
 		)
 	)
-	(global_label "DB14"
+	(global_label "DB6"
 		(shape input)
-		(at 198.12 105.41 180)
+		(at 196.85 97.79 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -6323,36 +5812,14 @@
 			)
 			(justify right)
 		)
-		(uuid "cf252cdb-293e-41d2-a97a-3990a0ced9c8")
+		(uuid "cef32a71-f778-4430-882a-51726332b9c0")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 190.1758 105.41 0)
+			(at 190.1153 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "DB7{slash}DOUTA"
-		(shape input)
-		(at 223.52 95.25 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "d835949e-a619-48b9-a09b-84120f2e04a0")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 237.5724 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
 				(hide yes)
 			)
 		)
@@ -6379,28 +5846,6 @@
 			)
 		)
 	)
-	(global_label "DB8DOUTB"
-		(shape input)
-		(at 198.12 97.79 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "dea78bd9-b579-4edd-93f1-2f322e1350a9")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 185.2167 97.79 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "CS"
 		(shape input)
 		(at 95.758 56.134 180)
@@ -6414,6 +5859,28 @@
 		(uuid "e0fd65cb-0fe6-4ca5-88a0-b90488f08ad4")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 90.2933 56.134 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "DB1"
+		(shape input)
+		(at 196.85 85.09 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "e15509f2-1663-4737-b9bd-8bf521e3adf3")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 190.1153 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6467,9 +5934,9 @@
 			)
 		)
 	)
-	(global_label "DB12"
+	(global_label "DB9"
 		(shape input)
-		(at 198.12 102.87 180)
+		(at 227.33 85.09 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -6477,9 +5944,9 @@
 			)
 			(justify right)
 		)
-		(uuid "eb6f8a28-2de2-4306-b8f5-68eaa2f78249")
+		(uuid "e6d6cdab-c071-4811-a094-b8e2714563ca")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 190.1758 102.87 0)
+			(at 220.5953 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6489,9 +5956,9 @@
 			)
 		)
 	)
-	(global_label "DB0"
+	(global_label "DB14"
 		(shape input)
-		(at 198.12 87.63 180)
+		(at 227.33 97.79 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -6499,9 +5966,31 @@
 			)
 			(justify right)
 		)
-		(uuid "f6b7b267-99f5-4089-82ec-2fbc0d84d02b")
+		(uuid "f6f0ae32-25d8-44a3-ac69-ebe3e34ee64d")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 191.3853 87.63 0)
+			(at 219.3858 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "DB11"
+		(shape input)
+		(at 227.33 90.17 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "f795d295-718c-4aef-901f-148136efe933")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 219.3858 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6839,7 +6328,25 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C167339"
+		(property "LCSC" "C52923"
+			(at 210.82 137.922 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PARTREV" ""
+			(at 210.82 137.922 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "STANDARD" ""
 			(at 210.82 137.922 0)
 			(effects
 				(font
@@ -6944,6 +6451,121 @@
 		)
 	)
 	(symbol
+		(lib_id "headers:H_8")
+		(at 218.44 90.17 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "18ae92a2-3dd3-4a4b-b7d6-2e51aec90117")
+		(property "Reference" "U3"
+			(at 244.094 90.1699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "OUT2"
+			(at 244.094 92.075 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector_JST:JST_SH_SM08B-SRSS-TB_1x08-1MP_P1.00mm_Horizontal"
+			(at 218.44 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 218.44 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 218.44 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C160407"
+			(at 218.44 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PARTREV" ""
+			(at 218.44 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "STANDARD" ""
+			(at 218.44 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "81bbc2f3-1aec-4b9f-aa51-149d81f4acdf")
+		)
+		(pin "3"
+			(uuid "90cb0af3-3b37-4b1e-9847-c3f5202b8dc4")
+		)
+		(pin "6"
+			(uuid "213d86d7-11d3-43fb-9739-6717a3bffc4e")
+		)
+		(pin "7"
+			(uuid "af0d53a4-b176-4bc9-adb8-e3bb1a60b5c8")
+		)
+		(pin "8"
+			(uuid "6260fb49-fa66-4889-b23e-1534f97fca67")
+		)
+		(pin "2"
+			(uuid "f5705e49-bbec-40d1-afc7-0d4a36e2c28e")
+		)
+		(pin "4"
+			(uuid "caab7e44-e95c-4bd8-9d9e-ddf4c24a71ba")
+		)
+		(pin "5"
+			(uuid "c26ecf47-a200-4690-a8b7-171299a9dae6")
+		)
+		(instances
+			(project "ADC"
+				(path "/e7acbbb1-ecaa-48ea-b3f0-162d5edce236"
+					(reference "U3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Connector_Generic:Conn_01x12")
 		(at 273.304 94.234 0)
 		(unit 1)
@@ -6962,7 +6584,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "~"
+		(property "Value" "SET"
 			(at 276.352 96.7739 0)
 			(effects
 				(font
@@ -6999,7 +6621,25 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C725944"
+			(at 273.304 94.234 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PARTREV" ""
+			(at 273.304 94.234 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "STANDARD" ""
 			(at 273.304 94.234 0)
 			(effects
 				(font
@@ -7213,7 +6853,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "~"
+		(property "Value" "IN"
 			(at 227.584 60.325 0)
 			(effects
 				(font
@@ -7250,6 +6890,24 @@
 			)
 		)
 		(property "LCSC" "C265111"
+			(at 201.93 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PARTREV" ""
+			(at 201.93 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "STANDARD" ""
 			(at 201.93 58.42 0)
 			(effects
 				(font
@@ -7310,7 +6968,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "~"
+		(property "Value" "PWR"
 			(at 228.6 114.2999 0)
 			(effects
 				(font
@@ -7347,6 +7005,24 @@
 			)
 		)
 		(property "LCSC" "C189893"
+			(at 222.25 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PARTREV" ""
+			(at 222.25 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "STANDARD" ""
 			(at 222.25 113.03 0)
 			(effects
 				(font
@@ -7614,7 +7290,25 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C167339"
+		(property "LCSC" "C52923"
+			(at 65.786 117.348 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PARTREV" ""
+			(at 65.786 117.348 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "STANDARD" ""
 			(at 65.786 117.348 90)
 			(effects
 				(font
@@ -7672,7 +7366,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Switches:switch1"
+		(property "Footprint" "Button_Switch_SMD:SW_SPDT_Shouhan_MSK12C02"
 			(at 43.942 49.784 0)
 			(effects
 				(font
@@ -7753,7 +7447,25 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C431540"
+			(at 43.942 49.784 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PARTREV" ""
+			(at 43.942 49.784 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "STANDARD" ""
 			(at 43.942 49.784 90)
 			(effects
 				(font
@@ -7918,284 +7630,28 @@
 				(hide yes)
 			)
 		)
+		(property "PARTREV" ""
+			(at 46.482 140.208 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "STANDARD" ""
+			(at 46.482 140.208 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project ""
 				(path "/e7acbbb1-ecaa-48ea-b3f0-162d5edce236"
 					(reference "H1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "headers:MTSW-150-22-S-D-415")
-		(at 210.82 151.13 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "6e6db621-107d-445f-9561-9f0b5c5f57ed")
-		(property "Reference" "J1"
-			(at 197.612 82.042 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "H_16_2.54mm"
-			(at 210.82 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Connector_JST:JST_SUR_SM16B-SURS-TF_1x16-1MP_P0.80mm_Horizontal"
-			(at 219.71 130.302 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 216.916 129.286 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 216.916 129.286 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MF" "Samtec"
-			(at 216.916 129.286 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Description_1" "\n                        \n                            MTSW - Samtec 2.54mm Variable Post Height Header  22 Lead Style\n                        \n"
-			(at 219.71 130.302 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Package" "None"
-			(at 216.916 129.286 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Price" "None"
-			(at 216.916 129.286 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Check_prices" "https://www.snapeda.com/parts/MTSW-150-22-S-D-415/Samtec/view-part/?ref=eda"
-			(at 219.71 130.302 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "STANDARD" "Manufacturer Recommendations"
-			(at 219.71 130.302 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "PARTREV" "R"
-			(at 216.916 129.286 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "SnapEDA_Link" "https://www.snapeda.com/parts/MTSW-150-22-S-D-415/Samtec/view-part/?ref=snap"
-			(at 219.71 130.302 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "MP" "MTSW-150-22-S-D-415"
-			(at 219.71 130.302 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Availability" "In Stock"
-			(at 216.916 129.286 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER" "Samtec"
-			(at 216.916 129.286 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Centerline_Pitch" ""
-			(at 210.82 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Comment" ""
-			(at 210.82 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "EU_RoHS_Compliance" ""
-			(at 210.82 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Number_of_Positions" ""
-			(at 210.82 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Product_Type" ""
-			(at 210.82 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" ""
-			(at 210.82 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "5"
-			(uuid "dad403ca-fcc3-4916-ba57-33d6b7b56628")
-		)
-		(pin "4"
-			(uuid "79559e33-30d3-4468-be56-796bb7e9b913")
-		)
-		(pin "14"
-			(uuid "c5fec9ae-b57f-4aae-8ef9-84137e481ad9")
-		)
-		(pin "9"
-			(uuid "04d74537-2cbf-4bbf-8b49-b917ebd45cfc")
-		)
-		(pin "2"
-			(uuid "ee89929e-7299-4611-add9-6422bf547c3c")
-		)
-		(pin "12"
-			(uuid "eb9b37f3-f6f6-481e-b26c-228110cb311b")
-		)
-		(pin "3"
-			(uuid "865fdfe1-232b-42bf-b278-c3838528543b")
-		)
-		(pin "6"
-			(uuid "c48cb3ca-ad0b-4b7f-9cc0-13f839f317c6")
-		)
-		(pin "15"
-			(uuid "d9594e60-e7ff-4a18-b795-5b59feee93cf")
-		)
-		(pin "8"
-			(uuid "c3ff2c0c-2cfe-48ad-937d-69463999c261")
-		)
-		(pin "13"
-			(uuid "193a5c98-f284-48ce-ad49-26812696320a")
-		)
-		(pin "10"
-			(uuid "6304a727-a540-401d-86b6-28cdb3376492")
-		)
-		(pin "7"
-			(uuid "ac7be1e2-1255-4f67-8a98-81d831da41dd")
-		)
-		(pin "1"
-			(uuid "2df37d5a-5de5-45c5-828d-fc771dc623be")
-		)
-		(pin "16"
-			(uuid "656afb55-3a5c-44b1-84d6-6c077221665b")
-		)
-		(pin "11"
-			(uuid "bb1ccec2-6a7e-49d4-8add-af9fb0aecd3b")
-		)
-		(instances
-			(project "ADC"
-				(path "/e7acbbb1-ecaa-48ea-b3f0-162d5edce236"
-					(reference "J1")
 					(unit 1)
 				)
 			)
@@ -8308,6 +7764,24 @@
 			)
 		)
 		(property "LCSC" "C19702"
+			(at 53.086 117.348 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PARTREV" ""
+			(at 53.086 117.348 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "STANDARD" ""
 			(at 53.086 117.348 0)
 			(effects
 				(font
@@ -8517,6 +7991,24 @@
 			)
 		)
 		(property "LCSC" "C11337"
+			(at 234.696 139.192 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PARTREV" ""
+			(at 234.696 139.192 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "STANDARD" ""
 			(at 234.696 139.192 0)
 			(effects
 				(font
@@ -8754,10 +8246,143 @@
 				(hide yes)
 			)
 		)
+		(property "PARTREV" ""
+			(at 53.594 140.208 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "STANDARD" ""
+			(at 53.594 140.208 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project "ADC"
 				(path "/e7acbbb1-ecaa-48ea-b3f0-162d5edce236"
 					(reference "H2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "headers:H_8")
+		(at 187.96 90.17 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8c47e9b7-6c18-4bb4-bf25-e5eb0f1697d8")
+		(property "Reference" "U4"
+			(at 213.614 90.1699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "OUT1"
+			(at 213.614 92.075 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector_JST:JST_SH_SM08B-SRSS-TB_1x08-1MP_P1.00mm_Horizontal"
+			(at 187.96 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 187.96 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 187.96 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C160407"
+			(at 187.96 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PARTREV" ""
+			(at 187.96 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "STANDARD" ""
+			(at 187.96 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a9f22f4f-b45d-49c2-9fa9-2829d485e460")
+		)
+		(pin "3"
+			(uuid "24304449-7ec2-48e3-ad74-b1979543539c")
+		)
+		(pin "6"
+			(uuid "da4be7ec-125e-425d-b8aa-72faa255bfc6")
+		)
+		(pin "7"
+			(uuid "52a8958f-4a9e-47ac-8856-a1b750b9fe8b")
+		)
+		(pin "8"
+			(uuid "5b651169-beb2-438c-8b3a-6a9ca68211b1")
+		)
+		(pin "2"
+			(uuid "1d168e5b-cbcc-4649-9331-9c73d8207748")
+		)
+		(pin "4"
+			(uuid "1fb0bf8c-07e2-4202-9874-653deb610e05")
+		)
+		(pin "5"
+			(uuid "94530016-51ed-4a38-91ea-008be47f4b25")
+		)
+		(instances
+			(project "ADC"
+				(path "/e7acbbb1-ecaa-48ea-b3f0-162d5edce236"
+					(reference "U4")
 					(unit 1)
 				)
 			)
@@ -8872,7 +8497,25 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C141382"
+		(property "LCSC" "C307331"
+			(at 150.876 45.974 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PARTREV" ""
+			(at 150.876 45.974 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "STANDARD" ""
 			(at 150.876 45.974 90)
 			(effects
 				(font
@@ -9010,6 +8653,24 @@
 			)
 		)
 		(property "LCSC" "C19702"
+			(at 71.374 117.348 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PARTREV" ""
+			(at 71.374 117.348 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "STANDARD" ""
 			(at 71.374 117.348 90)
 			(effects
 				(font
@@ -9260,6 +8921,24 @@
 			)
 		)
 		(property "LCSC" "C398827"
+			(at 124.206 94.234 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PARTREV" ""
+			(at 124.206 94.234 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "STANDARD" ""
 			(at 124.206 94.234 0)
 			(effects
 				(font
@@ -9583,7 +9262,25 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C141382"
+		(property "LCSC" "C307331"
+			(at 138.176 45.974 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PARTREV" ""
+			(at 138.176 45.974 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "STANDARD" ""
 			(at 138.176 45.974 90)
 			(effects
 				(font
@@ -9853,7 +9550,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Switches:switch1"
+		(property "Footprint" "Button_Switch_SMD:SW_SPDT_Shouhan_MSK12C02"
 			(at 36.322 49.784 0)
 			(effects
 				(font
@@ -9934,7 +9631,25 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C431540"
+			(at 36.322 49.784 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PARTREV" ""
+			(at 36.322 49.784 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "STANDARD" ""
 			(at 36.322 49.784 90)
 			(effects
 				(font
@@ -10068,7 +9783,25 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C279981"
+		(property "LCSC" "C11702"
+			(at 31.496 94.234 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PARTREV" ""
+			(at 31.496 94.234 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "STANDARD" ""
 			(at 31.496 94.234 90)
 			(effects
 				(font
@@ -10205,7 +9938,25 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C279981"
+		(property "LCSC" "C11702"
+			(at 31.496 99.314 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PARTREV" ""
+			(at 31.496 99.314 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "STANDARD" ""
 			(at 31.496 99.314 90)
 			(effects
 				(font
@@ -10476,7 +10227,25 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C285206"
+		(property "LCSC" "C25804"
+			(at 80.01 86.614 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PARTREV" ""
+			(at 80.01 86.614 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "STANDARD" ""
 			(at 80.01 86.614 90)
 			(effects
 				(font
@@ -10608,7 +10377,25 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C167339"
+		(property "LCSC" "C52923"
+			(at 59.436 117.348 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PARTREV" ""
+			(at 59.436 117.348 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "STANDARD" ""
 			(at 59.436 117.348 90)
 			(effects
 				(font
@@ -10957,7 +10744,25 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C285206"
+		(property "LCSC" "C25804"
+			(at 79.756 61.214 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PARTREV" ""
+			(at 79.756 61.214 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "STANDARD" ""
 			(at 79.756 61.214 90)
 			(effects
 				(font
@@ -11308,7 +11113,25 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C167339"
+		(property "LCSC" "C52923"
+			(at 259.334 137.922 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PARTREV" ""
+			(at 259.334 137.922 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "STANDARD" ""
 			(at 259.334 137.922 0)
 			(effects
 				(font
@@ -11447,7 +11270,25 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C141382"
+		(property "LCSC" "C307331"
+			(at 144.526 45.974 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PARTREV" ""
+			(at 144.526 45.974 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "STANDARD" ""
 			(at 144.526 45.974 90)
 			(effects
 				(font
@@ -11505,7 +11346,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Switches:switch1"
+		(property "Footprint" "Button_Switch_SMD:SW_SPDT_Shouhan_MSK12C02"
 			(at 51.562 49.784 0)
 			(effects
 				(font
@@ -11586,7 +11427,25 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C431540"
+			(at 51.562 49.784 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PARTREV" ""
+			(at 51.562 49.784 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "STANDARD" ""
 			(at 51.562 49.784 90)
 			(effects
 				(font
@@ -11669,6 +11528,24 @@
 			)
 		)
 		(property "LCSC" ""
+			(at 60.706 140.208 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PARTREV" ""
+			(at 60.706 140.208 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "STANDARD" ""
 			(at 60.706 140.208 0)
 			(effects
 				(font
@@ -11793,7 +11670,25 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C279981"
+		(property "LCSC" "C11702"
+			(at 31.496 96.774 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PARTREV" ""
+			(at 31.496 96.774 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "STANDARD" ""
 			(at 31.496 96.774 90)
 			(effects
 				(font
