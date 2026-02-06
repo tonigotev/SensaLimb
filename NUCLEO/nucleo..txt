@@ -1,0 +1,33 @@
+nucleo.
+Check for warnings
+ADC read - parallel interface
+ 1. Pulse CONVST → ADC starts converting.
+   -CONVST LOW ≥ 25 ns
+   -CONVST HIGH  ≥ 25 ns
+ 2. BUSY goes HIGH during conversion.
+   -From CONVST rising → BUSY high: max 45 ns.
+ 3. Wait until BUSY goes LOW → data is ready.
+   -Conversion time AD7606: typ 4 µs - max 4 µs.
+   -If Oversampling is enabled: typical * oversampling_ratio
+ 4. Keep RD HIGH while BUSY is HIGH (don’t read yet).AA
+ 5. After BUSY goes LOW: Pull CS LOW & Pull RD LOW
+   -BUSY falling → CS falling: min 0 ns (t4)
+   -CS → RD setup: min 0 ns (t8)
+   -CS → RD hold: min 0 ns (t9)
+ 6. Latch/read DB[15:0] on the MCU.
+   -After RD goes LOW, wait the “data access” time:
+      VDRIVE > 4.75 V: 16 ns
+      *VDRIVE > 3.3 V: 21 ns <-- that's us*
+      VDRIVE > 2.7 V: 25 ns
+      VDRIVE > 2.3 V: 32 ns
+ 7. Bring RD HIGH (this advances to the next channel word) and do it for each channel.
+    -RD low pulse width t10 ≥ 21ns
+    -RD high pulse width t11: ≥15 ns
+    -Data hold after RD falling t15: ≥6 ns
+ 8. Finally bring CS HIGH when done.
+    -CS rising → DB[15:0] goes tri-state t17: ≥22 ns
+angle read (optional - hardware dependent)
+ANN parse
+ANN result
+Check again for warnings or alerts
+control motors --> stub func for now
