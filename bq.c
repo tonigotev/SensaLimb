@@ -1,3 +1,5 @@
+// UART is still TX-only; no ACK RX yet.
+//SCD/OCC thresholds/delays still need final tuning once hardware data is known.
 #include "bq.h"
 #include "stm32c0xx_hal.h"
 
@@ -11,16 +13,58 @@ static uint16_t g_last_fault_reason = BQ_FAULT_NONE;
 static uint32_t g_fault_count = 0;
 static bool g_low_batt_warn_armed = true;
 static uint32_t g_last_pct_poll_ms = 0;
-__attribute__((weak)) void nucleo_send_low_batt_mode(void) { }
-__attribute__((weak)) void nucleo_send_safe_req(uint16_t code, uint32_t timeout_ms) { (void)code; (void)timeout_ms; }
-__attribute__((weak)) void nucleo_send_scd_event(uint32_t timeout_ms) { (void)timeout_ms; }
-__attribute__((weak)) void nucleo_send_low_batt_lockdown(uint32_t timeout_ms) { (void)timeout_ms; }
-__attribute__((weak)) void nucleo_send_cur_latched(uint32_t timeout_ms) { (void)timeout_ms; }
-__attribute__((weak)) void nucleo_send_low_batt_warn(uint8_t c1_pct, uint8_t c2_pct) { (void)c1_pct; (void)c2_pct; }
+static bool g_last_fault_pending = false;
+__attribute__((weak)) UART_HandleTypeDef huart1;
+static uint8_t g_nuc_seq = 0;
+static int bq_hal_nucleo_send(const uint8_t *data, uint8_t len, uint32_t timeout_ms);
+static const uint8_t BQ_NUC_FRAME_SAFE_REQ      = 0x10;
+static const uint8_t BQ_NUC_FRAME_SCD_EVENT     = 0x11;
+static const uint8_t BQ_NUC_FRAME_LOW_BATT_MODE = 0x12;
+static const uint8_t BQ_NUC_FRAME_LOW_BATT_LOCK = 0x13;
+static const uint8_t BQ_NUC_FRAME_CUR_LATCHED   = 0x14;
+static const uint8_t BQ_NUC_FRAME_LOW_BATT_WARN = 0x15;
+static const uint8_t BQ_NUC_FRAME_LAST_FAULT    = 0x16;
+
+int nucleo_send_low_batt_mode(void) {
+    return bq_send_frame(BQ_NUC_FRAME_LOW_BATT_MODE, NULL, 0, 50);
+}
+int nucleo_send_safe_req(uint16_t code, uint32_t timeout_ms) {
+    uint8_t p[2] = { (uint8_t)(code & 0xFF), (uint8_t)(code >> 8) };
+    return bq_send_frame(BQ_NUC_FRAME_SAFE_REQ, p, 2, timeout_ms);
+}
+int nucleo_send_scd_event(uint32_t timeout_ms) {
+    return bq_send_frame(BQ_NUC_FRAME_SCD_EVENT, NULL, 0, timeout_ms);
+}
+int nucleo_send_low_batt_lockdown(uint32_t timeout_ms) {
+    return bq_send_frame(BQ_NUC_FRAME_LOW_BATT_LOCK, NULL, 0, timeout_ms);
+}
+int nucleo_send_cur_latched(uint32_t timeout_ms) {
+    return bq_send_frame(BQ_NUC_FRAME_CUR_LATCHED, NULL, 0, timeout_ms);
+}
+int nucleo_send_low_batt_warn(uint8_t c1_pct, uint8_t c2_pct) {
+    uint8_t p[2] = { c1_pct, c2_pct };
+    return bq_send_frame(BQ_NUC_FRAME_LOW_BATT_WARN, p, 2, 50);
+}
+int nucleo_send_last_fault(uint16_t reason, uint32_t count) {
+    uint8_t p[6] = {
+        (uint8_t)(reason & 0xFF), (uint8_t)(reason >> 8),
+        (uint8_t)(count & 0xFF), (uint8_t)((count >> 8) & 0xFF),
+        (uint8_t)((count >> 16) & 0xFF), (uint8_t)((count >> 24) & 0xFF)
+    };
+    return bq_send_frame(BQ_NUC_FRAME_LAST_FAULT, p, 6, 50);
+}
 
 static void bq_set_fault(uint16_t code) {
     g_last_fault_reason = code;
     g_fault_count++;
+}
+
+static int bq_send_frame(uint8_t id, const uint8_t *payload, uint8_t plen, uint32_t timeout_ms) {
+    uint8_t buf[8];
+    if (1 + plen > sizeof(buf)) plen = sizeof(buf) - 1;
+    buf[0] = id;
+    for (uint8_t i = 0; i < plen; i++) buf[1 + i] = payload[i];
+    return bq_hal_nucleo_send(buf, (uint8_t)(1 + plen), timeout_ms);
 }
 
 static void bq_handle_alert_actions(uint16_t alarm, const bq_alert_snapshot_t *snap) {
@@ -51,7 +95,7 @@ static void bq_handle_alert_actions(uint16_t alarm, const bq_alert_snapshot_t *s
             return;
         }
         if (sta & SS_CURLATCH) {
-            bq_set_fault(BQ_FAULT_OCC); // reuse code slot; adjust if you add a dedicated code
+            bq_set_fault(BQ_FAULT_OCC); 
             nucleo_send_cur_latched(50);
             return;
         }
@@ -110,6 +154,18 @@ static inline bms_status_t bq_guard(void) {
     return bq_ready() ? BMS_OK : BMS_ERR_BAD_PARAM;
 }
 
+static uint8_t bq_crc8(const uint8_t *data, uint8_t len) {
+    uint8_t crc = 0x00; // init
+    for (uint8_t i = 0; i < len; i++) {
+        crc ^= data[i];
+        for (uint8_t b = 0; b < 8; b++) {
+            if (crc & 0x80) crc = (uint8_t)((crc << 1) ^ 0x07);
+            else crc <<= 1;
+        }
+    }
+    return crc;
+}
+
 static uint8_t bq_checksum(const uint8_t *data, uint16_t len) {
     uint32_t sum = 0;
     for (uint16_t i = 0; i < len; i++) {
@@ -131,6 +187,40 @@ static uint8_t bq_pct_from_mv(uint16_t mv) {
     if (delta <= 0) return 0;
     if (delta >= 1000) return 100;
     return (uint8_t)(delta / 10); // (mv-3200)/1000 * 100
+}
+
+static int bq_hal_nucleo_send(const uint8_t *data, uint8_t len, uint32_t timeout_ms) {
+    if (!data || len == 0) return -1;
+    if (!g_bq.nucleo_uart) return -1;
+
+    uint8_t max_payload = g_bq.nucleo_max_payload ? g_bq.nucleo_max_payload : 16;
+    if (len > max_payload) return -1;
+
+    const uint8_t critical_id1 = BQ_NUC_FRAME_SAFE_REQ;
+    const uint8_t critical_id2 = BQ_NUC_FRAME_SCD_EVENT;
+    const uint8_t critical_id3 = BQ_NUC_FRAME_LOW_BATT_LOCK;
+    bool critical = (data[0] == critical_id1) || (data[0] == critical_id2) || (data[0] == critical_id3);
+
+    UART_HandleTypeDef *huart = (UART_HandleTypeDef *)g_bq.nucleo_uart;
+    if (huart->gState != HAL_UART_STATE_READY && !critical) {
+        return -1;
+    }
+
+    uint8_t frame[32];
+    uint8_t seq = g_nuc_seq++;
+    uint8_t frame_len = (uint8_t)(1 + len); // seq + payload
+    if ((uint16_t)(frame_len + 3) > sizeof(frame)) return -1; // preamble + len + crc
+
+    frame[0] = 0xAA;
+    frame[1] = frame_len;
+    frame[2] = seq;
+    for (uint8_t i = 0; i < len; i++) frame[3 + i] = data[i];
+    uint8_t crc = bq_crc8(&frame[1], (uint8_t)(frame_len + 1)); // len + seq+payload
+    frame[3 + len] = crc;
+
+    uint32_t to = timeout_ms ? timeout_ms : g_bq.nucleo_timeout_ms;
+    HAL_StatusTypeDef st = HAL_UART_Transmit(huart, frame, (uint16_t)(frame_len + 3), to);
+    return (st == HAL_OK) ? 0 : -1;
 }
 
 static int bq_hal_i2c_mem_read(uint8_t reg, uint8_t *buf, uint16_t len) {
@@ -175,6 +265,15 @@ bms_status_t bq_init(bq_ctx_t *ctx, void *i2c_handle, uint8_t addr_7b, bool crc_
     ctx->i2c_addr_7b = addr_7b;
     ctx->crc_enabled = crc_enabled;
     ctx->xfer_timeout_ms = timeout_ms;
+    if (ctx->nucleo_uart == NULL) {
+        ctx->nucleo_uart = &huart1;
+    }
+    if (ctx->nucleo_max_payload == 0) {
+        ctx->nucleo_max_payload = 16;
+    }
+    if (ctx->nucleo_timeout_ms == 0) {
+        ctx->nucleo_timeout_ms = 50;
+    }
 
     g_bq = *ctx;
     g_init = true;
@@ -284,6 +383,10 @@ bms_status_t bq_deepsleep(void) {
 
 bms_status_t bq_exit_deepsleep(void) {
     return bq_subcmd_exec(BQ_SUBCMD_EXIT_DEEPSLEEP);
+}
+
+bms_status_t bq_fet_enable(void) {
+    return bq_subcmd_exec(BQ_SUBCMD_FET_ENABLE);
 }
 
 bms_status_t bq_read_safety_alert_a(uint8_t *out) { return bq_read_u8(BQ_SAFETY_ALERT_A, out); }
@@ -475,8 +578,41 @@ bms_status_t bq_configure_2s_basic(void) {
 }
 
 bms_status_t bms_init(void) {
-    // Caller should pass a pre-filled context to bq_init before calling this,
-    // and perform actual configuration here when ready.
+    if (!g_init) return BMS_ERR_BAD_PARAM;
+
+    bms_status_t st = bq_enter_cfgupdate();
+    if (st != BMS_OK) return st;
+
+    st = bq_configure_2s_basic();
+    if (st != BMS_OK) {
+        (void)bq_exit_cfgupdate();
+        return st;
+    }
+
+    if (BQ_CFG_DEFAULT_ALARM_MASK != BQ_CFG_SKIP_U2) {
+        bms_status_t ae = bq_write_alarm_enable_u16(BQ_CFG_DEFAULT_ALARM_MASK);
+        if (ae != BMS_OK) {
+            (void)bq_exit_cfgupdate();
+            return ae;
+        }
+    }
+
+    st = bq_exit_cfgupdate();
+    if (st != BMS_OK) return st;
+
+    (void)bq_fet_enable();
+
+    uint16_t alarm = 0;
+    if (bq_get_alarm_status(&alarm) == BMS_OK && alarm) {
+        (void)bq_clear_alarm_status(alarm);
+    }
+
+    if (nucleo_send_last_fault(g_last_fault_reason, g_fault_count) != 0) {
+        g_last_fault_pending = true;
+    } else {
+        g_last_fault_pending = false;
+    }
+
     return BMS_OK;
 }
 
@@ -503,6 +639,15 @@ void bms_process(void) {
         }
     }
 
+    if (g_last_fault_pending && g_bq.nucleo_uart) {
+        UART_HandleTypeDef *huart = (UART_HandleTypeDef *)g_bq.nucleo_uart;
+        if (huart->gState == HAL_UART_STATE_READY) {
+            if (nucleo_send_last_fault(g_last_fault_reason, g_fault_count) == 0) {
+                g_last_fault_pending = false;
+            }
+        }
+    }
+
     uint32_t now = HAL_GetTick();
     if ((now - g_last_pct_poll_ms) >= 1000) {
         g_last_pct_poll_ms = now;
@@ -523,5 +668,5 @@ void bms_process(void) {
 // =====================
 // Nucleo publishing stubs
 // =====================
-void bms_nucleo_send_status(void) { }
-void bms_nucleo_send_event(uint16_t event_code) { (void)event_code; }
+int bms_nucleo_send_status(void) { return 0; }
+int bms_nucleo_send_event(uint16_t event_code) { (void)event_code; return 0; }

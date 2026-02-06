@@ -18,6 +18,9 @@ typedef struct {
     uint8_t i2c_addr_7b;
     bool crc_enabled;
     uint32_t xfer_timeout_ms;
+    void *nucleo_uart;
+    uint8_t nucleo_max_payload;
+    uint32_t nucleo_timeout_ms;
 } bq_ctx_t;
 
 typedef struct {
@@ -106,6 +109,8 @@ typedef struct {
 #define BQ_SUBCMD_SHUTDOWN      0x0010
 #define BQ_SUBCMD_DEEPSLEEP     0x000F
 #define BQ_SUBCMD_EXIT_DEEPSLEEP 0x000E
+#define BQ_SUBCMD_FET_ENABLE    0x0022
+
 
 #define DM_I2C_ADDRESS          0x9016
 #define DM_DEFAULT_ALARM_MASK   0x901C
@@ -149,7 +154,7 @@ typedef struct {
 
 #define BQ_CFG_OCC_THRESH_2mV_VAL     BQ_CFG_SKIP_U1
 #define BQ_CFG_OCC_DELAY_VAL          BQ_CFG_SKIP_U1
-#define BQ_CFG_SCD_THRESH_VAL         BQ_CFG_SKIP_U1
+#define BQ_CFG_SCD_THRESH_VAL         4u
 #define BQ_SCD_DELAY_FASTEST_CODE     0u  // TODO confirm from TRM table
 #define BQ_CFG_SCD_DELAY_VAL          BQ_SCD_DELAY_FASTEST_CODE
 
@@ -181,6 +186,7 @@ bms_status_t bq_configure_2s_basic(void);
 bms_status_t bq_shutdown(void);       // subcmd 0x0010 (must send twice within 4s)
 bms_status_t bq_deepsleep(void);      // subcmd 0x000F (must send twice within 4s)
 bms_status_t bq_exit_deepsleep(void); // subcmd 0x000E
+bms_status_t bq_fet_enable(void);
 
 void bq_alert_irq_flag_set(void); // ISR-safe: sets volatile flag only
 
@@ -195,17 +201,18 @@ bms_status_t bq_get_cell_minmax(uint16_t *min_mv, uint16_t *max_mv);
 bms_status_t bq_get_battery_status(uint16_t *status);
 
 
-void nucleo_send_ok_status(void);
-void nucleo_send_warning(uint16_t code);
-void nucleo_send_fault(uint16_t fault_code);
-void bms_nucleo_send_status(void);
-void bms_nucleo_send_event(uint16_t event_code);
-void nucleo_send_low_batt_mode(void);
-void nucleo_send_safe_req(uint16_t code, uint32_t timeout_ms);
-void nucleo_send_scd_event(uint32_t timeout_ms);
-void nucleo_send_low_batt_lockdown(uint32_t timeout_ms);
-void nucleo_send_cur_latched(uint32_t timeout_ms);
-void nucleo_send_low_batt_warn(uint8_t c1_pct, uint8_t c2_pct);
+int nucleo_send_ok_status(void);
+int nucleo_send_warning(uint16_t code);
+int nucleo_send_fault(uint16_t fault_code);
+int bms_nucleo_send_status(void);
+int bms_nucleo_send_event(uint16_t event_code);
+int nucleo_send_low_batt_mode(void);
+int nucleo_send_safe_req(uint16_t code, uint32_t timeout_ms);
+int nucleo_send_scd_event(uint32_t timeout_ms);
+int nucleo_send_low_batt_lockdown(uint32_t timeout_ms);
+int nucleo_send_cur_latched(uint32_t timeout_ms);
+int nucleo_send_low_batt_warn(uint8_t c1_pct, uint8_t c2_pct);
+int nucleo_send_last_fault(uint16_t reason, uint32_t count);
 
 bms_status_t bq_read_safety_alert_a(uint8_t *out);
 bms_status_t bq_read_safety_status_a(uint8_t *out);
