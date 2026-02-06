@@ -9,7 +9,7 @@ ADC read - parallel interface
  3. Wait until BUSY goes LOW → data is ready.
    -Conversion time AD7606: typ 4 µs - max 4 µs.
    -If Oversampling is enabled: typical * oversampling_ratio
- 4. Keep RD HIGH while BUSY is HIGH (don’t read yet).AA
+ 4. Keep RD HIGH while BUSY is HIGH (don’t read yet).
  5. After BUSY goes LOW: Pull CS LOW & Pull RD LOW
    -BUSY falling → CS falling: min 0 ns (t4)
    -CS → RD setup: min 0 ns (t8)
