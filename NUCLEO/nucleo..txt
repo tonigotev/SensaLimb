@@ -1,6 +1,6 @@
 nucleo.
 Check for warnings
-ADC read - parallel interface
+ADC read (2k times) - parallel interface
  1. Pulse CONVST → ADC starts converting.
    -CONVST LOW ≥ 25 ns
    -CONVST HIGH  ≥ 25 ns
@@ -27,6 +27,7 @@ ADC read - parallel interface
  8. Finally bring CS HIGH when done.
     -CS rising → DB[15:0] goes tri-state t17: ≥22 ns
 angle read (optional - hardware dependent)
+Prepare data for ANN
 ANN parse
 ANN result
 Check again for warnings or alerts
