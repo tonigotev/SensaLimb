@@ -1,0 +1,30 @@
+{
+  "input_root": "ML\\datasets\\Mendeley\\sEMG_recordings\\normalized\\labeled",
+  "mode": "envelope",
+  "fs": 2000.0,
+  "win_sec": 1.0,
+  "step_sec": 0.05,
+  "downsample_hz": 200.0,
+  "envelope_rms_ms": 50.0,
+  "window_zscore": false,
+  "angle_stat": "mean",
+  "angle_max_deg": 150.0,
+  "split_by": "record",
+  "only_subject": null,
+  "n_records": null,
+  "n_windows": {
+    "train": 12299,
+    "val": 6022,
+    "test": 3312
+  },
+  "baseline_mean_subset": 0.3882696330547333,
+  "test_metrics": {
+    "loss": 0.0043785725720226765,
+    "mae": 0.10889172554016113,
+    "corr": 0.7948648698508529
+  },
+  "training_curves_png": "ML\\models\\conv1d_angle_subject2\\training_curves.png",
+  "pred_vs_true_png": "ML\\models\\conv1d_angle_subject2\\pred_vs_true.png",
+  "keras": "ML\\models\\conv1d_angle_subject2\\model.keras",
+  "tflite": "ML\\models\\conv1d_angle_subject2\\model.tflite"
+}
