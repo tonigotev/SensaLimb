@@ -271,6 +271,8 @@ def make_dataset_generator(
     angle_min: float | None,
     angle_max: float | None,
     angle_history_sec: float,
+    target: str,
+    delta_max: float | None,
 ) -> Iterator[tuple[np.ndarray, np.ndarray]]:
     win = int(round(win_sec * fs_hz))
     ds_factor = 1
@@ -310,18 +312,31 @@ def make_dataset_generator(
             sd = np.std(emg, axis=0, keepdims=True) + 1e-6
             emg = (emg - mu) / sd
 
-        a_deg = float(np.mean(ang))
-        if angle_norm == "none":
-            y = a_deg
-        else:
-            if angle_min is None or angle_max is None:
-                raise SystemExit("Angle min/max must be provided for minmax normalization.")
-            denom = float(angle_max - angle_min)
-            if denom <= 0:
-                y = 0.5
+        if target == "delta":
+            d_deg = float(ang[-1] - ang[0])
+            if angle_norm == "none":
+                y = d_deg
             else:
-                y = (a_deg - float(angle_min)) / denom
-                y = float(np.clip(y, 0.0, 1.0))
+                if delta_max is None:
+                    raise SystemExit("Delta max must be provided for normalized delta target.")
+                denom = float(delta_max)
+                if denom <= 0:
+                    y = 0.0
+                else:
+                    y = float(np.clip(d_deg / denom, -1.0, 1.0))
+        else:
+            a_deg = float(np.mean(ang))
+            if angle_norm == "none":
+                y = a_deg
+            else:
+                if angle_min is None or angle_max is None:
+                    raise SystemExit("Angle min/max must be provided for minmax normalization.")
+                denom = float(angle_max - angle_min)
+                if denom <= 0:
+                    y = 0.5
+                else:
+                    y = (a_deg - float(angle_min)) / denom
+                    y = float(np.clip(y, 0.0, 1.0))
         if hist is not None:
             if angle_norm == "none":
                 hist_norm = hist
@@ -359,13 +374,23 @@ def plot_curves(history, out_path: Path) -> None:
     plt.close(fig)
 
 
-def plot_pred_vs_true(y_true: np.ndarray, y_pred: np.ndarray, out_path: Path, *, angle_norm: str) -> None:
+def plot_pred_vs_true(
+    y_true: np.ndarray,
+    y_pred: np.ndarray,
+    out_path: Path,
+    *,
+    angle_norm: str,
+    target: str,
+) -> None:
     fig, ax = plt.subplots(figsize=(6, 6))
     ax.scatter(y_true, y_pred, s=6, alpha=0.25)
     lo = float(np.min(y_true))
     hi = float(np.max(y_true))
     ax.plot([lo, hi], [lo, hi], linestyle="--")
-    label = "angle_norm" if angle_norm != "none" else "angle_deg"
+    if target == "delta":
+        label = "delta_norm" if angle_norm != "none" else "delta_deg"
+    else:
+        label = "angle_norm" if angle_norm != "none" else "angle_deg"
     ax.set_xlabel(f"True {label}")
     ax.set_ylabel(f"Predicted {label}")
     ax.set_title("Predicted vs True (test)")
@@ -380,10 +405,14 @@ def plot_angle_histograms(
     out_path: Path,
     *,
     angle_norm: str,
+    target: str,
     n_bins: int,
 ) -> None:
     fig, ax = plt.subplots(figsize=(7, 4))
-    label = "angle_norm" if angle_norm != "none" else "angle_deg"
+    if target == "delta":
+        label = "delta_norm" if angle_norm != "none" else "delta_deg"
+    else:
+        label = "angle_norm" if angle_norm != "none" else "angle_deg"
     for name, values in hist_data.items():
         if values.size == 0:
             continue
@@ -479,6 +508,9 @@ def main() -> None:
     p.add_argument("--angle-min", type=float, default=None)
     p.add_argument("--angle-max", type=float, default=None)
     p.add_argument("--angle-history-sec", type=float, default=0.0, help="Include past angle channel (lagged by this many seconds).")
+    p.add_argument("--target", choices=["angle", "delta"], default="angle", help="Predict mean angle or delta angle (end-start).")
+    p.add_argument("--delta-max-deg", type=float, default=None, help="Max abs delta used for normalization (only when target=delta and angle-norm!=none).")
+    p.add_argument("--delta-samples", type=int, default=3000, help="Samples used to estimate delta-max when not provided.")
     p.add_argument("--histogram-samples", type=int, default=20000, help="Max windows per split to summarize histograms.")
     p.add_argument("--histogram-bins", type=int, default=40, help="Histogram bin count.")
 
@@ -490,6 +522,7 @@ def main() -> None:
     p.add_argument("--patience", type=int, default=10)
     p.add_argument("--no-shuffle", action="store_true", help="Disable shuffle buffer (faster startup, less randomness).")
     p.add_argument("--shuffle-buffer", type=int, default=20000, help="Shuffle buffer size (default: 20000).")
+    p.add_argument("--shuffle-once", action="store_true", help="Shuffle once and reuse the same order each epoch.")
     p.add_argument("--steps-per-epoch", type=int, default=0, help="Limit training steps per epoch (0 = full).")
     p.add_argument("--cache", choices=["none", "memory", "disk"], default="none", help="Cache dataset after preprocessing.")
     p.add_argument("--cache-path", type=str, default=None, help="Optional cache directory (used when --cache=disk).")
@@ -540,10 +573,10 @@ def main() -> None:
         )
         split_method = str(args.split_by)
 
-    # Determine angle normalization range from training set if needed
+    # Determine normalization ranges from training set if needed
     angle_min = args.angle_min
     angle_max = args.angle_max
-    if str(args.angle_norm) == "minmax":
+    if str(args.target) == "angle" and str(args.angle_norm) == "minmax":
         if angle_min is None or angle_max is None:
             angle_min, angle_max = compute_angle_range(train_recs)
 
@@ -582,9 +615,34 @@ def main() -> None:
         ds_factor = int(round(fs_hz / float(args.downsample_hz)))
         ds_factor = max(1, ds_factor)
     input_len = win if str(args.mode) == "raw" and ds_factor <= 1 else int(max(1, round(win / ds_factor)))
+
+    delta_max = args.delta_max_deg
+    if str(args.target) == "delta" and str(args.angle_norm) != "none" and delta_max is None:
+        delta_vals: list[float] = []
+        for _, yy in make_dataset_generator(
+            train_items[: int(args.delta_samples)],
+            fs_hz=fs_hz,
+            win_sec=float(args.win_sec),
+            mode=str(args.mode),
+            envelope_rms_ms=float(args.envelope_rms_ms),
+            downsample_hz=float(args.downsample_hz),
+            window_zscore=bool(args.window_zscore),
+            emg_source=str(args.emg_source),
+            angle_norm="none",
+            angle_min=None,
+            angle_max=None,
+            angle_history_sec=float(args.angle_history_sec),
+            target="delta",
+            delta_max=None,
+        ):
+            delta_vals.append(float(yy.reshape(-1)[0]))
+        delta_max = float(np.max(np.abs(delta_vals))) if delta_vals else 1.0
     n_ch = 3 if float(args.angle_history_sec) > 0 else 2
 
-    out_act = "linear" if str(args.angle_norm) == "none" else "sigmoid"
+    if str(args.target) == "delta":
+        out_act = "linear" if str(args.angle_norm) == "none" else "tanh"
+    else:
+        out_act = "linear" if str(args.angle_norm) == "none" else "sigmoid"
     model = build_conv1d_model(input_len=input_len, n_ch=n_ch, out_act=out_act, dropout=float(args.dropout))
     loss = tf.keras.losses.Huber(delta=0.05) if str(args.angle_norm) != "none" else tf.keras.losses.MeanAbsoluteError()
     model.compile(
@@ -613,6 +671,8 @@ def main() -> None:
             angle_min=angle_min,
             angle_max=angle_max,
             angle_history_sec=float(args.angle_history_sec),
+            target=str(args.target),
+            delta_max=delta_max,
         )
         output_signature = (
             tf.TensorSpec(shape=(None, n_ch), dtype=tf.float32),
@@ -641,7 +701,8 @@ def main() -> None:
             buf = int(args.shuffle_buffer)
             if buf <= 0:
                 buf = min(20_000, max(2_000, len(items)))
-            ds = ds.shuffle(buffer_size=min(buf, max(2_000, len(items))), reshuffle_each_iteration=True)
+            reshuffle = not bool(args.shuffle_once)
+            ds = ds.shuffle(buffer_size=min(buf, max(2_000, len(items))), reshuffle_each_iteration=reshuffle)
         if repeat:
             ds = ds.repeat()
         ds = ds.batch(int(args.batch_size)).prefetch(tf.data.AUTOTUNE)
@@ -666,6 +727,8 @@ def main() -> None:
         angle_min=angle_min,
         angle_max=angle_max,
         angle_history_sec=float(args.angle_history_sec),
+        target=str(args.target),
+        delta_max=delta_max,
     ):
         y_baseline_samples.append(float(yy.reshape(-1)[0]))
     y_train_mean = float(np.mean(y_baseline_samples)) if y_baseline_samples else 0.5
@@ -687,6 +750,8 @@ def main() -> None:
             angle_min=angle_min,
             angle_max=angle_max,
             angle_history_sec=float(args.angle_history_sec),
+            target=str(args.target),
+            delta_max=delta_max,
         ):
             y_vals.append(float(yy.reshape(-1)[0]))
         return np.array(y_vals, dtype=np.float32)
@@ -703,7 +768,7 @@ def main() -> None:
     }
     hist_data = {"train": train_y_sample, "val": val_y_sample, "test": test_y_sample}
     hist_png = out_dir / "angle_histograms.png"
-    plot_angle_histograms(hist_data, hist_png, angle_norm=str(args.angle_norm), n_bins=int(args.histogram_bins))
+    plot_angle_histograms(hist_data, hist_png, angle_norm=str(args.angle_norm), target=str(args.target), n_bins=int(args.histogram_bins))
     hist_json_path = out_dir / "angle_histograms.json"
     hist_json_path.write_text(json.dumps(hist_json, indent=2), encoding="utf-8")
 
@@ -738,7 +803,7 @@ def main() -> None:
     curves_path = out_dir / "training_curves.png"
     plot_curves(history, curves_path)
     scatter_path = out_dir / "pred_vs_true.png"
-    plot_pred_vs_true(yt, yp, scatter_path, angle_norm=str(args.angle_norm))
+    plot_pred_vs_true(yt, yp, scatter_path, angle_norm=str(args.angle_norm), target=str(args.target))
 
     keras_path = out_dir / "model.keras"
     model.save(keras_path)
@@ -805,6 +870,8 @@ def main() -> None:
         "angle_min": float(angle_min) if angle_min is not None else None,
         "angle_max": float(angle_max) if angle_max is not None else None,
         "angle_history_sec": float(args.angle_history_sec),
+        "target": str(args.target),
+        "delta_max_deg": float(delta_max) if delta_max is not None else None,
         "split_method": split_method,
         "only_subject": str(args.only_subject) if args.only_subject else None,
         "movement": str(args.movement),
