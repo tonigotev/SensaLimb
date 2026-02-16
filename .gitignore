@@ -1,4 +1,5 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 ML/datasets/Toro Ossaba/subject 9/subject_info.txt
 ML/datasets/Toro Ossaba/subject 9/9_pronsup_train_2270.txt
 ML/datasets/Toro Ossaba/subject 9/9_pronsup_train_1360.txt
@@ -130,6 +131,8 @@ ML/datasets/Toro Ossaba/subject 1/1_flex_test_2270.txt
 ML/datasets/Toro Ossaba/subject 1/1_flex_test_1360.txt
 ML/datasets/Toro Ossaba/subject 1/1_flex_test_0.txt
 =======
+=======
+>>>>>>> Stashed changes
 ML/datasets/Toro Ossaba/subject 1/1_flex_test_0.txt
 ML/datasets/Toro Ossaba/subject 1/1_flex_test_1360.txt
 ML/datasets/Toro Ossaba/subject 1/1_flex_test_2270.txt
@@ -260,4 +263,7 @@ ML/datasets/Toro Ossaba/subject 9/9_pronsup_train_0.txt
 ML/datasets/Toro Ossaba/subject 9/9_pronsup_train_1360.txt
 ML/datasets/Toro Ossaba/subject 9/9_pronsup_train_2270.txt
 ML/datasets/Toro Ossaba/subject 9/subject_info.txt
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
