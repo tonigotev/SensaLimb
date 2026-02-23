@@ -1,0 +1,7 @@
+../Core/Src/control_loop.c:42:13:debug_print_pred_stats	6
+../Core/Src/control_loop.c:80:13:debug_print_sample_rate	2
+../Core/Src/control_loop.c:90:13:dwt_init	1
+../Core/Src/control_loop.c:96:6:control_init	2
+../Core/Src/control_loop.c:118:6:control_on_sample_tick_isr	2
+../Core/Src/control_loop.c:128:6:control_enable_sampling	1
+../Core/Src/control_loop.c:132:6:control_tick	9

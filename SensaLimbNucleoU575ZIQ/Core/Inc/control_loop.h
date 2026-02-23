@@ -12,5 +12,7 @@
 
 void control_init(void);
 void control_tick(void);
+void control_on_sample_tick_isr(void);
+void control_enable_sampling(void);
 
 #endif

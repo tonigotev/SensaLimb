@@ -1,5 +1,5 @@
 // Stub action implementations for BMS UART frames.
-#include "nucleo_uart_rx.h"
+#include "UART/nucleo_uart_rx.h"
 
 void nucleo_on_safe_req(uint16_t fault_code) {
     (void)fault_code;

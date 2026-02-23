@@ -6,6 +6,7 @@
 #include <stddef.h>
 #include <stdint.h>
 
+#include "control_loop.h"
 #include "circular_list.h"
 
 typedef struct {
@@ -14,6 +15,7 @@ typedef struct {
     size_t window;
     size_t downsample;
     size_t rms_count;
+    size_t write_index;
     CircularList *lists;
     float (*rms_values)[SAMPLE_RATE];
     float (*features)[SAMPLES];

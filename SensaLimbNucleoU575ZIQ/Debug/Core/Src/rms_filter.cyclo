@@ -1,0 +1,5 @@
+../Core/Src/rms_filter.c:6:6:rms_filter_init	5
+../Core/Src/rms_filter.c:26:6:rms_filter_update	5
+../Core/Src/rms_filter.c:40:6:rms_filter_ready	2
+../Core/Src/rms_filter.c:45:6:rms_filter_build_features	7
+../Core/Src/rms_filter.c:62:6:rms_filter_reset	2

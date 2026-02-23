@@ -2,7 +2,7 @@
 #include <stdint.h>
 #include "ad7606.h"
 #include "ad7606_pins.h"
-#include "core_cm33.h"   // or stm32u5xx.h (which includes it)
+#include "core_cm33.h"
 
 static bool adc_initialized = false;
 // Init once. Access current cycle on DWT->CYCCNT
@@ -211,7 +211,7 @@ static inline void finish_conversion(void) {
 }
 
 void ad7606_read_all_channels(uint16_t *channels, uint8_t num_channels) {
-#ifdef AD7606_FAKE
+#if AD7606_FORCE_FAKE
     #include "adc_fake_data.h"
     static size_t frame_idx = 0;
     if (!channels || num_channels == 0) return;

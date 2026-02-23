@@ -1,0 +1,2 @@
+../Core/Src/ann_infer.c:21:6:ann_init	2
+../Core/Src/ann_infer.c:37:7:ann_predict	7

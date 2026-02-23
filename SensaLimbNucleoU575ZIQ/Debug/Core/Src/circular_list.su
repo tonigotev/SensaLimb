@@ -1,0 +1,4 @@
+../Core/Src/circular_list.c:6:6:circular_list_init	32	static
+../Core/Src/circular_list.c:42:6:circular_list_add	32	static
+../Core/Src/circular_list.c:56:7:circular_list_sum_sq	16	static
+../Core/Src/circular_list.c:61:6:circular_list_free	32	static

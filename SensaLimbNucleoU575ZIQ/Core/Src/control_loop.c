@@ -2,6 +2,8 @@
 #include "control_loop.h"
 
 #include <stdint.h>
+#include <stdio.h>
+#include <stdbool.h>
 
 #include "main.h"
 #include "core_cm33.h"
@@ -13,19 +15,76 @@
 // Provided by stm32u5xx_it.c
 void uart_dma_idle_init(UART_HandleTypeDef *huart);
 
-// Replace with your actual UART handle.
 extern UART_HandleTypeDef huart1;
 
 static CircularList g_rms_lists[CHANNELS];
 static float g_rms_values[CHANNELS][SAMPLE_RATE];
 static float g_features[CHANNELS][SAMPLES];
 static RmsFilter g_rms_filter;
-static uint16_t g_sample[CHANNELS];
 
-static uint32_t g_period_cycles = 0;
-static uint32_t g_tick_start = 0;
-static uint32_t g_tick_max_cycles = 0;
-static uint32_t g_tick_last_cycles = 0;
+static volatile uint32_t g_sample_tick = 0;
+static volatile bool g_sampling_enabled = false;
+static uint32_t g_last_pred_tick = 0;
+static uint32_t g_last_stats_tick = 0;
+static uint32_t g_last_led_tick = 0;
+static uint32_t g_last_sample_tick_print = 0;
+
+static uint32_t g_last_feat_cycles = 0;
+static uint32_t g_last_ann_cycles = 0;
+static uint32_t g_pred_count_1s = 0;
+static uint64_t g_pred_cycles_sum_1s = 0;
+static uint32_t g_pred_cycles_max_1s = 0;
+static int64_t g_pred_sum_milli_1s = 0;
+static int32_t g_pred_min_milli_1s = 0;
+static int32_t g_pred_max_milli_1s = 0;
+
+static void debug_print_pred_stats(void) {
+    if (g_pred_count_1s == 0u) {
+        return;
+    }
+    uint32_t avg_cycles = (uint32_t)(g_pred_cycles_sum_1s / g_pred_count_1s);
+    uint32_t avg_us = (uint32_t)(((uint64_t)avg_cycles * 1000000ULL) / SystemCoreClock);
+    uint32_t max_us = (uint32_t)(((uint64_t)g_pred_cycles_max_1s * 1000000ULL) / SystemCoreClock);
+    int32_t avg_pred_milli = (int32_t)(g_pred_sum_milli_1s / (int64_t)g_pred_count_1s);
+    int32_t avg_whole = avg_pred_milli / 1000;
+    int32_t avg_frac = avg_pred_milli % 1000;
+    if (avg_frac < 0) {
+        avg_frac = -avg_frac;
+    }
+    int32_t min_whole = g_pred_min_milli_1s / 1000;
+    int32_t min_frac = g_pred_min_milli_1s % 1000;
+    if (min_frac < 0) {
+        min_frac = -min_frac;
+    }
+    int32_t max_whole = g_pred_max_milli_1s / 1000;
+    int32_t max_frac = g_pred_max_milli_1s % 1000;
+    if (max_frac < 0) {
+        max_frac = -max_frac;
+    }
+    char buf[160];
+    int n = snprintf(buf, sizeof(buf),
+                     "pred/s=%lu avg_pred=%ld.%03ld min=%ld.%03ld max=%ld.%03ld avg=%lu cycles (%lu us) max=%lu us\r\n",
+                     (unsigned long)g_pred_count_1s,
+                     (long)avg_whole, (long)avg_frac,
+                     (long)min_whole, (long)min_frac,
+                     (long)max_whole, (long)max_frac,
+                     (unsigned long)avg_cycles,
+                     (unsigned long)avg_us,
+                     (unsigned long)max_us);
+    if (n > 0) {
+        HAL_UART_Transmit(&huart1, (uint8_t *)buf, (uint16_t)n, 10);
+    }
+}
+
+static void debug_print_sample_rate(uint32_t sample_tick) {
+    uint32_t delta = sample_tick - g_last_sample_tick_print;
+    g_last_sample_tick_print = sample_tick;
+    char buf[64];
+    int n = snprintf(buf, sizeof(buf), "samples/s=%lu\r\n", (unsigned long)delta);
+    if (n > 0) {
+        HAL_UART_Transmit(&huart1, (uint8_t *)buf, (uint16_t)n, 10);
+    }
+}
 
 static void dwt_init(void) {
     CoreDebug->DEMCR |= CoreDebug_DEMCR_TRCENA_Msk;
@@ -52,21 +111,58 @@ void control_init(void) {
                     g_rms_lists,
                     g_rms_values,
                     g_features);
+    control_enable_sampling();
+}
 
-    g_period_cycles = (uint32_t)((uint64_t)SystemCoreClock / SAMPLE_RATE);
-    g_tick_start = DWT->CYCCNT;
+void control_on_sample_tick_isr(void) {
+    if (!g_sampling_enabled) {
+        return;
+    }
+    uint16_t sample[CHANNELS];
+    ad7606_read_all_channels(sample, CHANNELS);
+    rms_filter_update(&g_rms_filter, sample);
+    g_sample_tick++;
+}
+
+void control_enable_sampling(void) {
+    g_sampling_enabled = true;
 }
 
 void control_tick(void) {
-    uint32_t tick_start = DWT->CYCCNT;
-    ad7606_read_all_channels(g_sample, CHANNELS);
-    rms_filter_update(&g_rms_filter, g_sample);
+    uint32_t sample_tick = g_sample_tick;
 
-    if (rms_filter_ready(&g_rms_filter)) {
+    if (rms_filter_ready(&g_rms_filter) &&
+        ((uint32_t)(sample_tick - g_last_pred_tick) >= 50u)) {
+        g_last_pred_tick = sample_tick;
+
+        uint32_t t0 = DWT->CYCCNT;
+        __disable_irq();
         rms_filter_build_features(&g_rms_filter);
-        rms_filter_reset(&g_rms_filter);
+        __enable_irq();
+        g_last_feat_cycles = DWT->CYCCNT - t0;
 
+        t0 = DWT->CYCCNT;
         float pred = ann_predict(&g_features[0][0], CHANNELS, SAMPLES, 0.0f);
+        g_last_ann_cycles = DWT->CYCCNT - t0;
+        uint32_t pred_cycles = g_last_feat_cycles + g_last_ann_cycles;
+        g_pred_cycles_sum_1s += pred_cycles;
+        if (pred_cycles > g_pred_cycles_max_1s) {
+            g_pred_cycles_max_1s = pred_cycles;
+        }
+        g_pred_count_1s++;
+        int32_t pred_milli = (int32_t)(pred * 1000.0f);
+        g_pred_sum_milli_1s += pred_milli;
+        if (g_pred_count_1s == 1u) {
+            g_pred_min_milli_1s = pred_milli;
+            g_pred_max_milli_1s = pred_milli;
+        } else {
+            if (pred_milli < g_pred_min_milli_1s) {
+                g_pred_min_milli_1s = pred_milli;
+            }
+            if (pred_milli > g_pred_max_milli_1s) {
+                g_pred_max_milli_1s = pred_milli;
+            }
+        }
 
         // motor logic here
         // if (movement_changed(pred)) {
@@ -75,10 +171,21 @@ void control_tick(void) {
     }
 
     nucleo_uart_rx_port_process();
-    g_tick_last_cycles = DWT->CYCCNT - tick_start;
-    if (g_tick_last_cycles > g_tick_max_cycles) {
-        g_tick_max_cycles = g_tick_last_cycles;
+
+    if ((uint32_t)(sample_tick - g_last_stats_tick) >= SAMPLE_RATE) {
+        debug_print_sample_rate(sample_tick);
+        debug_print_pred_stats();
+        g_pred_count_1s = 0;
+        g_pred_cycles_sum_1s = 0;
+        g_pred_cycles_max_1s = 0;
+        g_pred_sum_milli_1s = 0;
+        g_pred_min_milli_1s = 0;
+        g_pred_max_milli_1s = 0;
+        g_last_stats_tick = sample_tick;
     }
-    while (DWT->CYCCNT - g_tick_start < g_period_cycles) {}
-    g_tick_start += g_period_cycles;
+    if ((uint32_t)(sample_tick - g_last_led_tick) >= (SAMPLE_RATE / 2u)) {
+        HAL_GPIO_TogglePin(LD1_GPIO_Port, LD1_Pin);
+        HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
+        g_last_led_tick = sample_tick;
+    }
 }

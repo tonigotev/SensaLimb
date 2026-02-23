@@ -1,5 +1,6 @@
 // Nucleo UART RX implementation for BMS frames.
-#include "nucleo_uart_rx.h"
+#include "UART/nucleo_uart_rx.h"
+#include <string.h>
 
 typedef struct {
     UART_HandleTypeDef *huart;

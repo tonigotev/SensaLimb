@@ -1,0 +1,2 @@
+../Core/Src/control_loop.c:50:6:control_init	32	static
+../Core/Src/control_loop.c:74:6:control_tick	120	static

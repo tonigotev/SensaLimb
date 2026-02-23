@@ -1,0 +1,4 @@
+../Core/Src/ad7606.c:40:20:delay_ns	2
+../Core/Src/ad7606.c:167:6:ad7606_init	2
+../Core/Src/ad7606.c:213:6:ad7606_read_all_channels	4
+../Core/Src/ad7606.c:239:6:ad7606_normalize_channels	2

@@ -1,0 +1,17 @@
+../Core/Src/ad7606.c:11:20:dwt_init	4	static
+../Core/Src/ad7606.c:22:20:dwt_delay_cycles	24	static
+../Core/Src/ad7606.c:36:24:convert_ns_to_cycles	32	static
+../Core/Src/ad7606.c:40:20:delay_ns	16	static
+../Core/Src/ad7606.c:45:20:pin_low	16	static
+../Core/Src/ad7606.c:49:20:pin_high	16	static
+../Core/Src/ad7606.c:54:20:pulse_low_ns	24	static
+../Core/Src/ad7606.c:68:20:ad7606_gpio_init	40	static
+../Core/Src/ad7606.c:167:6:ad7606_init	8	static
+../Core/Src/ad7606.c:175:20:start_conversion	8	static
+../Core/Src/ad7606.c:179:20:wait_conversion_complete	8	static
+../Core/Src/ad7606.c:185:24:read_current_channel	4	static
+../Core/Src/ad7606.c:190:24:read_channel_sample	16	static
+../Core/Src/ad7606.c:199:20:read_all_channels	32	static
+../Core/Src/ad7606.c:208:20:finish_conversion	8	static
+../Core/Src/ad7606.c:213:6:ad7606_read_all_channels	32	static
+../Core/Src/ad7606.c:239:6:ad7606_normalize_channels	32	static

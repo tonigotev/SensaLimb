@@ -1,0 +1,3 @@
+../Core/Src/ann_infer.c:20:6:ann_init	2
+../Core/Src/ann_infer.c:29:14:quantize_input	3
+../Core/Src/ann_infer.c:36:7:ann_predict	7

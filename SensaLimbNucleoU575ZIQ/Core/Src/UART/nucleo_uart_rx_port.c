@@ -1,5 +1,5 @@
 // Optional Nucleo UART RX integration helpers.
-#include "nucleo_uart_rx_port.h"
+#include "UART/nucleo_uart_rx_port.h"
 
 #define NUCLEO_UART_RX_RING_SIZE   (NUCLEO_UART_MAX_FRAME_LEN * 4u)
 

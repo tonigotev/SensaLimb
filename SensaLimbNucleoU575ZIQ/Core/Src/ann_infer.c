@@ -7,7 +7,6 @@
 #include "network.h"
 #include "network_data.h"
 
-// Quantization params from network_generate_report.txt
 #define ANN_IN_SCALE      (0.003801456f)
 #define ANN_IN_ZERO       (-128)
 #define ANN_OUT_SCALE     (0.00390625f)
@@ -19,17 +18,10 @@ static ai_i8 g_in_data[AI_NETWORK_IN_1_SIZE_BYTES];
 static ai_i8 g_out_data[AI_NETWORK_OUT_1_SIZE_BYTES];
 
 void ann_init(void) {
-    ai_network_params params;
-    if (!ai_network_data_params_get(&params)) {
-        return;
-    }
-    params.activations = ai_network_data_activations_buffer_get(g_activations);
-    params.weights = ai_network_data_weights_buffer_get(ai_network_data_weights_get());
-    if (ai_network_create(&g_network, AI_NETWORK_DATA_CONFIG) != AI_ERROR_NONE) {
-        g_network = AI_HANDLE_NULL;
-        return;
-    }
-    if (!ai_network_init(g_network, &params)) {
+    ai_handle activations[] = { g_activations };
+    ai_handle weights[] = { ai_network_data_weights_get() };
+    ai_error err = ai_network_create_and_init(&g_network, activations, weights);
+    if (err.type != AI_ERROR_NONE) {
         g_network = AI_HANDLE_NULL;
     }
 }
@@ -61,13 +53,19 @@ float ann_predict(const float *features, size_t channels, size_t samples, float 
     }
 
     ai_buffer ai_input = AI_BUFFER_INIT(
-        AI_BUFFER_FORMAT_S8,
-        1, 1, AI_NETWORK_IN_1_SIZE, 1,
+        AI_FLAG_NONE,
+        AI_NETWORK_IN_1_FORMAT,
+        AI_BUFFER_SHAPE_INIT(AI_SHAPE_BCWH, 4, 1, AI_NETWORK_IN_1_CHANNEL, 1, AI_NETWORK_IN_1_HEIGHT),
+        AI_NETWORK_IN_1_SIZE,
+        NULL,
         g_in_data);
 
     ai_buffer ai_output = AI_BUFFER_INIT(
-        AI_BUFFER_FORMAT_S8,
-        1, 1, AI_NETWORK_OUT_1_SIZE, 1,
+        AI_FLAG_NONE,
+        AI_NETWORK_OUT_1_FORMAT,
+        AI_BUFFER_SHAPE_INIT(AI_SHAPE_BCWH, 4, 1, AI_NETWORK_OUT_1_CHANNEL, 1, 1),
+        AI_NETWORK_OUT_1_SIZE,
+        NULL,
         g_out_data);
 
     if (ai_network_run(g_network, &ai_input, &ai_output) != 1) {

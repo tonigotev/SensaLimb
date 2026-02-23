@@ -44,7 +44,6 @@
 /* USER CODE BEGIN PV */
 #define UART_RX_DMA_BUF_SIZE  1024u
 
-// must replace if not using huart1
 extern UART_HandleTypeDef huart1;
 
 static UART_HandleTypeDef *g_uart = &huart1;

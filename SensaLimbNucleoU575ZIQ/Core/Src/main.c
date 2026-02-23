@@ -25,6 +25,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "ad7606.h"
 #include "control_loop.h"
 
 /* USER CODE END Includes */
@@ -98,6 +99,21 @@ int main(void)
   MX_ICACHE_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
+#if AD7606_FORCE_FAKE
+  for (int i = 0; i < 2; i++) {
+    HAL_GPIO_TogglePin(LD1_GPIO_Port, LD1_Pin);
+    HAL_Delay(1000);
+    HAL_GPIO_TogglePin(LD1_GPIO_Port, LD1_Pin);
+    HAL_Delay(1000);
+  }
+#else
+  for (int i = 0; i < 2; i++) {
+    HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
+    HAL_Delay(2500);
+    HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
+    HAL_Delay(2500);
+  }
+#endif
   control_init();
 
   /* USER CODE END 2 */
@@ -206,7 +222,9 @@ static void SystemPower_Config(void)
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
   /* USER CODE BEGIN Callback 0 */
-
+  if (htim->Instance == TIM17) {
+    control_on_sample_tick_isr();
+  }
   /* USER CODE END Callback 0 */
   if (htim->Instance == TIM17)
   {

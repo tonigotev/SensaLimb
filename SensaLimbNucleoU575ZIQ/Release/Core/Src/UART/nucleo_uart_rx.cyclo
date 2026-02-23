@@ -1,0 +1,13 @@
+../Core/Src/UART/nucleo_uart_rx.c:21:15:rb_count	2
+../Core/Src/UART/nucleo_uart_rx.c:41:13:rb_pop	2
+../Core/Src/UART/nucleo_uart_rx.c:46:13:rb_push	4
+../Core/Src/UART/nucleo_uart_rx.c:57:9:nucleo_uart_crc8.part.0	4
+../Core/Src/UART/nucleo_uart_rx.c:32:13:rb_peek.isra	2
+../Core/Src/UART/nucleo_uart_rx.c:99:13:nucleo_uart_parse_frame	12
+../Core/Src/UART/nucleo_uart_rx.c:57:9:nucleo_uart_crc8	2
+../Core/Src/UART/nucleo_uart_rx.c:70:6:nucleo_uart_rx_init	2
+../Core/Src/UART/nucleo_uart_rx.c:82:6:nucleo_uart_rx_reset_parser	1
+../Core/Src/UART/nucleo_uart_rx.c:87:6:nucleo_uart_rx_push_byte	2
+../Core/Src/UART/nucleo_uart_rx.c:92:6:nucleo_uart_rx_push_block	5
+../Core/Src/UART/nucleo_uart_rx.c:154:6:nucleo_uart_rx_pop_frame	1
+../Core/Src/UART/nucleo_uart_rx.c:158:6:nucleo_uart_rx_process	16
