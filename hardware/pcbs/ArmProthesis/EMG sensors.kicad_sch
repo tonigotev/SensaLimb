@@ -2060,6 +2060,26 @@
 		)
 		(uuid "70df151c-0b8a-4e0a-b489-ea4a956b2298")
 	)
+	(text "DIN 1.5mm\nfor third electrode\nto bone"
+		(exclude_from_sim no)
+		(at 144.272 30.734 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "af9aa6a7-4f6a-4813-9d70-732a323ed495")
+	)
+	(text "2x4mm ECG \nelectrode snaps"
+		(exclude_from_sim no)
+		(at 178.816 29.972 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "fd2af422-54c6-4952-a9d6-ce47819e58ae")
+	)
 	(junction
 		(at 65.024 101.6)
 		(diameter 0)

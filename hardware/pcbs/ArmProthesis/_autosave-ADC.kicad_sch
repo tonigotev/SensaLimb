@@ -23,7 +23,6 @@
 			(property "Value" "AD7606BSTZ"
 				(at 0.762 29.718 0)
 				(effects
-					(font
 						(size 1.27 1.27)
 					)
 				)
@@ -8937,19 +8936,21 @@
 		(fields_autoplaced yes)
 		(uuid "93c878c3-e3b5-4484-bf9c-195b2315de23")
 		(property "Reference" "U1"
-			(at 124.714 61.214 0)
+			(at 134.0486 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Value" "AD7606BSTZ"
-			(at 125.222 64.262 0)
+			(at 134.0486 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "ADC:AD7606BSTZ"
