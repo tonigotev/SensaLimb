@@ -23,6 +23,7 @@
 			(property "Value" "AD7606BSTZ"
 				(at 0.762 29.718 0)
 				(effects
+					(font
 						(size 1.27 1.27)
 					)
 				)
