@@ -37,6 +37,15 @@ static uint32_t g_pred_cycles_max_1s = 0;
 static int64_t g_pred_sum_milli_1s = 0;
 static int32_t g_pred_min_milli_1s = 0;
 static int32_t g_pred_max_milli_1s = 0;
+static volatile float g_angle_history_deg = 0.0f;
+#define ANGLE_HISTORY_LAG_SAMPLES 100u
+#define ANGLE_CTX_RING_LEN (SAMPLE_RATE + ANGLE_HISTORY_LAG_SAMPLES + 16u)
+static float g_angle_ctx_ring[ANGLE_CTX_RING_LEN];
+static float g_angle_ctx_window[SAMPLES];
+
+static float angle_ctx_ring_get(uint32_t sample_idx) {
+    return g_angle_ctx_ring[sample_idx % ANGLE_CTX_RING_LEN];
+}
 
 static void debug_print_pred_stats(void) {
     if (g_pred_count_1s == 0u) {
@@ -122,6 +131,7 @@ void control_on_sample_tick_isr(void) {
     ad7606_read_all_channels(sample, CHANNELS);
     rms_filter_update(&g_rms_filter, sample);
     g_sample_tick++;
+    g_angle_ctx_ring[g_sample_tick % ANGLE_CTX_RING_LEN] = g_angle_history_deg;
 }
 
 void control_enable_sampling(void) {
@@ -131,19 +141,36 @@ void control_enable_sampling(void) {
 void control_tick(void) {
     uint32_t sample_tick = g_sample_tick;
 
-    if (rms_filter_ready(&g_rms_filter) &&
+    if (sample_tick >= (SAMPLE_RATE + ANGLE_HISTORY_LAG_SAMPLES) &&
+        rms_filter_ready(&g_rms_filter) &&
         ((uint32_t)(sample_tick - g_last_pred_tick) >= 50u)) {
         g_last_pred_tick = sample_tick;
 
         uint32_t t0 = DWT->CYCCNT;
         __disable_irq();
         rms_filter_build_features(&g_rms_filter);
+        uint32_t window_start = sample_tick - SAMPLE_RATE;
+        for (size_t j = 0; j < SAMPLES; j++) {
+            uint32_t block_start = window_start + (uint32_t)(j * RMS_DOWNSAMPLE);
+            float sum = 0.0f;
+            for (size_t k = 0; k < RMS_DOWNSAMPLE; k++) {
+                uint32_t idx = block_start + (uint32_t)k;
+                sum += angle_ctx_ring_get(idx - ANGLE_HISTORY_LAG_SAMPLES);
+            }
+            g_angle_ctx_window[j] = sum / (float)RMS_DOWNSAMPLE;
+        }
         __enable_irq();
         g_last_feat_cycles = DWT->CYCCNT - t0;
 
         t0 = DWT->CYCCNT;
-        float pred = ann_predict(&g_features[0][0], CHANNELS, SAMPLES, 0.0f);
+        float pred = ann_predict_with_history(&g_features[0][0], CHANNELS, SAMPLES, g_angle_ctx_window, SAMPLES);
         g_last_ann_cycles = DWT->CYCCNT - t0;
+        if (pred < 0.0f) {
+            pred = 0.0f;
+        } else if (pred > 160.0f) {
+            pred = 160.0f;
+        }
+        g_angle_history_deg = pred;
         uint32_t pred_cycles = g_last_feat_cycles + g_last_ann_cycles;
         g_pred_cycles_sum_1s += pred_cycles;
         if (pred_cycles > g_pred_cycles_max_1s) {

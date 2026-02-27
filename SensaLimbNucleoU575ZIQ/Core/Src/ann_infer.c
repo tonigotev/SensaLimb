@@ -11,6 +11,8 @@
 #define ANN_IN_ZERO       (-128)
 #define ANN_OUT_SCALE     (0.00390625f)
 #define ANN_OUT_ZERO      (-128)
+#define ANN_ANGLE_MIN_DEG (-67.43497467041016f)
+#define ANN_ANGLE_MAX_DEG (129.13128662109375f)
 
 static ai_handle g_network = AI_HANDLE_NULL;
 static ai_u8 g_activations[AI_NETWORK_DATA_ACTIVATIONS_SIZE];
@@ -33,7 +35,30 @@ static ai_i8 quantize_input(float v) {
     return (ai_i8)q;
 }
 
-float ann_predict(const float *features, size_t channels, size_t samples, float angle_value) {
+static float normalize_angle(float angle_deg) {
+    float denom = ANN_ANGLE_MAX_DEG - ANN_ANGLE_MIN_DEG;
+    if (denom <= 0.0f) {
+        return 0.0f;
+    }
+    float x = (angle_deg - ANN_ANGLE_MIN_DEG) / denom;
+    if (x < 0.0f) x = 0.0f;
+    if (x > 1.0f) x = 1.0f;
+    return x;
+}
+
+static float denormalize_angle(float angle_norm) {
+    float x = angle_norm;
+    if (x < 0.0f) x = 0.0f;
+    if (x > 1.0f) x = 1.0f;
+    return ANN_ANGLE_MIN_DEG + x * (ANN_ANGLE_MAX_DEG - ANN_ANGLE_MIN_DEG);
+}
+
+static float ann_predict_run(const float *features,
+                             size_t channels,
+                             size_t samples,
+                             const float *angle_history,
+                             size_t history_samples,
+                             float angle_value) {
     if (!g_network || !features) return 0.0f;
 
     // Expect 1x200x3 int8 input from report (size 600 bytes).
@@ -47,8 +72,11 @@ float ann_predict(const float *features, size_t channels, size_t samples, float 
     for (size_t t = 0; t < input_steps; t++) {
         g_in_data[t * input_ch + 0] = quantize_input(features[0 * samples + t]);
         g_in_data[t * input_ch + 1] = quantize_input(features[1 * samples + t]);
-        // Normalize angle (0..160 deg -> 0..1)
-        float angle_norm = angle_value / 160.0f;
+        float angle_src = angle_value;
+        if (angle_history && history_samples == input_steps) {
+            angle_src = angle_history[t];
+        }
+        float angle_norm = normalize_angle(angle_src);
         g_in_data[t * input_ch + 2] = quantize_input(angle_norm);
     }
 
@@ -74,7 +102,18 @@ float ann_predict(const float *features, size_t channels, size_t samples, float 
 
     ai_i8 q = g_out_data[0];
     float y = (float)(q - ANN_OUT_ZERO) * ANN_OUT_SCALE;
-    // Map normalized output [0..1] to degrees [0..160]
-    float angle_deg = y * 160.0f;
+    float angle_deg = denormalize_angle(y);
     return angle_deg;
+}
+
+float ann_predict(const float *features, size_t channels, size_t samples, float angle_value) {
+    return ann_predict_run(features, channels, samples, NULL, 0u, angle_value);
+}
+
+float ann_predict_with_history(const float *features,
+                               size_t channels,
+                               size_t samples,
+                               const float *angle_history,
+                               size_t history_samples) {
+    return ann_predict_run(features, channels, samples, angle_history, history_samples, 0.0f);
 }
