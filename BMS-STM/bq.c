@@ -1,7 +1,22 @@
 // UART is still TX-only; no ACK RX yet.
-//SCD/OCC thresholds/delays still need final tuning once hardware data is known.
+// SCD/OCC thresholds/delays still need final tuning once hardware data is known.
+//
+// DEBUG LOGGING NOTE:
+// BMS_LOG() uses semihosting printf. To enable in CubeIDE:
+//   1. Run menu > Debug Configurations > Debugger tab
+//   2. Check "Enable ARM semihosting"
+//   3. In Startup tab add: monitor arm semihosting enable
+// Logs appear in the CubeIDE Console when running under the debugger.
+// Define BMS_LOG_DISABLE to strip all logging from the build.
 #include "bq.h"
 #include "stm32c0xx_hal.h"
+#include <stdio.h>
+
+#ifndef BMS_LOG_DISABLE
+#define BMS_LOG(...) printf(__VA_ARGS__)
+#else
+#define BMS_LOG(...) ((void)0)
+#endif
 
 static bq_ctx_t g_bq = {0};
 static bool g_init = false;
@@ -17,6 +32,7 @@ static bool g_last_fault_pending = false;
 __attribute__((weak)) UART_HandleTypeDef huart1;
 static uint8_t g_nuc_seq = 0;
 static int bq_hal_nucleo_send(const uint8_t *data, uint8_t len, uint32_t timeout_ms);
+static int bq_send_frame(uint8_t id, const uint8_t *payload, uint8_t plen, uint32_t timeout_ms);
 static const uint8_t BQ_NUC_FRAME_SAFE_REQ      = 0x10;
 static const uint8_t BQ_NUC_FRAME_SCD_EVENT     = 0x11;
 static const uint8_t BQ_NUC_FRAME_LOW_BATT_MODE = 0x12;
@@ -77,6 +93,7 @@ static void bq_handle_alert_actions(uint16_t alarm, const bq_alert_snapshot_t *s
 
     if (sta || stb) {
         if (sta & SS_SCD) {
+            BMS_LOG("[BMS] FAULT: SCD (safety status A)\r\n");
             bq_set_fault(BQ_FAULT_SCD);
             nucleo_send_scd_event(50);
             return;
@@ -85,35 +102,42 @@ static void bq_handle_alert_actions(uint16_t alarm, const bq_alert_snapshot_t *s
             (stb & (SSB_OTINT | SSB_VREF | SSB_VSS)) ||
             (stb & (SSB_OTD | SSB_OTC | SSB_UTD | SSB_UTC)) ||
             (sta & SS_REGOUT)) {
+            BMS_LOG("[BMS] FAULT: OCD/OT/REGOUT (safety status A/B) sta=0x%02X stb=0x%02X\r\n", sta, stb);
             bq_set_fault(BQ_FAULT_OCD);
             nucleo_send_safe_req(BQ_FAULT_OCD, safe_req_timeout);
             return;
         }
         if (sta & SS_CUV) {
+            BMS_LOG("[BMS] FAULT: CUV (safety status A)\r\n");
             bq_set_fault(BQ_FAULT_CUV);
             nucleo_send_low_batt_lockdown(safe_req_timeout);
             return;
         }
         if (sta & SS_CURLATCH) {
-            bq_set_fault(BQ_FAULT_OCC); 
+            BMS_LOG("[BMS] FAULT: current latch (safety status A)\r\n");
+            bq_set_fault(BQ_FAULT_OCC);
             nucleo_send_cur_latched(50);
             return;
         }
         if (sta & SS_OCC) {
+            BMS_LOG("[BMS] FAULT: OCC (safety status A)\r\n");
             bq_set_fault(BQ_FAULT_OCC);
             return;
         }
         if (sta & SS_COV) {
+            BMS_LOG("[BMS] FAULT: COV (safety status A)\r\n");
             bq_set_fault(BQ_FAULT_COV);
             return;
         }
         if (stb & SSB_HWD) {
+            BMS_LOG("[BMS] FAULT: HWD watchdog (safety status B)\r\n");
             bq_set_fault(BQ_FAULT_HWD);
             g_bms_watchdog_warn = true;
             return;
         }
     } else {
         if (snap->sa & SA_SCD) {
+            BMS_LOG("[BMS] ALERT: SCD (safety alert A)\r\n");
             bq_set_fault(BQ_FAULT_SCD);
             nucleo_send_scd_event(50);
             return;
@@ -121,29 +145,37 @@ static void bq_handle_alert_actions(uint16_t alarm, const bq_alert_snapshot_t *s
         if ((snap->sa & (SA_OCD1 | SA_OCD2)) ||
             (snap->sb & (SB_OTINT | SB_VREF | SB_VSS)) ||
             (snap->sb & (SB_OTD | SB_OTC | SB_UTD | SB_UTC))) {
+            BMS_LOG("[BMS] ALERT: OCD/OT (safety alert A/B) sa=0x%02X sb=0x%02X\r\n", snap->sa, snap->sb);
             bq_set_fault(BQ_FAULT_OCD);
             nucleo_send_safe_req(BQ_FAULT_OCD, safe_req_timeout);
             return;
         }
         if (snap->sa & SA_CUV) {
+            BMS_LOG("[BMS] ALERT: CUV (safety alert A)\r\n");
             bq_set_fault(BQ_FAULT_CUV);
             nucleo_send_low_batt_lockdown(safe_req_timeout);
             return;
         }
         if (snap->sa & SA_OCC) {
+            BMS_LOG("[BMS] ALERT: OCC (safety alert A)\r\n");
             bq_set_fault(BQ_FAULT_OCC);
             return;
         }
         if (snap->sa & SA_COV) {
+            BMS_LOG("[BMS] ALERT: COV (safety alert A)\r\n");
             bq_set_fault(BQ_FAULT_COV);
             return;
         }
         if (snap->sb & SB_HWD) {
+            BMS_LOG("[BMS] ALERT: HWD watchdog (safety alert B)\r\n");
             bq_set_fault(BQ_FAULT_HWD);
             g_bms_watchdog_warn = true;
             return;
         }
     }
+
+    BMS_LOG("[BMS] Alert fired but no matching fault bits: alarm=0x%04X sa=0x%02X sb=0x%02X sta=0x%02X stb=0x%02X\r\n",
+            snap->alarm, snap->sa, snap->sb, snap->sta, snap->stb);
 }
 
 static inline bool bq_ready(void) {
@@ -155,7 +187,7 @@ static inline bms_status_t bq_guard(void) {
 }
 
 static uint8_t bq_crc8(const uint8_t *data, uint8_t len) {
-    uint8_t crc = 0x00; // init
+    uint8_t crc = 0x00;
     for (uint8_t i = 0; i < len; i++) {
         crc ^= data[i];
         for (uint8_t b = 0; b < 8; b++) {
@@ -186,7 +218,7 @@ static uint8_t bq_pct_from_mv(uint16_t mv) {
     int32_t delta = (int32_t)mv - 3200;
     if (delta <= 0) return 0;
     if (delta >= 1000) return 100;
-    return (uint8_t)(delta / 10); // (mv-3200)/1000 * 100
+    return (uint8_t)(delta / 10);
 }
 
 static int bq_hal_nucleo_send(const uint8_t *data, uint8_t len, uint32_t timeout_ms) {
@@ -208,14 +240,14 @@ static int bq_hal_nucleo_send(const uint8_t *data, uint8_t len, uint32_t timeout
 
     uint8_t frame[32];
     uint8_t seq = g_nuc_seq++;
-    uint8_t frame_len = (uint8_t)(1 + len); // seq + payload
-    if ((uint16_t)(frame_len + 3) > sizeof(frame)) return -1; // preamble + len + crc
+    uint8_t frame_len = (uint8_t)(1 + len);
+    if ((uint16_t)(frame_len + 3) > sizeof(frame)) return -1;
 
     frame[0] = 0xAA;
     frame[1] = frame_len;
     frame[2] = seq;
     for (uint8_t i = 0; i < len; i++) frame[3 + i] = data[i];
-    uint8_t crc = bq_crc8(&frame[1], (uint8_t)(frame_len + 1)); // len + seq+payload
+    uint8_t crc = bq_crc8(&frame[1], (uint8_t)(frame_len + 1));
     frame[3 + len] = crc;
 
     uint32_t to = timeout_ms ? timeout_ms : g_bq.nucleo_timeout_ms;
@@ -249,16 +281,16 @@ static int bq_hal_i2c_mem_write(uint8_t reg, const uint8_t *buf, uint16_t len) {
 
 bms_status_t bq_init(bq_ctx_t *ctx, void *i2c_handle, uint8_t addr_7b, bool crc_enabled, uint32_t timeout_ms) {
     if (!ctx || !i2c_handle) {
+        BMS_LOG("[BMS] bq_init: bad params\r\n");
         return BMS_ERR_BAD_PARAM;
     }
 
-    // Default address if caller passes 0
     if (addr_7b == 0) {
         addr_7b = BQ_I2C_ADDR_7B;
     }
 
     if (timeout_ms == 0) {
-        timeout_ms = 50; // sane minimum default
+        timeout_ms = 50;
     }
 
     ctx->i2c_handle = i2c_handle;
@@ -277,6 +309,7 @@ bms_status_t bq_init(bq_ctx_t *ctx, void *i2c_handle, uint8_t addr_7b, bool crc_
 
     g_bq = *ctx;
     g_init = true;
+    BMS_LOG("[BMS] bq_init: OK (addr=0x%02X timeout=%lums)\r\n", addr_7b, (unsigned long)timeout_ms);
     return BMS_OK;
 }
 
@@ -330,12 +363,12 @@ bms_status_t bq_buf_write_and_commit(uint16_t subcmd, const uint8_t *data, uint8
         if (bq_hal_i2c_mem_write(BQ_BUF_START, data, len) != 0) return BMS_ERR_I2C;
     }
 
-    uint8_t chk_data[2 + 64]; // 2 for subcmd + max payload (fits buffer)
+    uint8_t chk_data[2 + 64];
     chk_data[0] = (uint8_t)(subcmd & 0xFF);
     chk_data[1] = (uint8_t)(subcmd >> 8);
     for (uint8_t i = 0; i < len; i++) chk_data[2 + i] = data ? data[i] : 0x00;
     uint8_t checksum = bq_checksum(chk_data, (uint16_t)(2 + len));
-    uint8_t length = (uint8_t)(len + 4); // cmd(2) + checksum + length
+    uint8_t length = (uint8_t)(len + 4);
 
     if (bq_hal_i2c_mem_write(BQ_BUF_CHECKSUM, &checksum, 1) != 0) return BMS_ERR_I2C;
     if (bq_hal_i2c_mem_write(BQ_BUF_LENGTH, &length, 1) != 0) return BMS_ERR_I2C;
@@ -473,6 +506,13 @@ bms_status_t bq_handle_alert_and_clear(bq_alert_snapshot_t *out) {
         if (st != BMS_OK && first_err == BMS_OK) first_err = st;
     }
 
+    BMS_LOG("[BMS] Alert: alarm=0x%04X sa=0x%02X sb=0x%02X sta=0x%02X stb=0x%02X\r\n",
+            alarm, sa, sb, sta, stb);
+
+    if (first_err != BMS_OK) {
+        BMS_LOG("[BMS] Alert: I2C error reading registers (err=%d)\r\n", first_err);
+    }
+
     if (out) {
         out->alarm = alarm;
         out->sa = sa;
@@ -495,124 +535,148 @@ bms_status_t bq_handle_alert_and_clear(bq_alert_snapshot_t *out) {
 bms_status_t bq_configure_2s_basic(void) {
     bms_status_t st;
 
-    // Alarm mask / options
+    BMS_LOG("[BMS] configure_2s_basic: alarm mask / FET options\r\n");
     if (BQ_CFG_DEFAULT_ALARM_MASK != BQ_CFG_SKIP_U2) {
         st = bq_dm_write_u2(DM_DEFAULT_ALARM_MASK, BQ_CFG_DEFAULT_ALARM_MASK);
-        if (st != BMS_OK) return st;
+        if (st != BMS_OK) { BMS_LOG("[BMS] configure_2s_basic: FAILED alarm mask (err=%d)\r\n", st); return st; }
     }
     if (BQ_CFG_DEFAULT_FET_OPTIONS != BQ_CFG_SKIP_U2) {
         st = bq_dm_write_u2(DM_FET_OPTIONS, BQ_CFG_DEFAULT_FET_OPTIONS);
-        if (st != BMS_OK) return st;
+        if (st != BMS_OK) { BMS_LOG("[BMS] configure_2s_basic: FAILED FET options (err=%d)\r\n", st); return st; }
     }
 
-    // Protection enables / mapping
+    BMS_LOG("[BMS] configure_2s_basic: protection enables\r\n");
     if (BQ_CFG_ENABLED_PROT_A_VAL != BQ_CFG_SKIP_U1) {
         st = bq_dm_write_u1(DM_ENABLED_PROT_A, BQ_CFG_ENABLED_PROT_A_VAL);
-        if (st != BMS_OK) return st;
+        if (st != BMS_OK) { BMS_LOG("[BMS] configure_2s_basic: FAILED PROT_A (err=%d)\r\n", st); return st; }
     }
     if (BQ_CFG_ENABLED_PROT_B_VAL != BQ_CFG_SKIP_U1) {
         st = bq_dm_write_u1(DM_ENABLED_PROT_B, BQ_CFG_ENABLED_PROT_B_VAL);
-        if (st != BMS_OK) return st;
+        if (st != BMS_OK) { BMS_LOG("[BMS] configure_2s_basic: FAILED PROT_B (err=%d)\r\n", st); return st; }
     }
     if (BQ_CFG_DSG_FET_PROT_A_VAL != BQ_CFG_SKIP_U1) {
         st = bq_dm_write_u1(DM_DSG_FET_PROT_A, BQ_CFG_DSG_FET_PROT_A_VAL);
-        if (st != BMS_OK) return st;
+        if (st != BMS_OK) { BMS_LOG("[BMS] configure_2s_basic: FAILED DSG_FET_PROT_A (err=%d)\r\n", st); return st; }
     }
     if (BQ_CFG_CHG_FET_PROT_A_VAL != BQ_CFG_SKIP_U1) {
         st = bq_dm_write_u1(DM_CHG_FET_PROT_A, BQ_CFG_CHG_FET_PROT_A_VAL);
-        if (st != BMS_OK) return st;
+        if (st != BMS_OK) { BMS_LOG("[BMS] configure_2s_basic: FAILED CHG_FET_PROT_A (err=%d)\r\n", st); return st; }
     }
     if (BQ_CFG_BOTH_FET_PROT_B_VAL != BQ_CFG_SKIP_U1) {
         st = bq_dm_write_u1(DM_BOTH_FET_PROT_B, BQ_CFG_BOTH_FET_PROT_B_VAL);
-        if (st != BMS_OK) return st;
+        if (st != BMS_OK) { BMS_LOG("[BMS] configure_2s_basic: FAILED BOTH_FET_PROT_B (err=%d)\r\n", st); return st; }
     }
 
-    // Voltage thresholds/delays (CUV/COV delay fields are in ADSCAN counts)
+    BMS_LOG("[BMS] configure_2s_basic: CUV/COV thresholds\r\n");
     if (BQ_CFG_CUV_THRESH_mV != BQ_CFG_SKIP_U2) {
         st = bq_dm_write_u2(DM_CUV_THRESH_mV, BQ_CFG_CUV_THRESH_mV);
-        if (st != BMS_OK) return st;
+        if (st != BMS_OK) { BMS_LOG("[BMS] configure_2s_basic: FAILED CUV thresh (err=%d)\r\n", st); return st; }
     }
     if (BQ_CFG_CUV_DELAY_TARGET_MS != BQ_CFG_SKIP_U1 && BQ_CFG_CUV_DELAY_TARGET_MS != 0) {
         uint8_t cnt = bq_delay_ms_to_adscan_counts(BQ_CFG_CUV_DELAY_TARGET_MS);
         st = bq_dm_write_u1(DM_CUV_DELAY, cnt);
-        if (st != BMS_OK) return st;
+        if (st != BMS_OK) { BMS_LOG("[BMS] configure_2s_basic: FAILED CUV delay (err=%d)\r\n", st); return st; }
     }
     if (BQ_CFG_CUV_RECOV_HYST_VAL != BQ_CFG_SKIP_U1) {
         st = bq_dm_write_u1(DM_CUV_RECOV_HYST, BQ_CFG_CUV_RECOV_HYST_VAL);
-        if (st != BMS_OK) return st;
+        if (st != BMS_OK) { BMS_LOG("[BMS] configure_2s_basic: FAILED CUV hyst (err=%d)\r\n", st); return st; }
     }
-
     if (BQ_CFG_COV_THRESH_mV != BQ_CFG_SKIP_U2) {
         st = bq_dm_write_u2(DM_COV_THRESH_mV, BQ_CFG_COV_THRESH_mV);
-        if (st != BMS_OK) return st;
+        if (st != BMS_OK) { BMS_LOG("[BMS] configure_2s_basic: FAILED COV thresh (err=%d)\r\n", st); return st; }
     }
     if (BQ_CFG_COV_DELAY_TARGET_MS != BQ_CFG_SKIP_U1 && BQ_CFG_COV_DELAY_TARGET_MS != 0) {
         uint8_t cnt = bq_delay_ms_to_adscan_counts(BQ_CFG_COV_DELAY_TARGET_MS);
         st = bq_dm_write_u1(DM_COV_DELAY, cnt);
-        if (st != BMS_OK) return st;
+        if (st != BMS_OK) { BMS_LOG("[BMS] configure_2s_basic: FAILED COV delay (err=%d)\r\n", st); return st; }
     }
     if (BQ_CFG_COV_RECOV_HYST_VAL != BQ_CFG_SKIP_U1) {
         st = bq_dm_write_u1(DM_COV_RECOV_HYST, BQ_CFG_COV_RECOV_HYST_VAL);
-        if (st != BMS_OK) return st;
+        if (st != BMS_OK) { BMS_LOG("[BMS] configure_2s_basic: FAILED COV hyst (err=%d)\r\n", st); return st; }
     }
 
-    // Current thresholds/delays
+    BMS_LOG("[BMS] configure_2s_basic: OCC/SCD thresholds\r\n");
     if (BQ_CFG_OCC_THRESH_2mV_VAL != BQ_CFG_SKIP_U1) {
         st = bq_dm_write_u1(DM_OCC_THRESH_2mV, BQ_CFG_OCC_THRESH_2mV_VAL);
-        if (st != BMS_OK) return st;
+        if (st != BMS_OK) { BMS_LOG("[BMS] configure_2s_basic: FAILED OCC thresh (err=%d)\r\n", st); return st; }
     }
     if (BQ_CFG_OCC_DELAY_VAL != BQ_CFG_SKIP_U1) {
         st = bq_dm_write_u1(DM_OCC_DELAY, BQ_CFG_OCC_DELAY_VAL);
-        if (st != BMS_OK) return st;
+        if (st != BMS_OK) { BMS_LOG("[BMS] configure_2s_basic: FAILED OCC delay (err=%d)\r\n", st); return st; }
     }
     if (BQ_CFG_SCD_THRESH_VAL != BQ_CFG_SKIP_U1) {
         st = bq_dm_write_u1(DM_SCD_THRESH, BQ_CFG_SCD_THRESH_VAL);
-        if (st != BMS_OK) return st;
+        if (st != BMS_OK) { BMS_LOG("[BMS] configure_2s_basic: FAILED SCD thresh (err=%d)\r\n", st); return st; }
     }
     if (BQ_CFG_SCD_DELAY_VAL != BQ_CFG_SKIP_U1) {
         st = bq_dm_write_u1(DM_SCD_DELAY, BQ_CFG_SCD_DELAY_VAL);
-        if (st != BMS_OK) return st;
+        if (st != BMS_OK) { BMS_LOG("[BMS] configure_2s_basic: FAILED SCD delay (err=%d)\r\n", st); return st; }
     }
 
+    BMS_LOG("[BMS] configure_2s_basic: OK\r\n");
     return BMS_OK;
 }
 
 bms_status_t bms_init(void) {
-    if (!g_init) return BMS_ERR_BAD_PARAM;
+    BMS_LOG("[BMS] bms_init: start\r\n");
 
+    if (!g_init) {
+        BMS_LOG("[BMS] bms_init: FAILED - bq_init not called\r\n");
+        return BMS_ERR_BAD_PARAM;
+    }
+
+    BMS_LOG("[BMS] bms_init: entering CFGUPDATE mode\r\n");
     bms_status_t st = bq_enter_cfgupdate();
-    if (st != BMS_OK) return st;
+    if (st != BMS_OK) {
+        BMS_LOG("[BMS] bms_init: FAILED enter CFGUPDATE (err=%d) - I2C issue or BQ not responding\r\n", st);
+        return st;
+    }
 
+    BMS_LOG("[BMS] bms_init: writing protection config\r\n");
     st = bq_configure_2s_basic();
     if (st != BMS_OK) {
+        BMS_LOG("[BMS] bms_init: FAILED configure (err=%d)\r\n", st);
         (void)bq_exit_cfgupdate();
         return st;
     }
 
     if (BQ_CFG_DEFAULT_ALARM_MASK != BQ_CFG_SKIP_U2) {
+        BMS_LOG("[BMS] bms_init: writing alarm enable mask\r\n");
         bms_status_t ae = bq_write_alarm_enable_u16(BQ_CFG_DEFAULT_ALARM_MASK);
         if (ae != BMS_OK) {
+            BMS_LOG("[BMS] bms_init: FAILED alarm enable (err=%d)\r\n", ae);
             (void)bq_exit_cfgupdate();
             return ae;
         }
     }
 
+    BMS_LOG("[BMS] bms_init: exiting CFGUPDATE mode\r\n");
     st = bq_exit_cfgupdate();
-    if (st != BMS_OK) return st;
+    if (st != BMS_OK) {
+        BMS_LOG("[BMS] bms_init: FAILED exit CFGUPDATE (err=%d)\r\n", st);
+        return st;
+    }
 
+    BMS_LOG("[BMS] bms_init: enabling FETs\r\n");
     (void)bq_fet_enable();
 
     uint16_t alarm = 0;
     if (bq_get_alarm_status(&alarm) == BMS_OK && alarm) {
+        BMS_LOG("[BMS] bms_init: clearing stale alarm flags (0x%04X)\r\n", alarm);
         (void)bq_clear_alarm_status(alarm);
     }
 
+    BMS_LOG("[BMS] bms_init: sending last fault to NUCLEO (reason=%u count=%lu)\r\n",
+            g_last_fault_reason, (unsigned long)g_fault_count);
     if (nucleo_send_last_fault(g_last_fault_reason, g_fault_count) != 0) {
+        BMS_LOG("[BMS] bms_init: NUCLEO UART not ready, will retry in loop\r\n");
         g_last_fault_pending = true;
     } else {
+        BMS_LOG("[BMS] bms_init: last fault sent OK\r\n");
         g_last_fault_pending = false;
     }
 
+    BMS_LOG("[BMS] bms_init: DONE\r\n");
     return BMS_OK;
 }
 
@@ -629,8 +693,11 @@ void bms_process(void) {
             g_alert_i2c_fail_count = 0;
             g_safe_req_backoff = false;
         } else {
+            BMS_LOG("[BMS] process: alert I2C read failed (err=%d, fail_count=%u)\r\n",
+                    st, g_alert_i2c_fail_count + 1u);
             if (++g_alert_i2c_fail_count >= 3) {
                 if (!g_safe_req_backoff) {
+                    BMS_LOG("[BMS] process: 3 consecutive I2C failures, sending SAFE_REQ\r\n");
                     nucleo_send_safe_req(BQ_FAULT_OCD, 200);
                     g_safe_req_backoff = true;
                 }
@@ -643,6 +710,7 @@ void bms_process(void) {
         UART_HandleTypeDef *huart = (UART_HandleTypeDef *)g_bq.nucleo_uart;
         if (huart->gState == HAL_UART_STATE_READY) {
             if (nucleo_send_last_fault(g_last_fault_reason, g_fault_count) == 0) {
+                BMS_LOG("[BMS] process: last fault sent OK (retry)\r\n");
                 g_last_fault_pending = false;
             }
         }
@@ -653,14 +721,18 @@ void bms_process(void) {
         g_last_pct_poll_ms = now;
         uint8_t c1_pct = 0, c2_pct = 0;
         if (bq_get_cell_percents(&c1_pct, &c2_pct) == BMS_OK) {
+            BMS_LOG("[BMS] poll: cell1=%u%% cell2=%u%%\r\n", c1_pct, c2_pct);
             if ((c1_pct < BQ_LOW_BATT_WARN_PCT) || (c2_pct < BQ_LOW_BATT_WARN_PCT)) {
                 if (g_low_batt_warn_armed) {
+                    BMS_LOG("[BMS] poll: LOW BATTERY - sending warn to NUCLEO\r\n");
                     nucleo_send_low_batt_warn(c1_pct, c2_pct);
                     g_low_batt_warn_armed = false;
                 }
             } else if ((c1_pct >= BQ_LOW_BATT_CLEAR_PCT) && (c2_pct >= BQ_LOW_BATT_CLEAR_PCT)) {
                 g_low_batt_warn_armed = true;
             }
+        } else {
+            BMS_LOG("[BMS] poll: I2C error reading cell voltages\r\n");
         }
     }
 }
