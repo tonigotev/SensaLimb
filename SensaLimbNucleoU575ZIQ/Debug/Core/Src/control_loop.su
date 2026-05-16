@@ -1,7 +1,8 @@
-../Core/Src/control_loop.c:42:13:debug_print_pred_stats	368	static
-../Core/Src/control_loop.c:80:13:debug_print_sample_rate	88	static
-../Core/Src/control_loop.c:90:13:dwt_init	4	static
-../Core/Src/control_loop.c:96:6:control_init	32	static
-../Core/Src/control_loop.c:118:6:control_on_sample_tick_isr	16	static
-../Core/Src/control_loop.c:128:6:control_enable_sampling	4	static
-../Core/Src/control_loop.c:132:6:control_tick	64	static,ignoring_inline_asm
+../Core/Src/control_loop.c:47:14:angle_ctx_ring_get	16	static
+../Core/Src/control_loop.c:51:13:debug_print_pred_stats	368	static
+../Core/Src/control_loop.c:89:13:debug_print_sample_rate	88	static
+../Core/Src/control_loop.c:99:13:dwt_init	4	static
+../Core/Src/control_loop.c:105:6:control_init	32	static
+../Core/Src/control_loop.c:130:6:control_on_sample_tick_isr	16	static
+../Core/Src/control_loop.c:144:6:control_enable_sampling	4	static
+../Core/Src/control_loop.c:148:6:control_tick	208	static,ignoring_inline_asm

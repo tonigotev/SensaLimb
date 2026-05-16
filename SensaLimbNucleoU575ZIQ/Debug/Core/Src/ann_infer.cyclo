@@ -1,3 +1,7 @@
-../Core/Src/ann_infer.c:20:6:ann_init	2
-../Core/Src/ann_infer.c:29:14:quantize_input	3
-../Core/Src/ann_infer.c:36:7:ann_predict	7
+../Core/Src/ann_infer.c:22:6:ann_init	2
+../Core/Src/ann_infer.c:31:14:quantize_input	3
+../Core/Src/ann_infer.c:38:14:normalize_angle	4
+../Core/Src/ann_infer.c:49:14:denormalize_angle	3
+../Core/Src/ann_infer.c:56:14:ann_predict_run	9
+../Core/Src/ann_infer.c:109:7:ann_predict	1
+../Core/Src/ann_infer.c:113:7:ann_predict_with_history	1

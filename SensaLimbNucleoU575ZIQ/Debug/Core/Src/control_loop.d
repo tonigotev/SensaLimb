@@ -29,10 +29,10 @@ Core/Src/control_loop.o: ../Core/Src/control_loop.c \
  ../Drivers/STM32U5xx_HAL_Driver/Inc/stm32u5xx_hal_uart.h \
  ../Drivers/STM32U5xx_HAL_Driver/Inc/stm32u5xx_hal_uart_ex.h \
  ../Drivers/STM32U5xx_HAL_Driver/Inc/stm32u5xx_hal_exti.h \
- ../Core/Inc/ad7606.h ../Core/Inc/UART/nucleo_uart_rx_port.h \
- ../Core/Inc/UART/nucleo_uart_rx.h ../Core/Inc/rms_filter.h \
- ../Core/Inc/control_loop.h ../Core/Inc/circular_list.h \
- ../Core/Inc/ann_infer.h
+ ../Core/Inc/ad7606.h ../Core/Inc/ad7606_pins.h \
+ ../Core/Inc/UART/nucleo_uart_rx_port.h ../Core/Inc/UART/nucleo_uart_rx.h \
+ ../Core/Inc/rms_filter.h ../Core/Inc/control_loop.h \
+ ../Core/Inc/circular_list.h ../Core/Inc/ann_infer.h
 ../Core/Inc/control_loop.h:
 ../Core/Inc/main.h:
 ../Drivers/STM32U5xx_HAL_Driver/Inc/stm32u5xx_hal.h:
@@ -65,6 +65,7 @@ Core/Src/control_loop.o: ../Core/Src/control_loop.c \
 ../Drivers/STM32U5xx_HAL_Driver/Inc/stm32u5xx_hal_uart_ex.h:
 ../Drivers/STM32U5xx_HAL_Driver/Inc/stm32u5xx_hal_exti.h:
 ../Core/Inc/ad7606.h:
+../Core/Inc/ad7606_pins.h:
 ../Core/Inc/UART/nucleo_uart_rx_port.h:
 ../Core/Inc/UART/nucleo_uart_rx.h:
 ../Core/Inc/rms_filter.h:

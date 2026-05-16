@@ -204,6 +204,7 @@ static void SystemPower_Config(void)
     Error_Handler();
   }
 /* USER CODE BEGIN PWR */
+  HAL_PWREx_EnableVddIO2();
 /* USER CODE END PWR */
 }
 

@@ -66,102 +66,66 @@ static inline void pulse_high_ns(GPIO_TypeDef *gpio, uint32_t pin, uint32_t ns) 
 }
 
 static inline void ad7606_gpio_init(void) {
-    // Enable clock for GPIOA and GPIOB
     __HAL_RCC_GPIOA_CLK_ENABLE();
     __HAL_RCC_GPIOB_CLK_ENABLE();
+    __HAL_RCC_GPIOC_CLK_ENABLE();
+    __HAL_RCC_GPIOD_CLK_ENABLE();
+    __HAL_RCC_GPIOE_CLK_ENABLE();
+    __HAL_RCC_GPIOF_CLK_ENABLE();
+    __HAL_RCC_GPIOG_CLK_ENABLE();
+    __HAL_RCC_GPIOH_CLK_ENABLE();
 
-    // Initialize control pins
     GPIO_InitTypeDef init_struct = {0};
-    init_struct.Pin = ADC_CONVST_PIN;
-    init_struct.Mode = GPIO_MODE_OUTPUT_PP;
-    init_struct.Pull = GPIO_NOPULL;
-    init_struct.Speed = GPIO_SPEED_FREQ_LOW;
-    HAL_GPIO_Init(ADC_CONVST_GPIO, &init_struct);
 
-    init_struct.Pin = ADC_RD_PIN;
-    HAL_GPIO_Init(ADC_RD_GPIO, &init_struct);
+    /* Output control pins */
+    init_struct.Mode  = GPIO_MODE_OUTPUT_PP;
+    init_struct.Pull  = GPIO_NOPULL;
+    init_struct.Speed = GPIO_SPEED_FREQ_HIGH;
 
-    init_struct.Pin = ADC_CS_PIN;
-    HAL_GPIO_Init(ADC_CS_GPIO, &init_struct);
+    init_struct.Pin = ADC_CONVST_PIN; HAL_GPIO_Init(ADC_CONVST_GPIO, &init_struct);
+    init_struct.Pin = ADC_CS_PIN;     HAL_GPIO_Init(ADC_CS_GPIO,     &init_struct);
+    init_struct.Pin = ADC_STBY_PIN;   HAL_GPIO_Init(ADC_STBY_GPIO,   &init_struct);
 
-    init_struct.Pin = ADC_OS0_PIN;
-    HAL_GPIO_Init(ADC_OS0_GPIO, &init_struct);
+    /* RD is on GPIOH — must be explicitly initialized as output (resets to analog on STM32U5) */
+    init_struct.Pin = ADC_RD_PIN;     HAL_GPIO_Init(ADC_RD_GPIO,     &init_struct);
 
-    init_struct.Pin = ADC_OS1_PIN;
-    HAL_GPIO_Init(ADC_OS1_GPIO, &init_struct);
+    /* Input pins — BUSY and data bus */
+    init_struct.Mode  = GPIO_MODE_INPUT;
+    init_struct.Pull  = GPIO_PULLDOWN;
+    init_struct.Speed = GPIO_SPEED_FREQ_HIGH;
 
-    init_struct.Pin = ADC_OS2_PIN;
-    HAL_GPIO_Init(ADC_OS2_GPIO, &init_struct);
+    /* BUSY is on GPIOH — must be explicitly initialized as input (resets to analog on STM32U5) */
+    init_struct.Pin = ADC_BUSY_PIN;  HAL_GPIO_Init(ADC_BUSY_GPIO,  &init_struct);
 
-    init_struct.Pin = ADC_STBY_PIN;
-    HAL_GPIO_Init(ADC_STBY_GPIO, &init_struct);
-    
-    // Initialize data bus pins
-    init_struct.Pin = ADC_DB0_PIN;
-    init_struct.Mode = GPIO_MODE_INPUT;
-    init_struct.Pull = GPIO_NOPULL;
-    init_struct.Speed = GPIO_SPEED_FREQ_LOW;
-    HAL_GPIO_Init(ADC_DB0_GPIO, &init_struct);
+    /* DB0–DB15: pull-up for diagnostic (was PULLDOWN) */
+    init_struct.Pull  = GPIO_PULLUP;
+    init_struct.Pin = ADC_DB0_PIN;   HAL_GPIO_Init(ADC_DB0_GPIO,   &init_struct);
+    init_struct.Pin = ADC_DB1_PIN;   HAL_GPIO_Init(ADC_DB1_GPIO,   &init_struct);
+    init_struct.Pin = ADC_DB2_PIN;   HAL_GPIO_Init(ADC_DB2_GPIO,   &init_struct);
+    init_struct.Pin = ADC_DB3_PIN;   HAL_GPIO_Init(ADC_DB3_GPIO,   &init_struct);
+    init_struct.Pin = ADC_DB4_PIN;   HAL_GPIO_Init(ADC_DB4_GPIO,   &init_struct);
+    init_struct.Pin = ADC_DB5_PIN;   HAL_GPIO_Init(ADC_DB5_GPIO,   &init_struct);
+    init_struct.Pin = ADC_DB6_PIN;   HAL_GPIO_Init(ADC_DB6_GPIO,   &init_struct);
+    init_struct.Pin = ADC_DB7_PIN;   HAL_GPIO_Init(ADC_DB7_GPIO,   &init_struct);
+    init_struct.Pin = ADC_DB8_PIN;   HAL_GPIO_Init(ADC_DB8_GPIO,   &init_struct);
+    init_struct.Pin = ADC_DB9_PIN;   HAL_GPIO_Init(ADC_DB9_GPIO,   &init_struct);
+    init_struct.Pin = ADC_DB10_PIN;  HAL_GPIO_Init(ADC_DB10_GPIO,  &init_struct);
+    init_struct.Pin = ADC_DB11_PIN;  HAL_GPIO_Init(ADC_DB11_GPIO,  &init_struct);
+    init_struct.Pin = ADC_DB12_PIN;  HAL_GPIO_Init(ADC_DB12_GPIO,  &init_struct);
+    init_struct.Pin = ADC_DB13_PIN;  HAL_GPIO_Init(ADC_DB13_GPIO,  &init_struct);
+    init_struct.Pin = ADC_DB14_PIN;  HAL_GPIO_Init(ADC_DB14_GPIO,  &init_struct);
+    init_struct.Pin = ADC_DB15_PIN;  HAL_GPIO_Init(ADC_DB15_GPIO,  &init_struct);
 
-    init_struct.Pin = ADC_DB1_PIN;
-    HAL_GPIO_Init(ADC_DB1_GPIO, &init_struct);
-
-    init_struct.Pin = ADC_DB2_PIN;
-    HAL_GPIO_Init(ADC_DB2_GPIO, &init_struct);
-
-    init_struct.Pin = ADC_DB3_PIN;
-    HAL_GPIO_Init(ADC_DB3_GPIO, &init_struct);
-
-    init_struct.Pin = ADC_DB4_PIN;
-    HAL_GPIO_Init(ADC_DB4_GPIO, &init_struct);
-
-    init_struct.Pin = ADC_DB5_PIN;
-    HAL_GPIO_Init(ADC_DB5_GPIO, &init_struct);
-
-    init_struct.Pin = ADC_DB6_PIN;
-    HAL_GPIO_Init(ADC_DB6_GPIO, &init_struct);
-
-    init_struct.Pin = ADC_DB7_PIN;
-    HAL_GPIO_Init(ADC_DB7_GPIO, &init_struct);
-
-    init_struct.Pin = ADC_DB8_PIN;
-    HAL_GPIO_Init(ADC_DB8_GPIO, &init_struct);
-
-    init_struct.Pin = ADC_DB9_PIN;
-    HAL_GPIO_Init(ADC_DB9_GPIO, &init_struct);
-
-    init_struct.Pin = ADC_DB10_PIN;
-    HAL_GPIO_Init(ADC_DB10_GPIO, &init_struct);
-
-    init_struct.Pin = ADC_DB11_PIN;
-    HAL_GPIO_Init(ADC_DB11_GPIO, &init_struct);
-
-    init_struct.Pin = ADC_DB12_PIN;
-    HAL_GPIO_Init(ADC_DB12_GPIO, &init_struct);
-
-    init_struct.Pin = ADC_DB13_PIN;
-    HAL_GPIO_Init(ADC_DB13_GPIO, &init_struct);
-
-    init_struct.Pin = ADC_DB14_PIN;
-    HAL_GPIO_Init(ADC_DB14_GPIO, &init_struct);
-
-    init_struct.Pin = ADC_DB15_PIN;
-    HAL_GPIO_Init(ADC_DB15_GPIO, &init_struct);
-
-    init_struct.Pin = ADC_BUSY_PIN;
-    HAL_GPIO_Init(ADC_BUSY_GPIO, &init_struct);
-
-    // Init them high
+    /* Default idle states */
     HAL_GPIO_WritePin(ADC_CONVST_GPIO, ADC_CONVST_PIN, GPIO_PIN_SET);
-    HAL_GPIO_WritePin(ADC_RD_GPIO, ADC_RD_PIN, GPIO_PIN_SET);
-    HAL_GPIO_WritePin(ADC_CS_GPIO, ADC_CS_PIN, GPIO_PIN_SET);
-    HAL_GPIO_WritePin(ADC_STBY_GPIO, ADC_STBY_PIN, GPIO_PIN_SET);
+    HAL_GPIO_WritePin(ADC_RD_GPIO,     ADC_RD_PIN,     GPIO_PIN_SET);
+    HAL_GPIO_WritePin(ADC_CS_GPIO,     ADC_CS_PIN,     GPIO_PIN_SET);
+    HAL_GPIO_WritePin(ADC_STBY_GPIO,   ADC_STBY_PIN,   GPIO_PIN_SET);
 
-    // Init them low
-    HAL_GPIO_WritePin(ADC_OS0_GPIO, ADC_OS0_PIN, GPIO_PIN_RESET);
-    HAL_GPIO_WritePin(ADC_OS1_GPIO, ADC_OS1_PIN, GPIO_PIN_RESET);
-    HAL_GPIO_WritePin(ADC_OS2_GPIO, ADC_OS2_PIN, GPIO_PIN_RESET);
-
+#if AD7606_DEBUG_HOLD_CS_RD_LOW
+    HAL_GPIO_WritePin(ADC_CS_GPIO, ADC_CS_PIN, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(ADC_RD_GPIO, ADC_RD_PIN, GPIO_PIN_RESET);
+#endif
 }
 
 void ad7606_init(void) {
@@ -172,42 +136,78 @@ void ad7606_init(void) {
     }
 }
 
+/* Counts how many times BUSY was never seen high — indicates CONVST not reaching chip */
+static uint32_t g_busy_miss_count = 0;
+static uint32_t g_busy_seen_count = 0;
+
+uint32_t ad7606_get_busy_miss_count(void) { return g_busy_miss_count; }
+uint32_t ad7606_get_busy_seen_count(void) { return g_busy_seen_count; }
+
 static inline void start_conversion(void) {
-    pulse_low_ns(ADC_CONVST_GPIO, ADC_CONVST_PIN, 30);
+    /* CONVST idles high — pulse low then back high; rising edge starts conversion.
+       5us low: well above 25ns datasheet minimum, delay_ns(1000) was unreliable at 1us. */
+    pin_low(ADC_CONVST_GPIO, ADC_CONVST_PIN);
+    delay_us(5);
+    pin_high(ADC_CONVST_GPIO, ADC_CONVST_PIN);
 }
 
-static inline void wait_conversion_complete(void) {
-    pin_high(ADC_RD_GPIO, ADC_RD_PIN);
-    while (HAL_GPIO_ReadPin(ADC_BUSY_GPIO, ADC_BUSY_PIN) == GPIO_PIN_RESET) {}
-    while (HAL_GPIO_ReadPin(ADC_BUSY_GPIO, ADC_BUSY_PIN) == GPIO_PIN_SET) {}
+static inline bool wait_conversion_complete(void) {
+    /* Flat 6us wait — conversion completes in ~4us after CONVST rising edge.
+       Sample BUSY afterward for health tracking only; always proceed to read. */
+    delay_us(6);
+
+    if (HAL_GPIO_ReadPin(ADC_BUSY_GPIO, ADC_BUSY_PIN)) {
+        g_busy_miss_count++;
+        return false;
+    }
+    g_busy_seen_count++;
+    return true;
 }
 
 static inline uint16_t read_current_channel(void) {
-    // Assumes DB0..DB15 are on the same GPIO port (ADC_DB_GPIO).
-    return (uint16_t)(ADC_DB_GPIO->IDR & 0xFFFFu);
+    uint16_t v = 0;
+    if (HAL_GPIO_ReadPin(ADC_DB0_GPIO,  ADC_DB0_PIN))  v |= (1u << 0);
+    if (HAL_GPIO_ReadPin(ADC_DB1_GPIO,  ADC_DB1_PIN))  v |= (1u << 1);
+    if (HAL_GPIO_ReadPin(ADC_DB2_GPIO,  ADC_DB2_PIN))  v |= (1u << 2);
+    if (HAL_GPIO_ReadPin(ADC_DB3_GPIO,  ADC_DB3_PIN))  v |= (1u << 3);
+    if (HAL_GPIO_ReadPin(ADC_DB4_GPIO,  ADC_DB4_PIN))  v |= (1u << 4);
+    if (HAL_GPIO_ReadPin(ADC_DB5_GPIO,  ADC_DB5_PIN))  v |= (1u << 5);
+    if (HAL_GPIO_ReadPin(ADC_DB6_GPIO,  ADC_DB6_PIN))  v |= (1u << 6);
+    if (HAL_GPIO_ReadPin(ADC_DB7_GPIO,  ADC_DB7_PIN))  v |= (1u << 7);
+    if (HAL_GPIO_ReadPin(ADC_DB8_GPIO,  ADC_DB8_PIN))  v |= (1u << 8);
+    if (HAL_GPIO_ReadPin(ADC_DB9_GPIO,  ADC_DB9_PIN))  v |= (1u << 9);
+    if (HAL_GPIO_ReadPin(ADC_DB10_GPIO, ADC_DB10_PIN)) v |= (1u << 10);
+    if (HAL_GPIO_ReadPin(ADC_DB11_GPIO, ADC_DB11_PIN)) v |= (1u << 11);
+    if (HAL_GPIO_ReadPin(ADC_DB12_GPIO, ADC_DB12_PIN)) v |= (1u << 12);
+    if (HAL_GPIO_ReadPin(ADC_DB13_GPIO, ADC_DB13_PIN)) v |= (1u << 13);
+    if (HAL_GPIO_ReadPin(ADC_DB14_GPIO, ADC_DB14_PIN)) v |= (1u << 14);
+    if (HAL_GPIO_ReadPin(ADC_DB15_GPIO, ADC_DB15_PIN)) v |= (1u << 15);
+    return v;
 }
 
 static inline uint16_t read_channel_sample(void) {
     pin_low(ADC_RD_GPIO, ADC_RD_PIN);
-    delay_ns(30);
+    delay_ns(100);
     uint16_t v = read_current_channel();
     pin_high(ADC_RD_GPIO, ADC_RD_PIN);
-    delay_ns(20);
+    delay_ns(100);
     return v;
 }
 
 static inline void read_all_channels(uint16_t *channels, uint8_t num_channels) {
+    /* CS stays low for entire read sequence — data bus only driven while CS+RD both low */
     pin_low(ADC_CS_GPIO, ADC_CS_PIN);
-    pin_high(ADC_RD_GPIO, ADC_RD_PIN);
+    delay_ns(100);
 
     for (uint8_t i = 0; i < num_channels; i++) {
-        channels[i] = read_channel_sample();
+        pin_low(ADC_RD_GPIO, ADC_RD_PIN);
+        delay_ns(100);
+        channels[i] = read_current_channel();
+        pin_high(ADC_RD_GPIO, ADC_RD_PIN);
+        delay_ns(100);
     }
-}
 
-static inline void finish_conversion(void) {
     pin_high(ADC_CS_GPIO, ADC_CS_PIN);
-    delay_ns(25);
 }
 
 void ad7606_read_all_channels(uint16_t *channels, uint8_t num_channels) {
@@ -229,11 +229,9 @@ void ad7606_read_all_channels(uint16_t *channels, uint8_t num_channels) {
         return;
     }
 #endif
-    ad7606_init();
     start_conversion();
-    wait_conversion_complete();
+    if (!wait_conversion_complete()) return;
     read_all_channels(channels, num_channels);
-    finish_conversion();
 }
 
 void ad7606_normalize_channels(const uint16_t *channels,

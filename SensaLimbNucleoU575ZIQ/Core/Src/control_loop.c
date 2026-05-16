@@ -8,6 +8,7 @@
 #include "main.h"
 #include "core_cm33.h"
 #include "ad7606.h"
+#include "ad7606_pins.h"
 #include "UART/nucleo_uart_rx_port.h"
 #include "rms_filter.h"
 #include "ann_infer.h"
@@ -123,6 +124,9 @@ void control_init(void) {
     control_enable_sampling();
 }
 
+static uint32_t g_raw_print_tick = 0;
+static volatile uint16_t g_last_raw_sample[2] = {0};
+
 void control_on_sample_tick_isr(void) {
     if (!g_sampling_enabled) {
         return;
@@ -132,6 +136,9 @@ void control_on_sample_tick_isr(void) {
     rms_filter_update(&g_rms_filter, sample);
     g_sample_tick++;
     g_angle_ctx_ring[g_sample_tick % ANGLE_CTX_RING_LEN] = g_angle_history_deg;
+
+    g_last_raw_sample[0] = sample[0];
+    g_last_raw_sample[1] = sample[1];
 }
 
 void control_enable_sampling(void) {
@@ -200,6 +207,13 @@ void control_tick(void) {
     nucleo_uart_rx_port_process();
 
     if ((uint32_t)(sample_tick - g_last_stats_tick) >= SAMPLE_RATE) {
+        char raw_buf[96];
+        int rn = snprintf(raw_buf, sizeof(raw_buf),
+            "RAW ch0=0x%04X ch1=0x%04X busy_seen=%lu busy_miss=%lu\r\n",
+            (unsigned)g_last_raw_sample[0], (unsigned)g_last_raw_sample[1],
+            (unsigned long)ad7606_get_busy_seen_count(),
+            (unsigned long)ad7606_get_busy_miss_count());
+        if (rn > 0) HAL_UART_Transmit(&huart1, (uint8_t *)raw_buf, (uint16_t)rn, 10);
         debug_print_sample_rate(sample_tick);
         debug_print_pred_stats();
         g_pred_count_1s = 0;
