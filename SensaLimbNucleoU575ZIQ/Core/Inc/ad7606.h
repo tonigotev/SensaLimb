@@ -13,7 +13,6 @@
 void ad7606_init(void);
 void ad7606_read_all_channels(uint16_t *channels, uint8_t num_channels);
 void ad7606_normalize_channels(const uint16_t *channels, float *out, uint8_t num_channels);
-uint32_t ad7606_get_busy_miss_count(void);
-uint32_t ad7606_get_busy_seen_count(void);
+uint32_t ad7606_get_busy_timeout_count(void);
 
 #endif

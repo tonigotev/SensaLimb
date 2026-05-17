@@ -3,6 +3,6 @@
 ../Core/Src/control_loop.c:89:13:debug_print_sample_rate	88	static
 ../Core/Src/control_loop.c:99:13:dwt_init	4	static
 ../Core/Src/control_loop.c:105:6:control_init	32	static
-../Core/Src/control_loop.c:130:6:control_on_sample_tick_isr	16	static
-../Core/Src/control_loop.c:144:6:control_enable_sampling	4	static
-../Core/Src/control_loop.c:148:6:control_tick	208	static,ignoring_inline_asm
+../Core/Src/control_loop.c:129:6:control_on_sample_tick_isr	16	static
+../Core/Src/control_loop.c:143:6:control_enable_sampling	4	static
+../Core/Src/control_loop.c:147:6:control_tick	232	static,ignoring_inline_asm

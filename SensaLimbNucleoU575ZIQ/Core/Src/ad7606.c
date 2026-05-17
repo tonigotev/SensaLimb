@@ -98,8 +98,8 @@ static inline void ad7606_gpio_init(void) {
     /* BUSY is on GPIOH — must be explicitly initialized as input (resets to analog on STM32U5) */
     init_struct.Pin = ADC_BUSY_PIN;  HAL_GPIO_Init(ADC_BUSY_GPIO,  &init_struct);
 
-    /* DB0–DB15: pull-up for diagnostic (was PULLDOWN) */
-    init_struct.Pull  = GPIO_PULLUP;
+    /* DB0–DB14: no pull — chip drives these during reads */
+    init_struct.Pull  = GPIO_NOPULL;
     init_struct.Pin = ADC_DB0_PIN;   HAL_GPIO_Init(ADC_DB0_GPIO,   &init_struct);
     init_struct.Pin = ADC_DB1_PIN;   HAL_GPIO_Init(ADC_DB1_GPIO,   &init_struct);
     init_struct.Pin = ADC_DB2_PIN;   HAL_GPIO_Init(ADC_DB2_GPIO,   &init_struct);
@@ -108,6 +108,7 @@ static inline void ad7606_gpio_init(void) {
     init_struct.Pin = ADC_DB5_PIN;   HAL_GPIO_Init(ADC_DB5_GPIO,   &init_struct);
     init_struct.Pin = ADC_DB6_PIN;   HAL_GPIO_Init(ADC_DB6_GPIO,   &init_struct);
     init_struct.Pin = ADC_DB7_PIN;   HAL_GPIO_Init(ADC_DB7_GPIO,   &init_struct);
+    init_struct.Pull  = GPIO_NOPULL;
     init_struct.Pin = ADC_DB8_PIN;   HAL_GPIO_Init(ADC_DB8_GPIO,   &init_struct);
     init_struct.Pin = ADC_DB9_PIN;   HAL_GPIO_Init(ADC_DB9_GPIO,   &init_struct);
     init_struct.Pin = ADC_DB10_PIN;  HAL_GPIO_Init(ADC_DB10_GPIO,  &init_struct);
@@ -142,32 +143,29 @@ void ad7606_init(void) {
     }
 }
 
-/* Counts how many times BUSY was never seen high — indicates CONVST not reaching chip */
-static uint32_t g_busy_miss_count = 0;
-static uint32_t g_busy_seen_count = 0;
-
-uint32_t ad7606_get_busy_miss_count(void) { return g_busy_miss_count; }
-uint32_t ad7606_get_busy_seen_count(void) { return g_busy_seen_count; }
-
 static inline void start_conversion(void) {
-    /* CONVST idles high — pulse low then back high; rising edge starts conversion.
-       5us low: well above 25ns datasheet minimum, delay_ns(1000) was unreliable at 1us. */
     pin_low(ADC_CONVST_GPIO, ADC_CONVST_PIN);
     delay_us(5);
     pin_high(ADC_CONVST_GPIO, ADC_CONVST_PIN);
 }
 
-static inline bool wait_conversion_complete(void) {
-    /* Flat 6us wait — conversion completes in ~4us after CONVST rising edge.
-       Sample BUSY afterward for health tracking only; always proceed to read. */
-    delay_us(6);
+static uint32_t g_busy_timeout_count = 0;
+uint32_t ad7606_get_busy_timeout_count(void) { return g_busy_timeout_count; }
 
-    if (HAL_GPIO_ReadPin(ADC_BUSY_GPIO, ADC_BUSY_PIN)) {
-        g_busy_miss_count++;
-        return false;
+static inline void wait_conversion_complete(void) {
+    /* Skip past BUSY rising edge (~25ns after CONVST), then poll for BUSY falling.
+       10us timeout > 4us conversion time, so data is valid even on timeout.
+       Timeout incremented for diagnostics; read always proceeds. */
+    delay_ns(100);
+
+    uint32_t timeout = convert_us_to_cycles(10);
+    uint32_t start = DWT->CYCCNT;
+    while (HAL_GPIO_ReadPin(ADC_BUSY_GPIO, ADC_BUSY_PIN) == GPIO_PIN_SET) {
+        if ((DWT->CYCCNT - start) > timeout) {
+            g_busy_timeout_count++;
+            return;
+        }
     }
-    g_busy_seen_count++;
-    return true;
 }
 
 static inline uint16_t read_current_channel(void) {
@@ -236,7 +234,7 @@ void ad7606_read_all_channels(uint16_t *channels, uint8_t num_channels) {
     }
 #endif
     start_conversion();
-    if (!wait_conversion_complete()) return;
+    wait_conversion_complete();
     read_all_channels(channels, num_channels);
 }
 
