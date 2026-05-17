@@ -85,6 +85,7 @@ static inline void ad7606_gpio_init(void) {
     init_struct.Pin = ADC_CONVST_PIN; HAL_GPIO_Init(ADC_CONVST_GPIO, &init_struct);
     init_struct.Pin = ADC_CS_PIN;     HAL_GPIO_Init(ADC_CS_GPIO,     &init_struct);
     init_struct.Pin = ADC_STBY_PIN;   HAL_GPIO_Init(ADC_STBY_GPIO,   &init_struct);
+    init_struct.Pin = ADC_RESET_PIN;  HAL_GPIO_Init(ADC_RESET_GPIO,  &init_struct);
 
     /* RD is on GPIOH — must be explicitly initialized as output (resets to analog on STM32U5) */
     init_struct.Pin = ADC_RD_PIN;     HAL_GPIO_Init(ADC_RD_GPIO,     &init_struct);
@@ -121,6 +122,7 @@ static inline void ad7606_gpio_init(void) {
     HAL_GPIO_WritePin(ADC_RD_GPIO,     ADC_RD_PIN,     GPIO_PIN_SET);
     HAL_GPIO_WritePin(ADC_CS_GPIO,     ADC_CS_PIN,     GPIO_PIN_SET);
     HAL_GPIO_WritePin(ADC_STBY_GPIO,   ADC_STBY_PIN,   GPIO_PIN_SET);
+    HAL_GPIO_WritePin(ADC_RESET_GPIO,  ADC_RESET_PIN,  GPIO_PIN_RESET);
 
 #if AD7606_DEBUG_HOLD_CS_RD_LOW
     HAL_GPIO_WritePin(ADC_CS_GPIO, ADC_CS_PIN, GPIO_PIN_RESET);
@@ -132,6 +134,10 @@ void ad7606_init(void) {
     if (!adc_initialized) {
         ad7606_gpio_init();
         dwt_init();
+        pin_high(ADC_RESET_GPIO, ADC_RESET_PIN);
+        delay_us(1);
+        pin_low(ADC_RESET_GPIO, ADC_RESET_PIN);
+        delay_us(1);
         adc_initialized = true;
     }
 }

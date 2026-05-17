@@ -19,6 +19,9 @@
 #define ADC_STBY_GPIO     GPIOB
 #define ADC_STBY_PIN      GPIO_PIN_7
 
+#define ADC_RESET_GPIO    GPIOD
+#define ADC_RESET_PIN     GPIO_PIN_4
+
 /* Data bus — DB0..DB15 across multiple ports */
 /* DB0  */ #define ADC_DB0_GPIO   GPIOG
 /* DB0  */ #define ADC_DB0_PIN    GPIO_PIN_1
