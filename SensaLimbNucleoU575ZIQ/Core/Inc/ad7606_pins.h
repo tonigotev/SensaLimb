@@ -4,8 +4,8 @@
 #define DEFINED_CHANNELS 5
 
 /* Control pins */
-#define ADC_CONVST_GPIO   GPIOC
-#define ADC_CONVST_PIN    GPIO_PIN_13
+#define ADC_CONVST_GPIO   GPIOE
+#define ADC_CONVST_PIN    GPIO_PIN_3
 
 #define ADC_BUSY_GPIO     GPIOH
 #define ADC_BUSY_PIN      GPIO_PIN_0
@@ -16,8 +16,8 @@
 #define ADC_CS_GPIO       GPIOC
 #define ADC_CS_PIN        GPIO_PIN_2
 
-#define ADC_STBY_GPIO     GPIOB
-#define ADC_STBY_PIN      GPIO_PIN_7
+#define ADC_STBY_GPIO     GPIOG
+#define ADC_STBY_PIN      GPIO_PIN_0
 
 #define ADC_RESET_GPIO    GPIOD
 #define ADC_RESET_PIN     GPIO_PIN_4

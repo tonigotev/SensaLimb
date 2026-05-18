@@ -80,9 +80,10 @@ static inline void ad7606_gpio_init(void) {
     /* Output control pins */
     init_struct.Mode  = GPIO_MODE_OUTPUT_PP;
     init_struct.Pull  = GPIO_NOPULL;
-    init_struct.Speed = GPIO_SPEED_FREQ_HIGH;
-
+    init_struct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
     init_struct.Pin = ADC_CONVST_PIN; HAL_GPIO_Init(ADC_CONVST_GPIO, &init_struct);
+
+    init_struct.Speed = GPIO_SPEED_FREQ_HIGH;
     init_struct.Pin = ADC_CS_PIN;     HAL_GPIO_Init(ADC_CS_GPIO,     &init_struct);
     init_struct.Pin = ADC_STBY_PIN;   HAL_GPIO_Init(ADC_STBY_GPIO,   &init_struct);
     init_struct.Pin = ADC_RESET_PIN;  HAL_GPIO_Init(ADC_RESET_GPIO,  &init_struct);
@@ -98,8 +99,7 @@ static inline void ad7606_gpio_init(void) {
     /* BUSY is on GPIOH — must be explicitly initialized as input (resets to analog on STM32U5) */
     init_struct.Pin = ADC_BUSY_PIN;  HAL_GPIO_Init(ADC_BUSY_GPIO,  &init_struct);
 
-    /* DB0–DB14: no pull — chip drives these during reads */
-    init_struct.Pull  = GPIO_NOPULL;
+    init_struct.Pull  = GPIO_PULLDOWN;
     init_struct.Pin = ADC_DB0_PIN;   HAL_GPIO_Init(ADC_DB0_GPIO,   &init_struct);
     init_struct.Pin = ADC_DB1_PIN;   HAL_GPIO_Init(ADC_DB1_GPIO,   &init_struct);
     init_struct.Pin = ADC_DB2_PIN;   HAL_GPIO_Init(ADC_DB2_GPIO,   &init_struct);
@@ -108,7 +108,6 @@ static inline void ad7606_gpio_init(void) {
     init_struct.Pin = ADC_DB5_PIN;   HAL_GPIO_Init(ADC_DB5_GPIO,   &init_struct);
     init_struct.Pin = ADC_DB6_PIN;   HAL_GPIO_Init(ADC_DB6_GPIO,   &init_struct);
     init_struct.Pin = ADC_DB7_PIN;   HAL_GPIO_Init(ADC_DB7_GPIO,   &init_struct);
-    init_struct.Pull  = GPIO_NOPULL;
     init_struct.Pin = ADC_DB8_PIN;   HAL_GPIO_Init(ADC_DB8_GPIO,   &init_struct);
     init_struct.Pin = ADC_DB9_PIN;   HAL_GPIO_Init(ADC_DB9_GPIO,   &init_struct);
     init_struct.Pin = ADC_DB10_PIN;  HAL_GPIO_Init(ADC_DB10_GPIO,  &init_struct);
@@ -191,10 +190,10 @@ static inline uint16_t read_current_channel(void) {
 
 static inline uint16_t read_channel_sample(void) {
     pin_low(ADC_RD_GPIO, ADC_RD_PIN);
-    delay_ns(100);
+    delay_ns(200);
     uint16_t v = read_current_channel();
     pin_high(ADC_RD_GPIO, ADC_RD_PIN);
-    delay_ns(100);
+    delay_ns(200);
     return v;
 }
 
@@ -205,10 +204,10 @@ static inline void read_all_channels(uint16_t *channels, uint8_t num_channels) {
 
     for (uint8_t i = 0; i < num_channels; i++) {
         pin_low(ADC_RD_GPIO, ADC_RD_PIN);
-        delay_ns(100);
+        delay_ns(200);
         channels[i] = read_current_channel();
         pin_high(ADC_RD_GPIO, ADC_RD_PIN);
-        delay_ns(100);
+        delay_ns(200);
     }
 
     pin_high(ADC_CS_GPIO, ADC_CS_PIN);
