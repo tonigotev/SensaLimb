@@ -206,14 +206,13 @@ void control_tick(void) {
     nucleo_uart_rx_port_process();
 
     if ((uint32_t)(sample_tick - g_last_stats_tick) >= SAMPLE_RATE) {
-        char raw_buf[100];
-        uint16_t ch0 = (unsigned)g_last_raw_sample[0];
-        char bin16[17];
-        for (int i = 15; i >= 0; i--) { bin16[15 - i] = ((ch0 >> i) & 1) ? '1' : '0'; }
-        bin16[16] = '\0';
+        int32_t mv0 = ((int32_t)(int16_t)g_last_raw_sample[0] * 5000) / 32768;
+        int32_t mv1 = ((int32_t)(int16_t)g_last_raw_sample[1] * 5000) / 32768;
+        char raw_buf[80];
         int rn = snprintf(raw_buf, sizeof(raw_buf),
-            "RAW ch0=0x%04X [%s] ch1=0x%04X busy_timeout=%lu\r\n",
-            ch0, bin16, (unsigned)g_last_raw_sample[1],
+            "ch0=%ld.%03ld V  ch1=%ld.%03ld V  busy_timeout=%lu\r\n",
+            (long)(mv0 / 1000), (long)(mv0 < 0 ? -mv0 % 1000 : mv0 % 1000),
+            (long)(mv1 / 1000), (long)(mv1 < 0 ? -mv1 % 1000 : mv1 % 1000),
             (unsigned long)ad7606_get_busy_timeout_count());
         if (rn > 0) HAL_UART_Transmit(&huart1, (uint8_t *)raw_buf, (uint16_t)rn, 10);
         debug_print_sample_rate(sample_tick);

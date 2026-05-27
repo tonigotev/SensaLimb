@@ -465,7 +465,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "Voltage supply of sEMG & ADC.kicad_pro",
+    "filename": "System_PSU_v2.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -726,7 +726,7 @@
     },
     "net_format_name": "",
     "page_layout_descr_file": "",
-    "plot_directory": "",
+    "plot_directory": "pdfs/",
     "space_save_all_events": true,
     "spice_current_sheet_as_root": false,
     "spice_external_command": "spice \"%I\"",

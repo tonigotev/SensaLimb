@@ -5,4 +5,4 @@
 ../Core/Src/control_loop.c:105:6:control_init	32	static
 ../Core/Src/control_loop.c:129:6:control_on_sample_tick_isr	16	static
 ../Core/Src/control_loop.c:143:6:control_enable_sampling	4	static
-../Core/Src/control_loop.c:147:6:control_tick	232	static,ignoring_inline_asm
+../Core/Src/control_loop.c:147:6:control_tick	200	static,ignoring_inline_asm

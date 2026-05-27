@@ -5,4 +5,4 @@
 ../Core/Src/control_loop.c:105:6:control_init	2
 ../Core/Src/control_loop.c:129:6:control_on_sample_tick_isr	2
 ../Core/Src/control_loop.c:143:6:control_enable_sampling	1
-../Core/Src/control_loop.c:147:6:control_tick	17
+../Core/Src/control_loop.c:147:6:control_tick	19

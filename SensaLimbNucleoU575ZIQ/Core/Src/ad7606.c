@@ -99,7 +99,6 @@ static inline void ad7606_gpio_init(void) {
     /* BUSY is on GPIOH — must be explicitly initialized as input (resets to analog on STM32U5) */
     init_struct.Pin = ADC_BUSY_PIN;  HAL_GPIO_Init(ADC_BUSY_GPIO,  &init_struct);
 
-    init_struct.Pull  = GPIO_PULLDOWN;
     init_struct.Pin = ADC_DB0_PIN;   HAL_GPIO_Init(ADC_DB0_GPIO,   &init_struct);
     init_struct.Pin = ADC_DB1_PIN;   HAL_GPIO_Init(ADC_DB1_GPIO,   &init_struct);
     init_struct.Pin = ADC_DB2_PIN;   HAL_GPIO_Init(ADC_DB2_GPIO,   &init_struct);
